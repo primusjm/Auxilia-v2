@@ -20,3 +20,33 @@ Working notes for the Claude Design to Astro conversion. Update as work proceeds
 - Unsplash placeholder images (screens on several case studies) need real screenshots or licensed images.
 - `britam/hero.webp` is 1000px wide; a larger source is needed for full-bleed use.
 - GitHub Pages needs a paid plan for a private repo. Not enabled.
+
+
+## Progress log
+
+Done and verified (DOM diff against the handover markup, plus screenshot diff in reduced motion; see "Verification"):
+- Scaffold, layout, tokens, theme, shared chrome (menu, contact modal, country picker, lightbox, quotes, reveals).
+- Homepage (`src/pages/index.astro`, copy in `src/content/pages/home.yaml`).
+- 10 record case studies (`src/content/work/*.md`, `kind: record`) on `RecordStudy.astro`.
+- 3 appendix case studies (`kind: appendix`) on `AppendixStudy.astro`. Panels are an ordered list of typed blocks.
+- Local copies of all Unsplash placeholder images in `public/assets/stock/` (WebP).
+
+Remaining:
+- Acquisti landing and privacy (separate site under `/acquisti`).
+- Sveltia config at `public/admin/`, OAuth proxy, CI drift check.
+- Accessibility, performance and SEO pass; image optimisation (4j).
+- Fidelity pass on mobile breakpoints for every page (4k).
+
+## Verification
+Tooling used during conversion lives outside the repo (scratchpad). Method:
+1. DOM diff: normalise the handover markup and the built page (sorted attributes, whitespace, style declarations) and diff `main`.
+2. Screenshot diff: Playwright with `reducedMotion: reduce` at 1440 and 390 wide, original served from `design/` with React from unpkg.
+3. Smoke test of interactions (menu, contact form with mocked Formspree, country picker, theme, quotes, lightbox, hero and spotlight).
+
+Known intentional differences from the prototype:
+- `<strong>` replaces the prototype's `<span style="font-weight:500;color:var(--ink)">` for inline emphasis (identical look).
+- RLC: section heading styles normalised to the shared style (the prototype had tiny drift: line-height 1.06 vs 1.08, `text-wrap`).
+- RLC: the three logo images have no source in the handover. The plates render empty.
+- Kenya Power panels: a single live link is not wrapped in the flex wrapper the prototype used (no visual change).
+- Appendix tab labels: the prototype's runtime wrapped each value in its own flex item, so labels overflow on narrow screens. Replicated as is. Worth a design look.
+- Page titles and meta descriptions are not in the handover. Titles are "client: title | Auxilia" and descriptions are the hero lead text, both derived from existing copy.
