@@ -146,13 +146,13 @@ screens:
     href: https://imarafund.org/
     text: Visit the live site
   plates:
-    - src: https://images.unsplash.com/photo-1655720358066-2aab2a903ef8?fm=jpg&q=70&w=2000&auto=format&fit=crop
+    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: https://images.unsplash.com/photo-1655721991918-ee80a3291219?fm=jpg&q=70&w=1400&auto=format&fit=crop
+    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
       alt: 'Screen: leadership'
       caption: the leadership bios
-    - src: https://images.unsplash.com/photo-1632215861513-130b66fe97f4?fm=jpg&q=70&w=1400&auto=format&fit=crop
+    - src: /assets/stock/photo-1632215861513-130b66fe97f4.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:

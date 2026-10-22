@@ -40,5 +40,5 @@ html.ct-open .ax-ct-wrap{clip-path:circle(150% at 100% 100%);transform:none;opac
 .ax-qd-off{display:block;width:8px;height:3px;background:var(--ft-dot);}
 
 /* Lightbox */
-.ax-lb[hidden]{display:none;}
+[hidden]{display:none!important;}
 .ax-lb-img{display:block;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);animation:lbImg .5s cubic-bezier(.2,.7,.2,1);}

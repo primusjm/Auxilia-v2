@@ -1,0 +1,12 @@
+/* Homepage state styles, replacing the prototype's React style objects. */
+.ax-hstage{position:absolute;inset:0;opacity:0;transform:scale(1.04);transition:opacity .6s ease,transform 1s cubic-bezier(.2,.7,.2,1);pointer-events:none;}
+.ax-hstage.is-on{opacity:1;transform:scale(1);pointer-events:auto;}
+.ax-sstage{position:absolute;inset:0;opacity:0;transform:scale(1.03);transition:opacity .6s ease,transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none;}
+.ax-sstage.is-on{opacity:1;transform:scale(1);pointer-events:auto;}
+.ax-spot-row{width:100%;position:relative;display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:15px 14px;border:0;border-bottom:1px solid var(--rule);background:transparent;color:var(--ink);text-align:left;cursor:pointer;font-family:inherit;transition:background .3s ease,color .3s ease;}
+.ax-spot-row.is-on{background:var(--surface);color:var(--brand);}
+.ax-spot-bar{position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brand);transform-origin:bottom;animation:spotDrain 6s linear forwards;}
+.ax-hseg-done{position:absolute;inset:0;background:var(--ink);}
+.ax-hseg-cur{position:absolute;inset:0;background:#3B28FF;transform-origin:left;animation:hoDrain 4.5s linear forwards;}
+.paused .ax-hseg-cur,.paused .ax-spot-bar{animation-play-state:paused;}
+[data-spot-m]:not([data-on]){display:none!important;}

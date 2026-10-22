@@ -77,6 +77,52 @@ const work = defineCollection({
   schema: z.discriminatedUnion('kind', [record]),
 });
 
+const homeHead = { tab: z.string(), title: rich, icon, intro: rich, note: z.string() };
+const pages = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/pages' }),
+  schema: z.object({
+    hero: z.object({
+      title: rich,
+      lead: rich,
+      primaryCta: z.string(),
+      secondaryCta: z.string(),
+      caseStudyLabel: z.string(),
+      /** Slugs of the studies shown in the proof slideshow, in order. */
+      slides: z.array(z.string()),
+    }),
+    marquee: z.object({ topics: z.array(z.string()), services: z.array(z.string()), servicesLabel: z.string() }),
+    stats: z.array(z.object({ icon, value: z.number(), prefix: z.string(), suffix: z.string(), label: z.string(), client: z.string() })),
+    record: z.object(homeHead),
+    trusted: z.object({
+      eyebrow: z.string(),
+      title: rich,
+      stats: z.array(z.object({ value: z.string(), icon, iconStyle: z.enum(['brand', 'paper']), text: z.string(), srPrefix: z.string() })),
+      clients: z.array(z.object({ name: z.string(), href: z.string(), external: z.boolean() })),
+      featuredLabel: z.string(),
+      featured: z.array(z.object({ href: z.string(), image: image, client: z.string(), title: z.string(), go: z.string() })),
+    }),
+    constraints: z.object({ ...homeHead, tiles: z.array(z.object({ image, alt: z.string(), icon, title: z.string(), text: z.string() })) }),
+    capability: z.object({ ...homeHead, steps: z.array(z.object({ icon, kicker: z.string(), title: z.string(), text: z.string() })) }),
+    method: z.object({
+      ...homeHead,
+      phases: z.array(
+        z.object({
+          icon,
+          label: z.string(),
+          time: z.string(),
+          title: z.string(),
+          text: z.string(),
+          bullets: z.array(z.string()),
+          leave: z.string(),
+          yourTimeLabel: z.string(),
+          yourTime: z.string(),
+        }),
+      ),
+      closing: z.string(),
+    }),
+  }),
+});
+
 const settings = defineCollection({
   loader: file('./src/content/settings/site.json', { parser: (text) => [{ id: 'site', ...JSON.parse(text) }] }),
   schema: z.object({
@@ -87,4 +133,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { work, settings };
+export const collections = { work, pages, settings };

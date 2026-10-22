@@ -1,0 +1,216 @@
+hero:
+  title: Turn your mission into ==proof of impact.==
+  lead: Websites and tools built **for East Africa's NGOs, foundations and funds**. {missions} missions delivered, every one **built around the people it serves.**
+  primaryCta: Book a call
+  secondaryCta: What we’ve built
+  caseStudyLabel: Case study
+  slides:
+    - rlc
+    - gric
+    - inuka
+    - kenya-power-foundation
+marquee:
+  topics:
+    - Leadership development
+    - Child well-being
+    - Research funding
+    - Scholarships
+    - Public utilities
+    - Corporate foundations
+  services:
+    - Audit & accessibility
+    - Websites & platforms
+    - Mobile & field tools
+    - Care & maintenance
+    - Impact reporting
+    - Digital strategy
+  servicesLabel: What we deliver
+stats:
+  - icon: icabfb16
+    value: 38
+    prefix: +
+    suffix: '%'
+    label: Programme enquiries
+    client: Rising Leaders Center
+  - icon: ic03cdbd
+    value: 61
+    prefix: +
+    suffix: '%'
+    label: Online gifts, YoY
+    client: Inuka Angaza Fund
+  - icon: ic56ef9c
+    value: 1
+    prefix: ''
+    suffix: M+
+    label: Trees planted
+    client: Kenya Power Foundation
+  - icon: ic1fcb0b
+    value: 27
+    prefix: +
+    suffix: '%'
+    label: Scholarship applicants
+    client: Co-op Bank Foundation
+record:
+  tab: The record
+  title: |-
+    {missions} missions, and
+    ==what changed.==
+  icon: ice496b2
+  intro: Work for foundations, funds and NGOs across East Africa, with the outcomes we tracked.
+  note: '{count} missions'
+trusted:
+  eyebrow: Appendix · Corporate & public sector
+  title: Also trusted by teams held to ==corporate standards.==
+  stats:
+    - value: '6'
+      icon: ic8abc22
+      iconStyle: brand
+      text: commercial & public-sector clients
+      srPrefix: '6'
+    - value: '2'
+      icon: ic2de851
+      iconStyle: paper
+      text: corporations under public scrutiny
+      srPrefix: '2'
+  clients:
+    - name: Britam
+      href: /work/britam
+      external: false
+    - name: Co-op Bank
+      href: /work/coop-bank
+      external: false
+    - name: Kenya Power
+      href: /work/kenya-power
+      external: false
+    - name: Kenya Pipeline
+      href: https://www.kpc.co.ke/
+      external: true
+    - name: Mi Vida
+      href: https://mividahomes.com/
+      external: true
+    - name: Belva Digital
+      href: https://belvadigital.com/
+      external: true
+  featuredLabel: Featured case studies
+  featured:
+    - href: /work/britam
+      image: /assets/britam/hero.webp
+      client: Britam
+      title: Trusts, microinsurance & awards
+      go: Read the case study
+    - href: /work/coop-bank
+      image: /assets/coopbank/main-k0ul.webp
+      client: Co-op Bank
+      title: Four product sites, one bank
+      go: Read the case study
+    - href: /work/kenya-power
+      image: /assets/kenyapower/kp-corp-intro-emg6.webp
+      client: Kenya Power
+      title: Four sites, one utility
+      go: Read the case study
+constraints:
+  tab: We know the constraints
+  title: Built for tight budgets, boards and ==proof of impact.==
+  icon: icd8839e
+  intro: Every plan starts from your funding cycle, your board's questions and what your donors need to see.
+  note: 4 constraints, planned for
+  tiles:
+    - image: /assets/rlc/hero.webp
+      alt: Programme team reviewing a phased budget
+      icon: ic82b8ea
+      title: Grant-sized budgets
+      text: Scope fixed in writing, phased to your funding cycle, with retainers you can report to the board.
+    - image: /assets/stock/photo-1622295023825-6e319464b810.webp
+      alt: Board meeting with an impact report
+      icon: icb30901
+      title: Boards, donors, beneficiaries
+      text: One site serving every audience, and impact reporting that answers the board's question before it's asked.
+    - image: /assets/stock/photo-1687422809654-579d81c29d32.webp
+      alt: Paying via M-Pesa on a phone
+      icon: ic6276c0
+      title: M-Pesa first
+      text: 'Giving and payment flows built around how people here actually pay: mobile money, then cards.'
+    - image: /assets/stock/photo-1688989667243-221eee13cbdb.webp
+      alt: Site loading on a shared handset
+      icon: ic8965d0
+      title: Low-bandwidth & accessible
+      text: Pages that open in seconds on a shared handset, built to WCAG 2.1 AA as the baseline, not an add-on.
+capability:
+  tab: Capability
+  title: Four ways we help you get there, [[all of them ==in-house.==]]
+  icon: ic2aafd9
+  intro: 'Strategy, design, build and care: one team from the first workshop to long after launch.'
+  note: 4 services, one team
+  steps:
+    - icon: ic04cbff
+      kicker: Start
+      title: Audit & accessibility
+      text: We test what you have against real users, low bandwidth and WCAG, then hand you a prioritised list, not a lecture.
+    - icon: ic522f82
+      kicker: Build
+      title: Websites & platforms
+      text: Programme sites, impact pages, grant portals and donor-facing content, built to be updated by your own team.
+    - icon: ic9343cb
+      kicker: Extend
+      title: Mobile & field tools
+      text: Apps that assume patchy connectivity and shared devices, because that is what your field teams actually carry.
+    - icon: icda8775
+      kicker: Sustain
+      title: Care & maintenance
+      text: Security, uptime and content support on a predictable retainer, sized for grant budgets and reportable to your board.
+method:
+  tab: Method
+  title: Checkpoints at every phase, so there are ==no surprises at the end.==
+  icon: ic02b15f
+  intro: Each phase ends with something you can review, approve or send back before we move on.
+  note: Sign-off at every phase
+  phases:
+    - icon: ic450b44
+      label: Phase 01
+      time: 1–2 weeks
+      title: Discovery
+      text: We learn who you serve, who funds you, and what has to be true for this to count as a success.
+      bullets:
+        - 'Stakeholder interviews: staff, board, beneficiaries'
+        - Audit of your current site, data and tools
+        - Donor and funder reporting needs mapped
+      leave: A written problem statement and success measures
+      yourTimeLabel: 'Your time:'
+      yourTime: 2–3 hours across two workshops
+    - icon: icb74c34
+      label: Phase 02
+      time: 1 week
+      title: Planning
+      text: Scope, platform and timeline agreed in writing, including what we are deliberately not building.
+      bullets:
+        - Sitemap, user flows and feature list
+        - Platform and hosting recommendation
+        - Phase dates tied to your funding cycle
+      leave: Fixed scope, budget and phase dates
+      yourTimeLabel: 'Your time:'
+      yourTime: One 90-minute review
+    - icon: ica4c46f
+      label: Phase 03
+      time: 6–12 weeks
+      title: Design & build
+      text: Design and full-stack development under one roof, reviewed with you at every phase gate.
+      bullets:
+        - Wireframes, then full visual design
+        - Build in two-week sprints with a live preview
+        - Tested on low-end phones and slow networks
+      leave: Working site or app, reviewed at each gate
+      yourTimeLabel: 'Your time:'
+      yourTime: A 45-minute check-in every two weeks
+    - icon: icd23f03
+      label: Phase 04
+      time: 1 week
+      title: Handover
+      text: Documentation and training that leave your team self-reliant, never dependent on us for basics.
+      bullets:
+        - Launch, redirects and analytics set-up
+        - Written guides for every editing task
+        - Recorded training for future staff
+      leave: Docs, a training session and admin access
+      yourTimeLabel: 'Your time:'
+      yourTime: One half-day training session
+  closing: 'Then we stay on: care & maintenance on a retainer you can depend on'
