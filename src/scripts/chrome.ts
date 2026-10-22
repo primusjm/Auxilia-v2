@@ -262,18 +262,28 @@ document.addEventListener('mousedown', (e) => {
 const lb = $('[data-lb-root]');
 const plates = $$('[data-lb]');
 let lbIdx = -1;
-function lbShow(i: number) {
-  if (!lb || !plates.length) return;
-  const n = plates.length;
-  const k = ((i % n) + n) % n;
+/** Plates are stepped within their own group (a record study has one group, an appendix has one per project). */
+function lbPool(i: number) {
+  const g = plates[i]?.getAttribute('data-lb-plate');
+  return plates.map((_, j) => j).filter((j) => plates[j].getAttribute('data-lb-plate') === g);
+}
+function lbStep(d: number) {
+  const pool = lbPool(lbIdx);
+  const pos = pool.indexOf(lbIdx);
+  if (pos < 0) return;
+  lbShow(pool[(pos + d + pool.length) % pool.length]);
+}
+function lbShow(k: number) {
+  if (!lb || !plates.length || k < 0 || k >= plates.length) return;
   lbIdx = k;
+  const pool = lbPool(k);
   const p = plates[k];
   const img = p.querySelector('img');
   const src = (img && (img.currentSrc || img.getAttribute('src'))) || '';
   const plate = p.getAttribute('data-lb-plate') || 'The screens';
   const cap = p.getAttribute('data-lb-cap') || '';
   lb.hidden = false;
-  $('[data-lb-count]', lb)!.textContent = String(k + 1).padStart(2, '0') + ' / ' + String(n).padStart(2, '0');
+  $('[data-lb-count]', lb)!.textContent = String(pool.indexOf(k) + 1).padStart(2, '0') + ' / ' + String(pool.length).padStart(2, '0');
   $('[data-lb-plate]', lb)!.textContent = plate;
   $('[data-lb-cap]', lb)!.textContent = cap;
   const media = $('[data-lb-media]', lb)!;
@@ -316,16 +326,16 @@ if (lb) {
     lbClose();
   });
   $('[data-lb-bar]', lb)?.addEventListener('click', (e) => e.stopPropagation());
-  $('[data-lb-prev]', lb)?.addEventListener('click', () => lbShow(lbIdx - 1));
-  $('[data-lb-next]', lb)?.addEventListener('click', () => lbShow(lbIdx + 1));
+  $('[data-lb-prev]', lb)?.addEventListener('click', () => lbStep(-1));
+  $('[data-lb-next]', lb)?.addEventListener('click', () => lbStep(1));
 }
 
 /* ---------------- Keyboard ---------------- */
 document.addEventListener('keydown', (e) => {
   if (lbIdx >= 0) {
     if (e.key === 'Escape') lbClose();
-    else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
-    else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+    else if (e.key === 'ArrowRight') lbStep(1);
+    else if (e.key === 'ArrowLeft') lbStep(-1);
     return;
   }
   if (e.key !== 'Escape') return;

@@ -1,0 +1,168 @@
+---
+import Icon from '../Icon.astro';
+import SectionHead from './SectionHead.astro';
+import RelatedCards from './RelatedCards.astro';
+import { rich } from '../../lib/rich';
+import { ico } from '../../lib/ico';
+
+interface Props {
+  study: any;
+  related: { slug: string; no: string; client: string; title: string; image: string }[];
+}
+const { study: d, related } = Astro.props;
+
+const labelStyle = "font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);";
+const plateCap = "font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);";
+const statStyle = 'display:grid;gap:clamp(22px,3vw,44px);';
+const mcardStyle = 'background:#FFFFFF;border:1px solid var(--rule);border-top:2px solid var(--brand);padding:clamp(22px,2.4vw,30px);display:flex;flex-direction:column;gap:12px;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease;';
+const pad = (n: number) => String(n).padStart(2, '0');
+
+// Lightbox plates are numbered across the whole page, as in the design.
+let lbCounter = -1;
+const projects = d.projects.map((p: any) => ({
+  ...p,
+  blocks: p.blocks.map((b: any) => {
+    if (b.type === 'plate') {
+      lbCounter++;
+      return b;
+    }
+    if (b.type !== 'screens') return b;
+    return { ...b, plates: b.plates.map((pl: any) => ({ ...pl, lb: ++lbCounter })) };
+  }),
+}));
+const tabCount = d.projects.length;
+---
+<main id="top">
+  <div aria-hidden="true" data-mark-top="" style="position:absolute;left:-90px;top:-150px;width:347px;height:600px;pointer-events:none;z-index:0;opacity:.07;transform-origin:50% 70%;transition:transform .8s cubic-bezier(.2,.7,.2,1);"><div style="position:absolute;inset:0;background:var(--brand);-webkit-mask:url(/assets/mark-helmet.png) center/contain no-repeat;mask:url(/assets/mark-helmet.png) center/contain no-repeat;"></div><div style="position:absolute;inset:0;background:var(--brand);-webkit-mask:url(/assets/mark-plume.png) center/contain no-repeat;mask:url(/assets/mark-plume.png) center/contain no-repeat;"></div></div>
+  <a href="/" aria-label="Auxilia home" style="position:absolute;z-index:3;top:28px;left:clamp(20px,4vw,44px);display:inline-flex;align-items:center;text-decoration:none;"><Icon k="icaa80bf" data-ax-logo="" viewBox="140 60 4290 1410" width="132" height="43" aria-hidden="true" style="display:block;overflow:visible;" /></a>
+
+  <section data-bubbles="" data-hero="" style="z-index:2;">
+    <img src={d.hero.image} alt="" aria-hidden="true" style="position:absolute;z-index:-3;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.42;filter:grayscale(.6) contrast(1.05);pointer-events:none;" />
+    <div aria-hidden="true" style="position:absolute;z-index:-2;inset:0;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--paper) 94%,transparent) 0%,color-mix(in srgb,var(--paper) 78%,transparent) 50%,color-mix(in srgb,var(--paper) 25%,transparent) 100%),linear-gradient(0deg,color-mix(in srgb,var(--paper) 90%,transparent) 0%,transparent 35%);"></div>
+    <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>
+    <div style="max-width:1240px;margin:0 auto;padding:calc(clamp(44px,6vw,72px) + 84px) clamp(20px,4vw,44px) clamp(30px,4vw,48px);">
+      <div data-reveal="" style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--brand);margin-bottom:clamp(28px,4vw,44px);">{d.hero.eyebrow}</div>
+      <h1 data-reveal="" style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(34px,5.4vw,70px);line-height:1.04;letter-spacing:-0.024em;color:var(--ink);text-wrap:balance;" set:html={rich(d.hero.title, 'h1')} />
+      <p data-reveal="" style="margin:clamp(22px,3vw,32px) 0 0;font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:clamp(20px,2.6vw,30px);line-height:1.32;letter-spacing:-0.012em;color:var(--ink-soft);max-width:38ch;" set:html={rich(d.hero.lead)} />
+    </div>
+  </section>
+
+  <div id="projects-top" style="position:sticky;top:0;z-index:40;background:var(--surface);border-top:2px solid var(--brand);border-bottom:1px solid var(--rule);">
+    <div data-facts="" data-tabgrid="" data-tabs={tabCount} role="tablist" aria-label={d.tablistLabel} style="box-sizing:border-box;display:grid;gap:0;">
+      {projects.map((p: any, i: number) => (
+        <div role="presentation" class={'ax-tabcell' + (i === 0 ? ' is-on' : '')}><button type="button" role="tab" id={`tab-${p.id}`} data-tab-index={i} aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`panel-${p.id}`} tabindex={i === 0 ? '0' : '-1'} style="display:block;width:100%;padding:0;border:0;background:transparent;cursor:pointer;text-align:inherit;font-family:inherit;color:inherit;"><span class="ax-tablab"><span data-fact-ico="" aria-hidden="true" style="color:var(--brand);display:inline-flex;flex-shrink:0;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15">{p.icon.map((x: string) => <path d={x} />)}</svg></span><span>{p.num}</span> · <span>{p.type}</span></span><span class="ax-tabname">{p.name}</span></button></div>
+      ))}
+    </div>
+  </div>
+
+  <section id="projects" style="border-bottom:1px solid var(--rule);">
+    <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,44px) clamp(32px,4.2vw,60px);">
+      {projects.map((p: any, i: number) => (
+        <div role="tabpanel" id={`panel-${p.id}`} aria-labelledby={`tab-${p.id}`} tabindex="0" hidden={i !== 0} style="padding-top:0;outline:none;">
+          {p.blocks.map((b: any) => {
+            if (b.type === 'plate')
+              return <div style="position:relative;width:100vw;margin-left:calc(50% - 50vw);height:clamp(280px,44vw,620px);margin-bottom:clamp(28px,3.6vw,46px);" data-plate=""><img src={b.src} alt={b.alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;" /></div>;
+            if (b.type === 'head')
+              return (
+                <div data-sh-split="" style="display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end;margin-bottom:clamp(28px,3.6vw,46px);"><div style="display:flex;flex-direction:column;gap:14px;"><span style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);">{b.kicker}</span><h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:clamp(28px,4vw,46px);line-height:1.08;letter-spacing:-0.02em;color:var(--ink);max-width:22ch;text-wrap:pretty;" set:html={rich(b.title, 'h2')} /></div><div style="display:flex;align-items:stretch;gap:20px;"><span aria-hidden="true" style="flex:none;align-self:flex-start;width:56px;height:56px;display:inline-flex;align-items:center;justify-content:center;background:var(--brand-wash);color:var(--brand);"><Icon k={b.icon} {...ico(26, 1.6)} /></span><div style="display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--brand);padding-left:24px;"><p style="margin:0;font-size:clamp(16px,1.5vw,17px);line-height:1.6;color:var(--ink-soft);text-wrap:pretty;" set:html={rich(b.intro)} />{b.links && b.links.length === 1 && b.links.map((l: any) => <a href={l.href} target="_blank" rel="noopener" data-live-link="" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--brand-text);text-decoration:none;">{l.text} <Icon k="ic113c36" {...ico(14, 1.8)} /></a>)}{b.links && b.links.length > 1 && <div style="display:flex;flex-wrap:wrap;gap:12px 24px;">{b.links.map((l: any) => <a href={l.href} target="_blank" rel="noopener" data-live-link="" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;font-weight:600;font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--brand-text);text-decoration:none;">{l.text} <Icon k="ic113c36" {...ico(14, 1.8)} /></a>)}</div>}</div></div></div>
+              );
+            if (b.type === 'cards' && b.variant === 'mandate')
+              return (
+                <div data-three="" data-reveal="" style={statStyle}>
+                  {b.items.map((c: any) => (
+                    <div data-mcard="" data-mandate-card="" style={mcardStyle} class="ax-heb9b91"><span data-draw-ico="" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-bottom:4px;background:var(--brand-wash);color:var(--brand);"><Icon k={c.icon} {...ico(24, 1.6)} /></span><div style="font-family:'Outfit',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);">{c.label}</div><p style="margin:0;font-size:clamp(16px,1.6vw,17px);line-height:1.65;color:var(--ink-soft);text-wrap:pretty;" set:html={rich(c.text)} /></div>
+                  ))}
+                </div>
+              );
+            if (b.type === 'cards')
+              return (
+                <div data-three="" data-reveal="" style={statStyle}>
+                  {b.items.map((c: any) => (
+                    <div style="border-top:1px solid var(--brand);padding-top:18px;display:flex;flex-direction:column;gap:12px;"><span data-draw-ico="" aria-hidden="true" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-bottom:4px;background:var(--brand-wash);color:var(--brand);"><Icon k={c.icon} {...ico(24, 1.6)} /></span><div style="font-family:'Outfit',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);">{c.label}</div><p style="margin:0;font-size:clamp(16px,1.6vw,17px);line-height:1.65;color:var(--ink-soft);text-wrap:pretty;" set:html={rich(c.text)} /></div>
+                  ))}
+                </div>
+              );
+            if (b.type === 'decisions')
+              return (
+                <div style="border-top:2px solid var(--rule-strong);">
+                  {b.items.map((it: any, n: number) => (
+                    <div data-reveal="" data-two="" data-tile-row="" style="display:grid;gap:clamp(14px,3vw,44px);padding:24px 0;border-bottom:1px solid var(--rule);">
+                      <div>
+                        <div style="font-family:'Outfit',sans-serif;font-weight:500;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--brand);margin-bottom:10px;display:flex;align-items:center;gap:10px;"><span data-dec-ico="" data-draw-ico="" aria-hidden="true" style="display:inline-flex;color:var(--brand);"><Icon k={it.icon} {...ico(15, 1.6)} /></span>Decision {pad(n + 1)}</div>
+                        <h3 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(20px,2.3vw,26px);line-height:1.2;letter-spacing:-0.014em;color:var(--ink);max-width:26ch;">{it.title}</h3>
+                      </div>
+                      <div style="display:flex;flex-direction:column;gap:12px;">
+                        <p style="margin:0;font-size:15.5px;line-height:1.62;color:var(--ink-soft);" set:html={rich(it.text)} />
+                        <p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink);"><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);">{it.onSiteLabel} </span><Fragment set:html={rich(it.onSite)} /></p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              );
+            if (b.type === 'band')
+              return (
+                <div style="position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(36px,4.5vw,60px);background:var(--surface);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);"><div style="max-width:1240px;margin:0 auto;padding:clamp(36px,4.5vw,64px) clamp(20px,4vw,44px);"><div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:12px 32px;margin-bottom:clamp(28px,3.4vw,44px);"><h4 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:400;font-size:clamp(24px,3vw,34px);line-height:1.1;letter-spacing:-0.018em;color:var(--ink);">{b.title}</h4><p style="margin:0;font-size:clamp(15px,1.4vw,16px);line-height:1.6;color:var(--ink-soft);max-width:44ch;">{b.note}</p></div>
+                  {b.kind === 'timeline' ? (
+                    <div data-tl={b.cols} data-reveal="">
+                      {b.steps.map((s: any) => (
+                        <div><span aria-hidden="true" style="position:relative;z-index:1;width:40px;height:40px;display:inline-flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:15px;border:1.5px solid var(--brand);background:var(--surface);color:var(--brand-text);">{s.no}</span><h4 style="margin:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:500;font-size:clamp(17px,1.7vw,19px);line-height:1.25;letter-spacing:-0.01em;color:var(--ink);">{s.title}</h4><p style="margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-soft);text-wrap:pretty;" set:html={rich(s.text)} /></div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div data-three="" data-reveal="" style={statStyle}>
+                      {b.items.map((s: any) => (
+                        <div style="border-top:1px solid var(--brand);padding-top:16px;"><div data-count="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(40px,5vw,58px);line-height:1;letter-spacing:-0.02em;color:var(--brand);font-variant-numeric:tabular-nums;">{s.value}</div><p style="margin:10px 0 0;font-size:15px;line-height:1.55;color:var(--ink);" set:html={rich(s.text)} /></div>
+                      ))}
+                    </div>
+                  )}
+                </div></div>
+              );
+            if (b.type === 'stats')
+              return (
+                <>
+                  {b.label && <div style={`margin:clamp(32px,4vw,52px) 0 16px;${labelStyle}`}>{b.label}</div>}
+                  <div data-three="" data-reveal="" style={statStyle}>
+                    {b.items.map((s: any) => (
+                      <div style="border-top:1px solid var(--brand);padding-top:16px;"><div data-count="" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(40px,5vw,58px);line-height:1;letter-spacing:-0.02em;color:var(--brand);font-variant-numeric:tabular-nums;">{s.value}</div><p style="margin:10px 0 0;font-size:15px;line-height:1.55;color:var(--ink);" set:html={rich(s.text)} /></div>
+                    ))}
+                  </div>
+                </>
+              );
+            if (b.type === 'screens')
+              return (
+                <>
+                  <div style={`margin:clamp(32px,4vw,52px) 0 16px;${labelStyle}`}>{b.label}</div>
+                  <div data-reveal="" style="position:relative;height:clamp(240px,38vw,520px);border:1px solid var(--rule);" data-plate="" data-lb={b.plates[0].lb} data-lb-plate={p.name} data-lb-cap={b.plates[0].caption}><img src={b.plates[0].src} alt={b.plates[0].alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;" /></div>
+                  <div data-reveal="" style={`margin-top:10px;margin-bottom:clamp(14px,2vw,22px);${plateCap}`}>{b.plates[0].caption}</div>
+                  <div data-plates="" data-reveal="" style="display:grid;gap:clamp(12px,1.6vw,20px);">
+                    {b.plates.slice(1).map((pl: any) => (
+                      <div>
+                        <div style="position:relative;height:clamp(200px,26vw,340px);border:1px solid var(--rule);" data-plate="" data-lb={pl.lb} data-lb-plate={p.name} data-lb-cap={pl.caption}><img src={pl.src} alt={pl.alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;" /></div>
+                        <div style={`margin-top:10px;${plateCap}`}>{pl.caption}</div>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              );
+            return null;
+          })}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section id="thread" style="border-bottom:1px solid var(--rule);background:var(--surface);">
+    <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>
+    <div style="max-width:1240px;margin:0 auto;padding:clamp(32px,4.2vw,60px) clamp(20px,4vw,44px);">
+      <SectionHead iconStroke={1.6} no="02" tab={d.thread.tab} title={d.thread.title} icon={d.thread.icon} intro={d.thread.intro} note={d.thread.note} mb="clamp(28px,3.6vw,46px)" />
+      <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:clamp(10px,1.2vw,14px);">
+        {d.thread.cards.map((c: any) => (
+          <div data-bcard="" style="display:flex;flex-direction:column;gap:14px;padding:clamp(18px,2vw,24px);border:1px solid var(--rule);background:var(--paper);"><span data-draw-ico="" aria-hidden="true" style="color:var(--brand);display:inline-flex;align-self:flex-start;"><Icon k={c.icon} {...ico(22, 1.6)} /></span><span style="font-family:'Outfit',sans-serif;font-weight:600;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-faint);">{c.label}</span><p style="margin:0;font-size:14.5px;line-height:1.5;color:var(--ink);text-wrap:pretty;" set:html={rich(c.text)} /></div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <RelatedCards items={related} />
+</main>

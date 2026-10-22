@@ -92,22 +92,7 @@ trusted:
       href: https://belvadigital.com/
       external: true
   featuredLabel: Featured case studies
-  featured:
-    - href: /work/britam
-      image: /assets/britam/hero.webp
-      client: Britam
-      title: Trusts, microinsurance & awards
-      go: Read the case study
-    - href: /work/coop-bank
-      image: /assets/coopbank/main-k0ul.webp
-      client: Co-op Bank
-      title: Four product sites, one bank
-      go: Read the case study
-    - href: /work/kenya-power
-      image: /assets/kenyapower/kp-corp-intro-emg6.webp
-      client: Kenya Power
-      title: Four sites, one utility
-      go: Read the case study
+  featuredGo: Read the case study
 constraints:
   tab: We know the constraints
   title: Built for tight budgets, boards and ==proof of impact.==

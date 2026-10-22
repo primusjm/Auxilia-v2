@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import AuxiliaLayout from '../../layouts/AuxiliaLayout.astro';
+import AppendixStudy from '../../components/work/AppendixStudy.astro';
+import '../../styles/auxilia/cs.css';
+import '../../styles/auxilia/appendix.css';
+import { plain } from '../../lib/rich';
+
+export async function getStaticPaths() {
+  const appendix = (await getCollection('work')).filter((e) => e.data.kind === 'appendix').sort((a, b) => a.data.order - b.data.order);
+  return appendix.map((entry) => {
+    // The related cards link to the other appendix studies.
+    const related = appendix
+      .filter((r) => r.id !== entry.id)
+      .map((r) => ({ slug: r.id, no: String(r.data.order).padStart(2, '0'), client: r.data.client, title: r.data.title, image: r.data.cardImage }));
+    return { params: { appendix: entry.id }, props: { entry, related } };
+  });
+}
+
+const { entry, related } = Astro.props;
+const d = entry.data as Extract<typeof entry.data, { kind: 'appendix' }>;
+const menu = d.menu.map((m) => ({ label: m.label, sub: m.sub, href: `#${m.id}`, icon: m.icon, tab: m.tab }));
+const title = `${d.client}: ${d.title} | Auxilia`;
+const description = plain(d.hero.lead);
+---
+<AuxiliaLayout
+  title={title}
+  description={description}
+  ogImage={d.cardImage}
+  screenLabel={`Appendix ${String(d.order).padStart(3, '0')}: ${d.client}`}
+  menu={menu}
+  caseStudy
+  formSubject={d.formSubject}
+  lightbox
+>
+  <AppendixStudy study={d} related={related} />
+  <script>
+    import '../../scripts/appendix';
+  </script>
+</AuxiliaLayout>

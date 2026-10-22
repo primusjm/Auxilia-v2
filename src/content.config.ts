@@ -72,9 +72,70 @@ const record = z.object({
   }),
 });
 
+const block = z.discriminatedUnion('type', [
+  z.object({ type: z.literal('plate'), src: z.string(), alt: z.string() }),
+  z.object({
+    type: z.literal('head'),
+    kicker: z.string(),
+    title: rich,
+    icon,
+    intro: rich,
+    links: z.array(z.object({ href: z.string().url(), text: z.string() })).optional(),
+  }),
+  z.object({ type: z.literal('cards'), variant: z.enum(['mandate', 'flat']), items: z.array(z.object({ icon, label: z.string(), text: rich })) }),
+  z.object({
+    type: z.literal('decisions'),
+    items: z.array(z.object({ icon, title: z.string(), text: rich, onSiteLabel: z.string(), onSite: rich })),
+  }),
+  z.object({
+    type: z.literal('band'),
+    kind: z.enum(['timeline', 'stats']),
+    title: z.string(),
+    note: z.string(),
+    /** Timeline only: the column count the design sets (4 or 3), or empty for the default. */
+    cols: z.string().optional(),
+    steps: z.array(z.object({ no: z.string(), title: z.string(), text: rich })).optional(),
+    items: z.array(z.object({ value: z.string(), text: rich })).optional(),
+  }),
+  z.object({ type: z.literal('stats'), label: z.string(), items: z.array(z.object({ value: z.string(), text: rich })) }),
+  z.object({
+    type: z.literal('screens'),
+    label: z.string(),
+    plates: z.array(z.object({ src: z.string(), alt: z.string(), caption: z.string() })),
+  }),
+]);
+
+const appendix = z.object({
+  kind: z.literal('appendix'),
+  /** Position among the appendix studies, 1 to 3. */
+  order: z.number().int().positive(),
+  title: z.string(),
+  client: z.string(),
+  cardImage: image,
+  formSubject: z.string(),
+  menu: z.array(z.object({ label: z.string(), sub: z.string(), id: z.string(), icon: z.array(z.string()), tab: z.number().int().optional() })),
+  hero: z.object({ image, eyebrow: z.string(), title: rich, lead: rich }),
+  tablistLabel: z.string(),
+  projects: z.array(
+    z.object({
+      id: z.string(),
+      num: z.string(),
+      name: z.string(),
+      type: z.string(),
+      icon: z.array(z.string()),
+      blocks: z.array(block),
+    }),
+  ),
+  thread: z.object({
+    ...head,
+    note: z.string().optional(),
+    cards: z.array(z.object({ icon, label: z.string(), text: rich })),
+  }),
+});
+
 const work = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/work' }),
-  schema: z.discriminatedUnion('kind', [record]),
+  schema: z.discriminatedUnion('kind', [record, appendix]),
 });
 
 const homeHead = { tab: z.string(), title: rich, icon, intro: rich, note: z.string() };
@@ -99,7 +160,7 @@ const pages = defineCollection({
       stats: z.array(z.object({ value: z.string(), icon, iconStyle: z.enum(['brand', 'paper']), text: z.string(), srPrefix: z.string() })),
       clients: z.array(z.object({ name: z.string(), href: z.string(), external: z.boolean() })),
       featuredLabel: z.string(),
-      featured: z.array(z.object({ href: z.string(), image: image, client: z.string(), title: z.string(), go: z.string() })),
+      featuredGo: z.string(),
     }),
     constraints: z.object({ ...homeHead, tiles: z.array(z.object({ image, alt: z.string(), icon, title: z.string(), text: z.string() })) }),
     capability: z.object({ ...homeHead, steps: z.array(z.object({ icon, kicker: z.string(), title: z.string(), text: z.string() })) }),
