@@ -1,0 +1,134 @@
+# Sveltia CMS: emergency and phone editor. Lumen CMS is the primary editor.
+# Keep this in step with src/content.config.ts. `npm run check:cms` fails on drift.
+# Paths and media folder match Lumen. After any Sveltia edit, pull in Lumen before the next session.
+backend:
+  name: github
+  repo: primusjm/Auxilia-v2
+  branch: main
+  # Set to the deployed sveltia-cms-auth Worker URL (see docs/CMS-SETUP.md).
+  base_url: https://REPLACE-WITH-WORKER-URL
+site_url: https://auxilia.io
+display_url: https://auxilia.io
+media_folder: public/assets
+public_folder: /assets
+publish_mode: simple
+
+collections:
+  - name: work
+    label: Case studies
+    label_singular: Case study
+    folder: src/content/work
+    extension: md
+    format: yaml-frontmatter
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    summary: '{{client}}: {{title}}'
+    fields:
+      - { name: title, label: Title, widget: string }
+      - { name: client, label: Client, widget: string }
+      - { name: sector, label: Sector, widget: string, required: false }
+      - { name: year, label: Year, widget: string, required: false }
+      - { name: stat, label: Headline figure, widget: string, required: false }
+      - { name: statLabel, label: Headline figure label, widget: string, required: false }
+      - { name: formSubject, label: Contact form subject, widget: string }
+      - { name: cardImage, label: Card image, widget: image }
+      - name: hero
+        label: Hero
+        widget: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, widget: string }
+          - { name: title, label: Title, widget: text }
+          - { name: lead, label: Lead, widget: text }
+
+  - name: pages
+    label: Pages
+    files:
+      - name: home
+        label: Homepage
+        file: src/content/pages/home.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: text }
+              - { name: lead, label: Lead, widget: text }
+              - { name: primaryCta, label: Primary button, widget: string }
+              - { name: secondaryCta, label: Secondary button, widget: string }
+              - { name: caseStudyLabel, label: Case study label, widget: string }
+          - name: record
+            label: Record section
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: text }
+              - { name: intro, label: Intro, widget: text }
+              - { name: note, label: Note, widget: text }
+          - name: constraints
+            label: Constraints section
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: text }
+              - { name: intro, label: Intro, widget: text }
+              - { name: note, label: Note, widget: text }
+          - name: capability
+            label: Capability section
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: text }
+              - { name: intro, label: Intro, widget: text }
+              - { name: note, label: Note, widget: text }
+          - name: method
+            label: Method section
+            widget: object
+            fields:
+              - { name: title, label: Title, widget: text }
+              - { name: intro, label: Intro, widget: text }
+              - { name: note, label: Note, widget: text }
+              - { name: closing, label: Closing line, widget: text }
+
+  - name: settings
+    label: Site settings
+    files:
+      - name: site
+        label: Site
+        file: src/content/settings/site.json
+        format: json
+        fields:
+          - { name: email, label: Contact email, widget: string }
+          - { name: copyright, label: Copyright line, widget: string }
+          - name: quotes
+            label: Endorsements
+            widget: list
+            fields:
+              - { name: text, label: Quote, widget: text }
+              - { name: who, label: Name, widget: string }
+              - { name: role, label: Role, widget: string }
+
+  - name: acquisti
+    label: Acquisti
+    files:
+      - name: landing
+        label: Landing page
+        file: src/content/acquisti/landing.yaml
+        fields:
+          - name: hero
+            label: Hero
+            widget: object
+            fields:
+              - { name: kicker, label: Kicker, widget: string }
+              - { name: title, label: Title, widget: string }
+              - { name: titleEmphasis, label: Title emphasis, widget: string }
+              - { name: lead, label: Lead, widget: text }
+          - name: support
+            label: Support topics
+            widget: list
+            fields:
+              - { name: label, label: Topic, widget: string }
+              - { name: blurb, label: Blurb, widget: text }
+              - name: items
+                label: Questions
+                widget: list
+                fields:
+                  - { name: q, label: Question, widget: string }
+                  - { name: a, label: Answer, widget: text }
