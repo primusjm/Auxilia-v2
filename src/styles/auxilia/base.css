@@ -319,10 +319,10 @@ span[aria-hidden][style*="background:#3B28FF;color:#FFFFFF"][style*="width:56px"
 [data-fact-ico],[data-draw-ico]:not([data-mail-ico]),[data-draw-ico]:not([data-mail-ico]) svg,[data-cta] [data-draw-ico],[data-wig],[data-wig-wrap] svg,[data-illus] > span{animation:none!important;}
 [data-theme="dark"] a{color:#B2ACFF;}
 [data-theme="dark"] a:hover{color:#EEF0FF;}
-[data-theme="dark"] [data-cta],[data-theme="dark"] .ax-btn-glow,[data-theme="dark"] button.ax-btn[type="submit"],[data-theme="dark"] a[style*="rgb(59, 40, 255)"],[data-theme="dark"] button[style*="rgb(59, 40, 255)"]{background:#7A6EFF!important;color:#0A0E24!important;}
+[data-theme="dark"] [data-cta],[data-theme="dark"] .ax-btn-glow,[data-theme="dark"] button.ax-btn[type="submit"],[data-theme="dark"] a[style*="rgb(59, 40, 255)"],[data-theme="dark"] button[style*="rgb(59, 40, 255)"],[data-theme="dark"] a[style*="#3B28FF" i],[data-theme="dark"] button[style*="#3B28FF" i]{background:#7A6EFF!important;color:#0A0E24!important;}
 [data-theme="dark"] .ax-btn .ax-btn-fill,[data-theme="dark"] .ax-btn-glow .ax-btn-fill{background:#5B4FE9!important;}
 [data-theme="dark"] .ax-btn:hover,[data-theme="dark"] .ax-btn:focus-visible,[data-theme="dark"] [data-cta]:hover{color:#FFFFFF!important;}
-[data-theme="dark"] [data-cta]:hover,[data-theme="dark"] button.ax-btn[type="submit"]:hover,[data-theme="dark"] a[style*="rgb(59, 40, 255)"]:hover,[data-theme="dark"] button[style*="rgb(59, 40, 255)"]:hover{background:#5B4FE9!important;color:#FFFFFF!important;}
+[data-theme="dark"] [data-cta]:hover,[data-theme="dark"] button.ax-btn[type="submit"]:hover,[data-theme="dark"] a[style*="rgb(59, 40, 255)"]:hover,[data-theme="dark"] button[style*="rgb(59, 40, 255)"]:hover,[data-theme="dark"] a[style*="#3B28FF" i]:hover,[data-theme="dark"] button[style*="#3B28FF" i]:hover{background:#5B4FE9!important;color:#FFFFFF!important;}
 [data-theme="dark"] [role="alert"]{color:#FF8A6B!important;}
 [data-theme="dark"] input,[data-theme="dark"] textarea,[data-theme="dark"] select,[data-theme="dark"] [data-cc] > button,[data-theme="dark"] [data-fb] > button{border-color:#6670A6!important;}
 :focus-visible{outline:2px solid var(--brand-text);outline-offset:2px;}

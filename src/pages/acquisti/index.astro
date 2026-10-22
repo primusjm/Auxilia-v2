@@ -1,0 +1,11 @@
+---
+import AcquistiLayout from '../../layouts/AcquistiLayout.astro';
+import AcquistiLanding from '../../components/acquisti/AcquistiLanding.tsx';
+import '../../styles/acquisti/landing.css';
+---
+<AcquistiLayout
+  title="Acquisti: shopping list with a running total"
+  description="Tick items off in the shop and see what you'll spend before the till. A shopping list app for iPhone, made by Auxilia."
+>
+  <AcquistiLanding client:load />
+</AcquistiLayout>

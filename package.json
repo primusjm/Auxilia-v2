@@ -14,9 +14,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^6.1.0",
     "@astrojs/sitemap": "^3.7.4",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^6.4.8",
+    "preact": "^11.0.1",
     "tailwindcss": "^4.3.3",
     "vite": "^7.3.7"
   },
