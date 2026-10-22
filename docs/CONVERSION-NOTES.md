@@ -50,3 +50,16 @@ Known intentional differences from the prototype:
 - Kenya Power panels: a single live link is not wrapped in the flex wrapper the prototype used (no visual change).
 - Appendix tab labels: the prototype's runtime wrapped each value in its own flex item, so labels overflow on narrow screens. Replicated as is. Worth a design look.
 - Page titles and meta descriptions are not in the handover. Titles are "client: title | Auxilia" and descriptions are the hero lead text, both derived from existing copy.
+
+## Status update: Acquisti, CMS and open items
+
+- Acquisti runs as Preact islands (SSR, `client:load`). Copy lives in `src/content/acquisti/*.yaml`, validated by Zod.
+- Sveltia config and drift check are in place (`npm run check:cms`, run in CI). See `docs/CMS-SETUP.md`.
+- Unsplash stock images are localised under `public/assets/stock`.
+
+### Needs Josh
+1. **OAuth proxy (5b):** create the GitHub OAuth App and deploy `sveltia-cms-auth` on Cloudflare, then set `base_url` in `public/admin/config.yml`. Test phone login once.
+2. **Open Graph image:** `/assets/og.png` is referenced but the handover has no such file. Please supply one (1200x630).
+3. **RLC logos:** three logo images are missing from the handover and render as empty plates.
+4. **GitHub Pages:** the repo is private, so Pages needs a paid plan. Not enabled.
+5. **Still to do (no input needed, next session):** image optimisation (4j), wider fidelity checks (4k), accessibility and Lighthouse pass (6).
