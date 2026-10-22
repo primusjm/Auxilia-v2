@@ -1,0 +1,20 @@
+import fs from 'fs';
+import {Collector} from './clean.mjs';
+import {prep} from './astroify.mjs';
+const R='/tmp/claude-0/-home-user-Auxilia-v2/07a07848-80e2-501c-9ce2-064e48cce958/scratchpad/raw/';
+const OUT='/home/user/Auxilia-v2/src/components/';
+const col=new Collector('ax');
+const head=fs.readFileSync(R+'gric-head.html','utf8');
+const tail=fs.readFileSync(R+'gric-tail.html','utf8');
+const P=h=>prep(h,col);
+const cut=(s,a,b)=>{const i=s.indexOf(a);const j=s.indexOf(b,i)+b.length;return [i,j];};
+// ---------- Contact section (footer) ----------
+let ct=P(tail);
+let [i,j]=cut(ct,'<section id="contact"','</section>');
+let sec=ct.slice(i,j);
+fs.writeFileSync(R+'sec.txt',sec);
+let [mi,mj]=[ct.indexOf('<div aria-hidden="true" style="'),0];
+fs.writeFileSync(R+'tail-after.txt',ct.slice(j));
+fs.writeFileSync(R+'head-clean.txt',P(head));
+fs.writeFileSync('/tmp/claude-0/-home-user-Auxilia-v2/07a07848-80e2-501c-9ce2-064e48cce958/scratchpad/states.css',col.cssText());
+console.log('ok',sec.length);

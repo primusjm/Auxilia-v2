@@ -1,0 +1,10 @@
+import fs from 'fs';
+import {Collector,readDc} from './clean.mjs';
+import {prep} from './astroify.mjs';
+const [,,f,out]=process.argv;
+const body=readDc(f);
+const i=body.indexOf('<main id="top">'),j=body.indexOf('</main>')+7;
+const col=new Collector('ax');
+const m=prep(body.slice(i,j),col);
+fs.writeFileSync(out,m);
+console.log(m.length);

@@ -1,0 +1,10 @@
+import fs from 'fs';
+import {readDc,clean,Collector} from './clean.mjs';
+import {collapseSvg} from './astroify.mjs';
+const [,,f,out]=process.argv;
+const col=new Collector('aq');
+const body=readDc(f);
+const h=collapseSvg(clean(body,col,{assetBase:'/acquisti/assets/'}),col);
+fs.writeFileSync(out,h);
+fs.writeFileSync(out+'.css',col.cssText());
+console.log(h.length, col.css.size,'state rules');
