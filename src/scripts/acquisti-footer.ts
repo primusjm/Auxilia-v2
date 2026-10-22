@@ -36,3 +36,4 @@ function fit() {
   if (document.fonts) document.fonts.ready.then(fit);
   fit();
 })();
+export {};

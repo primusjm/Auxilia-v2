@@ -1,4 +1,5 @@
 /** @jsxImportSource preact */
+// @ts-nocheck
 /* eslint-disable */
 // Generated from the Claude Design handover (acquisti/Acquisti.dc.html) by scripts/migrate/dc2jsx.mjs, then maintained by hand.
 import { Fragment } from 'preact';

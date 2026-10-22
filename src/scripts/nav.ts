@@ -58,3 +58,4 @@ document.addEventListener('click', (e) => {
 window.addEventListener('pageshow', (ev) => {
   if (ev.persisted) de.classList.remove('ax-leaving');
 });
+export {};

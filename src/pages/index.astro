@@ -11,10 +11,10 @@ import '../styles/auxilia/home-extra.css';
 
 const home = (await getEntry('pages', 'home'))!.data;
 const records = (await getCollection('work'))
-  .filter((e) => e.data.kind === 'record')
+  .flatMap((e) => (e.data.kind === 'record' ? [{ id: e.id, data: e.data }] : []))
   .sort((a, b) => a.data.order - b.data.order);
 const appendix = (await getCollection('work'))
-  .filter((e) => e.data.kind === 'appendix')
+  .flatMap((e) => (e.data.kind === 'appendix' ? [{ id: e.id, data: e.data }] : []))
   .sort((a, b) => a.data.order - b.data.order);
 const featured = appendix.map((a) => ({ href: `/work/${a.id}`, image: a.data.cardImage, client: a.data.client, title: a.data.title }));
 const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty'];

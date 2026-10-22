@@ -128,3 +128,4 @@ if (!reduce && 'IntersectionObserver' in window) {
     io.observe(el);
   });
 }
+export {};

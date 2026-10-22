@@ -233,3 +233,4 @@ function mtTick() {
 addEventListener('scroll', mtTick, { passive: true });
 addEventListener('resize', mtTick);
 requestAnimationFrame(mtTick);
+export {};
