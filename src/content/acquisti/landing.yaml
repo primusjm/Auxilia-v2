@@ -1,0 +1,447 @@
+hero:
+  kicker: Shopping list with a running total
+  title: Plan the list.
+  titleEmphasis: Know the total.
+  lead: Tick items off in the shop and see what you'll spend before the till.
+heroChips:
+  left:
+  - label: In cart
+    value: Ksh 1,947
+    left: calc(50% - 36vw)
+    top: clamp(200px,22vw,280px)
+  - label: Planned total
+    value: Ksh 3,240
+    left: calc(50% - 31vw)
+    top: clamp(110px,12vw,170px)
+  - label: Cheaper at
+    value: Harvest Grocers
+    left: calc(50% - 35vw)
+    top: clamp(240px,25vw,320px)
+  - label: Saved this month
+    value: Ksh 1,180
+    left: calc(50% - 30vw)
+    top: clamp(150px,16vw,220px)
+  right:
+  - label: This trip
+    value: 9 of 16 got
+    left: calc(50% + 36vw)
+    top: clamp(260px,26vw,340px)
+  - label: Next Time
+    value: 7 items · Ksh 2,215
+    left: calc(50% + 31vw)
+    top: clamp(150px,16vw,220px)
+  - label: Receipt scanned
+    value: 12 lines read
+    left: calc(50% + 35vw)
+    top: clamp(210px,22vw,290px)
+  - label: Split the trip
+    value: Save Ksh 260
+    left: calc(50% + 30vw)
+    top: clamp(120px,13vw,180px)
+highlights:
+- Planned total
+- In cart
+- Next Time
+- Categories and icons
+- Prices by shop
+- Scan a till slip
+- No account
+- Zero data collected
+- Home Screen widgets
+features:
+  title: A list that knows
+  titleEmphasis: what it costs
+  intro: Most lists remember what you need. Acquisti also remembers what it costs, and where.
+  items:
+  - title: Planned total
+    body: Add a price and quantity to each item and see your planned total before you leave the house.
+    image: 01-planned-total
+    chipLabel: Total
+    chipValue: Ksh 299
+    caption: Edit item
+  - title: In cart
+    body: Tick items off as they go into your cart and watch the total update with every tap. A ring around the + button fills as the cart does.
+    image: 02-in-cart
+    chipLabel: In cart
+    chipValue: Ksh 1,947
+    caption: In Cart
+  - title: Next Time
+    body: Not buying something this trip? Swipe it into Next Time. It stays on your list, and the things you buy most sit at the top as Frequently bought.
+    image: 03-next-time
+    chipLabel: Next trip
+    chipValue: 49 items
+    caption: Next Time
+  - title: Lists
+    body: Keep separate lists for home, the weekend or the office. Each has its own items and shop, and can be shared through iCloud.
+    image: 10-lists
+    chipLabel: Your lists
+    chipValue: 3 lists
+    caption: Your lists
+  - title: Scan a till slip
+    body: Photograph it or pick a photo. The phone reads it on the device, you check the lines, and the prices go to that shop. The photo is never saved.
+    image: 08-scan-till-slip
+    chipLabel: Till slip
+    chipValue: Read on your phone
+    caption: Scan receipt
+  - title: Trip receipts
+    body: Finish shopping and the trip is saved as a receipt, grouped by aisle with the total. Anything you did not find stays on for next time.
+    image: 09-trip-receipt
+    chipLabel: Spent
+    chipValue: Ksh 1,947
+    caption: Trip receipt
+trip:
+  steps:
+  - 'no': '01'
+    stage: Starting out
+    title: List templates
+    icon: icb1c258
+    image: trip-01-list-templates
+    alt: List templates
+    capA: Save a list you buy often, or start from a pack.
+    capB: Or tap Weekly basics and the list fills itself.
+    capBIcon: ice46ef5
+    delay: 0s
+    drawDelay: 0s
+  - 'no': '02'
+    stage: While listing
+    title: Item history
+    icon: ic6f2782
+    image: trip-02-item-history
+    alt: Item history
+    capA: Every brand, size and price you have paid, one tap away.
+    capB: Each one shows where you bought it, and when.
+    capBIcon: ice46ef5
+    delay: 0.1s
+    drawDelay: 0.2s
+  - 'no': '03'
+    stage: While listing
+    title: Choose icon
+    icon: ic9cd952
+    image: trip-03-choose-icon
+    alt: Choose an icon
+    capA: Almost 250 pictures, matched in English or Swahili.
+    capB: Type "sukuma" and the right picture appears.
+    capBIcon: ice46ef5
+    delay: 0.2s
+    drawDelay: 0.4s
+  - 'no': '04'
+    stage: While listing
+    title: Choose category
+    icon: icae0515
+    image: trip-04-choose-category
+    alt: Add new item
+    capA: Aisles suggested as you type, so the list sorts itself.
+    capB: Shopping in aisle order means no backtracking.
+    capBIcon: ice46ef5
+    delay: 0.3s
+    drawDelay: 0.6000000000000001s
+  - 'no': '05'
+    stage: Before you go
+    title: Pick today's shop
+    icon: ic002192
+    image: trip-05-pick-shop
+    alt: Pick today's shop
+    capA: Choose where you are shopping, and every price follows.
+    capB: Add a new shop in a tap, right from the list.
+    capBIcon: ice46ef5
+    delay: 0s
+    drawDelay: 0s
+  - 'no': '06'
+    stage: Before you go
+    title: Cheaper shop
+    icon: ic56665c
+    image: trip-06-cheaper-shop
+    alt: Harvest Grocers prices
+    capA: Switch shop and the list re-prices itself.
+    capB: Old prices are struck through so you see why.
+    capBIcon: ice46ef5
+    delay: 0.1s
+    drawDelay: 0.2s
+  - 'no': '07'
+    stage: Before you go
+    title: Split a trip
+    icon: ice05c10
+    image: trip-07-split-trip
+    alt: Shops
+    capA: Split across two shops when it saves enough.
+    capB: Below your amount, it keeps you to one shop.
+    capBIcon: ice46ef5
+    delay: 0.2s
+    drawDelay: 0.4s
+  - 'no': '08'
+    stage: In store
+    title: Edit in the aisle
+    icon: ic0c1255
+    image: trip-08-edit-in-aisle
+    alt: Shops
+    capA: Price changed on the shelf? Fix it where you stand.
+    capB: The new price is saved for that shop only.
+    capBIcon: ice46ef5
+    delay: 0.3s
+    drawDelay: 0.4s
+  - 'no': '09'
+    stage: At the till
+    title: Trip receipt
+    icon: ic97b53d
+    image: trip-09-trip-receipt
+    alt: Shops
+    capA: Every item you bought, grouped by aisle, with the total.
+    capB: Anything not found moves to your next trip.
+    capBIcon: ice46ef5
+    delay: 0s
+    drawDelay: 0.4s
+  - 'no': '10'
+    stage: At the till
+    title: Scan the till slip
+    icon: ic5c3697
+    image: trip-10-scan-till-slip
+    alt: Shops
+    capA: Scan the slip to save what you really paid.
+    capB: The photo is read on your phone, then discarded.
+    capBIcon: ice46ef5
+    delay: 0.1s
+    drawDelay: 0.4s
+  - 'no': '11'
+    stage: After
+    title: Next time
+    icon: ic7eb501
+    image: trip-11-next-time
+    alt: Shops
+    capA: Anything you skipped waits here for the next trip.
+    capB: Frequently bought items sit on top, one tap to add.
+    capBIcon: ice46ef5
+    delay: 0.2s
+    drawDelay: 0.4s
+  - 'no': '12'
+    stage: Anytime
+    title: Home Screen widgets
+    icon: ic946566
+    image: trip-12-widgets
+    alt: Home Screen widgets
+    capA: Your total and what is left, without opening the app.
+    capB: The large widget lists every item, ticked as you go.
+    capBIcon: ice46ef5
+    delay: 0.3s
+    drawDelay: 0.6000000000000001s
+privacy:
+  tiles:
+  - 'no': '01'
+    icon: ic1c48a3
+    kind: acct
+    title: Synced in your iCloud
+    text: Your lists sync through your own iCloud account, and you can share a list privately the same way.
+    delay: 0s
+  - 'no': '02'
+    icon: icf193e7
+    kind: shield
+    title: No data collected
+    text: Your lists, prices and shops stay on your phone and in your own iCloud, never on our servers.
+    delay: 0.1s
+  - 'no': '03'
+    icon: icca2ab0
+    kind: scan
+    title: No account needed
+    text: Open the app and start a list. No sign-up, no email, no password.
+    delay: 0.2s
+support:
+- label: Quick questions
+  blurb: The short answers people look for first.
+  shot: settings
+  items:
+  - q: Do I need an account?
+    a: No. Just open the app and start a list. Lists back up and sync through your own iCloud, which we can't see.
+  - q: Which currency does it use?
+    a: Any you pick in Settings. Only the symbol changes; nothing is converted.
+  - q: Does Acquisti collect my data?
+    a: No. Your list stays on your phone and in your own iCloud. We have no access to either.
+  - q: What happens to a till slip photo?
+    a: Your phone reads it, you check the lines, and the prices go to that shop. The photo is never saved.
+  - q: How do I rate Acquisti?
+    a: iOS may ask now and then after a few trips. Or go to Settings, then Help, then Rate Acquisti. If something's wrong, Send feedback reaches us directly.
+- label: Getting started
+  blurb: Add items, tick them off and finish your first trip.
+  shot: detail
+  items:
+  - q: How do I add an item?
+    a: Tap + at the bottom right, type a name (or several, separated by commas), add a price and quantity if you like, and tap Add to list. If a pill appears under the name, tap it to update that item instead of adding a copy.
+  - q: What are the quick ways to add items?
+    a: Type several names separated by commas. In Next Time, each category's Add button lets you pick several at once. Press and hold the app icon for Add Item and Scan Receipt.
+  - q: How do I tick something off?
+    a: Tap the item's name or its circle, or swipe it right. Tap again to put it back.
+  - q: What are the cards at the top of the list?
+    a: 'Offers (split the trip, switch shop) and tips, stacked like notifications. Tap to spread them, swipe one away to dismiss it. To see tips again: Settings, then Help, then How to use Acquisti, then Show tips again.'
+  - q: What is Next Time?
+    a: Where items wait when you're not buying them this trip. Tap one to add it. Frequently Bought sits at the top (turn it off in Settings, then List views), and each category the shop sells has an Add button.
+  - q: How do I finish a trip?
+    a: Tap the bottom card, check the receipt, add the shop's name if you like, and tap Finish shopping. The receipt is saved in Settings, then Past receipts.
+  - q: What is on the page when my list is empty?
+    a: 'Plan Your Next Trip: a few everyday items to tap and add, and Or buy these again with the things you buy most.'
+  - q: Where can I read how the app works?
+    a: Settings, then Help, then How to use Acquisti. Short illustrated guides in four chapters.
+- label: Your lists
+  blurb: Keep more than one list, tie one to a shop, or share it.
+  shot: detail
+  items:
+  - q: Can I keep more than one list?
+    a: Yes. Open ••• then Lists, and tap New list. Each list has its own To Buy, In Cart and Next Time; shops, prices and receipts are shared. Tap the list name at the top to switch, and use the three dots to share, rename or delete one.
+  - q: Can a list belong to one shop?
+    a: 'Yes. In Lists, tap the three dots on a list, then Shops, and pin it. A list has one shop and a shop has one list: choosing either opens the other. Free lists work at any shop. Tap the pinned shop again to unpin.'
+  - q: Can I describe what a list is for?
+    a: Yes. In Lists, tap the three dots, then Edit, and fill in Description. It shows under the list's name.
+  - q: Can I share a list with someone?
+    a: Yes, through iCloud. In Lists, tap the three dots, then Share, and invite someone. Everyone can add, change and tick items, and lists stay private until you share them. We never see a shared list.
+  - q: How do I put a whole list on To Buy at once?
+    a: Settings, then List, then List templates. Open a saved list or a starter pack, untick what you don't need, and tap Add to To Buy. Save To Buy as a list keeps your current list for next time.
+  - q: How do I get back, or permanently delete, something I deleted?
+    a: Settings, then List, then Recently deleted keeps items for 30 days. Swipe right to restore, or left to delete for good.
+- label: Make it yours
+  blurb: Currency, categories, themes, icons and widgets.
+  shot: icon
+  items:
+  - q: How do I change the currency?
+    a: 'Settings, then Currency. Search by name or code. Only the symbol changes: 120 stays 120.'
+  - q: What categories are there?
+    a: Fruits, Vegetables, Bakery, Meals, Meat, Dairy, Pantry, Grains, Spices, Snacks, Beverages, Alcohol, Health & Beauty, Childcare, Household and Other. The app picks one from the name; you can change it, and reorder them per shop under Shops, then Aisle order.
+  - q: How do I change the theme?
+    a: 'Settings, then Appearance: System, Daylight, Eclipse (deep indigo) or Midnight (pure black). Tapping the logo on the list also cycles through them.'
+  - q: How do I change the app icon?
+    a: Settings, then Appearance, then App icon. Choose Indigo, Dusk, Eclipse or Onyx.
+  - q: Can I put Acquisti on my home screen or lock screen?
+    a: Yes. Long-press the home screen, tap +, and search for Acquisti. Widgets let you tick items without opening the app; the lock screen has a ring, rectangle or one-line summary.
+- label: Shops and prices
+  blurb: How shops, estimates and cheaper suggestions work.
+  shot: receipt
+  items:
+  - q: How do shops work?
+    a: Each shop keeps its own prices, and the shop you're in decides which ones the list shows. Tap the shop name under the title to add or switch. Finishing a trip saves its prices for next time.
+  - q: What does “est.” next to a price mean?
+    a: You haven't paid for that item at this shop yet, so it shows your first shop's price as a guide until you enter a real one.
+  - q: How does the app suggest a cheaper shop?
+    a: If another shop is cheaper for your list by at least the amount set in Settings, then Shops, a card offers to switch. It only compares real prices, and a pinned list only uses its own shop.
+  - q: What does Split the trip do?
+    a: When two shops together save you enough, a card shows what to buy where. Use this plan sets it up; Undo split reverses it. Set the minimum saving in Settings, then Shops.
+  - q: Can each shop have its own aisle order?
+    a: Yes. In Shops, pick a shop, choose Aisle order and drag categories into the order you walk. Acquisti also learns it from how you tick items off.
+  - q: How do I stop a shop showing things it does not sell?
+    a: 'For a whole aisle: Settings, then Shops, pick the shop, then Categories, and switch off what it doesn''t sell. Those items stay on your list but leave that shop''s trip. For single items, use Remove from the shop.'
+  - q: Can I always buy an item at one shop?
+    a: Yes. Choose a shop under Always buy at when adding or editing an item. Elsewhere it shows “Buy at” and stays out of the total, and the app won't suggest moving it.
+  - q: How do I take an item off one shop?
+    a: In •••, choose Select items, pick items and tap the bin. Remove from the shop drops them there; Delete from app removes them everywhere. Both can be undone.
+- label: Scanning receipts
+  blurb: Read a till slip and fix what it got wrong.
+  shot: receipt
+  items:
+  - q: How do I scan a till slip?
+    a: In Settings, then Shops, pick a shop and tap Scan a receipt. You can also tap Scan on the trip receipt, or press and hold the app icon. Photograph the slip, check the lines and save. The photo is never kept.
+  - q: A scanned line matched the wrong item.
+    a: On the review screen, tap the name to correct it, or Match item to pick one you already have. Untick a line to skip it. The app remembers for that shop.
+  - q: A receipt line has no price. How do I add one?
+    a: Tap the plus where the price would be, enter it and save. Works on past receipts too.
+  - q: What is Item history?
+    a: A record of changes to an item's brand, size, note or price. Open Edit item, then Item history, and tap an entry to reuse it. Brands you've bought before also show under the Brand field.
+- label: Moving items
+  blurb: Swipes, long presses and changing many at once.
+  shot: detail
+  items:
+  - q: What do the swipes do?
+    a: Swipe right to move an item forward (Next Time, To Buy, cart). Swipe left to send it back to Next Time, or delete it from there. Each swipe can be undone.
+  - q: What does pressing and holding an item do?
+    a: Opens a menu to edit, move or delete it.
+  - q: How do I change many items at once?
+    a: Tap More, then Select items. Pick them, then move or delete together.
+  - q: Can I move an item to another list?
+    a: Yes. Long-press it and choose Move to list, or use Select items. It keeps its status, quantity and prices, and you can undo. An item is the same in every list, so editing it in one changes it everywhere.
+  - q: How do I change how the list looks?
+    a: Tap the three dots at the top right. View as switches between List and Compact; Organise shows or hides the category buttons.
+  - q: How do I get rid of a suggestion card?
+    a: Swipe it sideways.
+  - q: An item has no icon, or the wrong one.
+    a: Tap the item's icon, scroll to the bottom and tap Request an icon. It opens a ready-made feedback email.
+- label: Your data
+  blurb: Where your list lives, and how to back it up.
+  shot: settings
+  items:
+  - q: Where is my list stored?
+    a: On your iPhone, and in your own iCloud when iCloud is on for Acquisti, so it's backed up and the same on all your devices. We can't access either.
+  - q: How do I back up or move my list?
+    a: 'Settings, then Export: PDF, Text, CSV or JSON. Bring JSON back with Settings, then Import.'
+  - q: How do I back up everything?
+    a: Settings, then Export, then Everything. Backup saves one file with all your lists, shops, prices and receipts; Restore backup brings it back and replaces what's there. Back up before you change phone.
+  - q: How do I get a receipt as a PDF?
+    a: Settings, then Receipts. Open one and tap share at the top right.
+  - q: How do I start again?
+    a: Settings, then Clear all items. Receipts are kept.
+- label: Troubleshooting
+  blurb: When something looks wrong, or to tell us about it.
+  shot: settings
+  items:
+  - q: An item or price looks wrong.
+    a: Tap the price, correct it and tap Save.
+  - q: The screen locks while I shop.
+    a: Turn on Settings, then Keep screen on.
+  - q: Text is too small or too large.
+    a: 'Acquisti follows your iPhone''s text size: iPhone Settings, then Display and Brightness, then Text Size.'
+  - q: How do I send feedback?
+    a: Settings, then Help, then Send feedback. Your mail app opens with the message ready; nothing is sent until you send it.
+reviews:
+- tag: Running total
+  text: I set a budget of Ksh 3,000 and watch the total climb as I tick things off. No more surprises at the till.
+  name: Wanjiru K.
+  where: Mum of two, weekly shop
+  init: W
+- tag: Prices by shop
+  text: It remembers what tomatoes cost at each shop, so I know where to buy before I leave the house.
+  name: Brian O.
+  where: Shops at three markets
+  init: B
+- tag: Scan a till slip
+  text: I snap the receipt and the prices fill in. Saves me typing them all out.
+  name: Amina H.
+  where: Family of five
+  init: A
+- tag: Next time
+  text: Anything I don't find goes to Next time. The list for the next trip writes itself.
+  name: David M.
+  where: Shops on the way home
+  init: D
+- tag: Shared lists
+  text: My husband and I share one list through iCloud. Whoever is at the shop sees what the other added.
+  name: Grace N.
+  where: Shares a list at home
+  init: G
+- tag: Categories and icons
+  text: The icons make the list easy to scan. I find dairy and veg at a glance.
+  name: Kevin W.
+  where: Nursing student
+  init: K
+- tag: Widgets
+  text: The lock-screen widget shows how many items are left. I barely open the app in the aisle.
+  name: Faith A.
+  where: Quick top-up shops
+  init: F
+- tag: Privacy
+  text: Nothing to sign up for and nothing sent to anyone. I just opened it and started my list.
+  name: Joseph K.
+  where: Careful with apps
+  init: J
+- tag: Trip receipts
+  text: I look back at last month's trips and see what I actually spent. It changed how I plan.
+  name: Mercy L.
+  where: Tracks the house budget
+  init: M
+- tag: Aisle order
+  text: I sort the list in the order of my shop's aisles, so I walk through once and I'm done.
+  name: Peter G.
+  where: Saturday market run
+  init: P
+quotes:
+- text: I finally know what I will spend before I reach the till. No more surprises at checkout.
+  who: Wanjiru K.
+  role: Parent of three
+- text: Swiping things into Next Time keeps my list short without forgetting anything.
+  who: Daniel M.
+  role: University student
+- text: Comparing two shops on the same list saved me more than I expected in the first month.
+  who: Amina H.
+  role: Small business owner

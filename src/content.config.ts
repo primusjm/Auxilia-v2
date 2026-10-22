@@ -184,6 +184,81 @@ const pages = defineCollection({
   }),
 });
 
+const iconPath = z.string();
+const acqChip = z.object({ label: z.string(), value: z.string(), left: z.string(), top: z.string() });
+const acqLanding = z.object({
+  hero: z.object({ kicker: z.string(), title: z.string(), titleEmphasis: z.string(), lead: z.string() }),
+  heroChips: z.object({ left: z.array(acqChip), right: z.array(acqChip) }),
+  highlights: z.array(z.string()),
+  features: z.object({
+    title: z.string(),
+    titleEmphasis: z.string(),
+    intro: z.string(),
+    items: z.array(
+      z.object({ title: z.string(), body: z.string(), image: z.string(), chipLabel: z.string(), chipValue: z.string(), caption: z.string() }),
+    ),
+  }),
+  trip: z.object({
+    steps: z.array(
+      z.object({
+        no: z.string(),
+        stage: z.string(),
+        title: z.string(),
+        icon,
+        image: z.string(),
+        alt: z.string(),
+        capA: z.string(),
+        capB: z.string(),
+        capBIcon: icon,
+        delay: z.string(),
+        drawDelay: z.string(),
+      }),
+    ),
+  }),
+  privacy: z.object({
+    tiles: z.array(z.object({ no: z.string(), icon, kind: z.string(), title: z.string(), text: z.string(), delay: z.string() })),
+  }),
+  /** Support topics. `shot` picks the phone screenshot shown beside the topic. */
+  support: z.array(
+    z.object({
+      label: z.string(),
+      blurb: z.string(),
+      shot: z.string(),
+      items: z.array(z.object({ q: z.string(), a: z.string() })),
+    }),
+  ),
+  reviews: z.array(z.object({ tag: z.string(), text: z.string(), name: z.string(), where: z.string(), init: z.string() })),
+  quotes: z.array(z.object({ text: z.string(), who: z.string(), role: z.string() })),
+});
+const acqPrivacy = z.object({
+  intro: z.object({ title: z.string(), titleEmphasis: z.string(), lead: z.string() }),
+  meta: z.array(z.object({ label: z.string(), value: z.string() })),
+  /** Policy sections. Text accepts [link text](url) for links. */
+  sections: z.array(
+    z.object({
+      id: z.string(),
+      title: z.string(),
+      blocks: z.array(
+        z.union([
+          z.object({ type: z.literal('p'), text: z.string(), variant: z.enum(['', 'spaced', 'lead']) }),
+          z.object({ type: z.literal('rows'), items: z.array(z.object({ term: z.string(), text: z.string() })) }),
+        ]),
+      ),
+    }),
+  ),
+  contact: z.object({ title: z.string(), text: z.string(), button: z.string() }),
+  apple: z.string(),
+});
+const acqShared = z.object({
+  feedbackTopics: z.array(z.object({ label: z.string(), icon: iconPath })),
+  menu: z.array(z.object({ label: z.string(), sub: z.string(), href: z.string(), icon: z.array(iconPath) })),
+});
+// Acquisti is a separate site. Its content is kept apart from the Auxilia collections.
+const acquisti = defineCollection({
+  loader: glob({ pattern: '*.yaml', base: './src/content/acquisti' }),
+  schema: z.union([acqLanding, acqPrivacy, acqShared]),
+});
+
 const settings = defineCollection({
   loader: file('./src/content/settings/site.json', { parser: (text) => [{ id: 'site', ...JSON.parse(text) }] }),
   schema: z.object({
@@ -194,4 +269,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { work, pages, settings };
+export const collections = { work, pages, acquisti, settings };

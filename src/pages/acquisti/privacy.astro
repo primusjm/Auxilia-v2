@@ -2,10 +2,13 @@
 import AcquistiLayout from '../../layouts/AcquistiLayout.astro';
 import AcquistiPrivacy from '../../components/acquisti/AcquistiPrivacy.tsx';
 import '../../styles/acquisti/privacy.css';
+import { getEntry } from 'astro:content';
+const data = (await getEntry('acquisti', 'privacy'))!.data;
+const shared = (await getEntry('acquisti', 'shared'))!.data;
 ---
 <AcquistiLayout
   title="Privacy policy | Acquisti"
   description="Acquisti does not collect your information. This page explains what happens to your data when you use the app."
 >
-  <AcquistiPrivacy client:load />
+  <AcquistiPrivacy client:load data={data} shared={shared} />
 </AcquistiLayout>

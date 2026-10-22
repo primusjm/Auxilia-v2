@@ -7,15 +7,7 @@ import template from './privacy.template';
 
 export default class AcquistiPrivacy extends Component<any, any> {
   state = { mOpen: false, mC: false, theme: null, cur: null, cc: 'KE', ccQ: '', ccA: 0, ct: false, ctState: 'idle', ccOpen: false, fb: 0, fbOpen: false };
-  _fb = [
-    ['The shopping list', 'M9 6h11M9 12h11M9 18h11M4.5 6h.01M4.5 12h.01M4.5 18h.01'],
-    ['Add and edit items', 'M4 4h16v16H4zM12 8v8M8 12h8'],
-    ['Shops and prices', 'M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2'],
-    ['Slips, receipts and backups', 'M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4M9 7h4l2 2v8H9z'],
-    ['An icon request', 'M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z'],
-    ['Leave a review', 'M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8-5.2-2.7-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z'],
-    ['Something else', 'M5 12h.01M12 12h.01M19 12h.01'],
-  ];
+  _fb = this.props.shared.feedbackTopics.map((t) => [t.label, t.icon]);
   openReview = (e) => { this.setState({ fb: this._fb.findIndex(o => o[0] === 'Leave a review'), fbOpen: false }); this.openContact(e); };
   _cc: any[] = countries;
   _ccSearchRef = createRef(); _ccListRef = createRef();
@@ -76,7 +68,7 @@ export default class AcquistiPrivacy extends Component<any, any> {
       mClose: () => { if (this.state.mOpen) this.setState({ mOpen: false }); },
       mReview: (e) => { this.setState({ mOpen: false }); if (this.openReview) this.openReview(e); },
       mMail: (e) => { this.setState({ mOpen: false }); if (this.openContact) this.openContact(e); },
-      mNav: [['Features', 'What it does', '/acquisti#features', ['M9 6h11M9 12h11M9 18h11', 'M4.5 6h.01M4.5 12h.01', 'M4.5 18h.01']], ['The trip', 'See the app', '/acquisti#how', ['M7 3h10v18H7Z', 'M11 18h2', '']], ['Privacy', 'Stays on your phone', '/acquisti#privacy', ['M12 3 4.5 6v6c0 4.6 3.2 8 7.5 9 4.3-1 7.5-4.4 7.5-9V6L12 3Z', 'm9 12 2 2 4-4', '']], ['Support', 'Answers and help', '/acquisti#support', ['M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18Z', 'M9.5 9.5a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.8-.9 1.4v.3', 'M12 16.8h.01']], ['Reviews', 'What people say', '/acquisti#reviews', ['M4 5h16v11H9l-5 4Z', 'M8 9.5h8', 'M8 12.5h5']], ['Contact', 'Send feedback', '#contact', ['M3 5h18v14H3Z', 'm3 7 9 6 9-6', '']]].map((n, i) => ({ no: '0' + (i + 1), label: n[0], sub: n[1], href: n[2], d1: n[3][0], d2: n[3][1], d3: n[3][2] })),
+      mNav: this.props.shared.menu.map((n, i) => ({ no: '0' + (i + 1), label: n.label, sub: n.sub, href: n.href === '#contact' ? '#contact' : '/acquisti' + n.href, d1: n.icon[0], d2: n.icon[1], d3: n.icon[2] })),
       mL1: { position: 'absolute', left: 0, right: 0, top: o ? 4 : 0, height: 1.8, background: 'currentColor', transform: o ? 'rotate(45deg)' : 'none', transition: 'all .35s ' + ez },
       mL2: { position: 'absolute', left: 0, right: o ? 0 : 5, top: o ? 4 : 8, height: 1.8, background: 'currentColor', transform: o ? 'rotate(-45deg)' : 'none', transition: 'all .35s ' + ez },
       mLabelSt: { display: 'inline-block', overflow: 'hidden', whiteSpace: 'nowrap', maxWidth: k ? 0 : 60, marginLeft: k ? -12 : 0, opacity: k ? 0 : 1, transition: 'max-width .5s ' + ez + ', margin .5s ' + ez + ', opacity .3s ease' },
@@ -94,6 +86,7 @@ export default class AcquistiPrivacy extends Component<any, any> {
     const theme = this.state.theme || this.props.theme || 'light';
     return {
       ...this._menuVals(),
+      pdata: this.props.data,
       theme,
       logoTheme: (e) => { e.preventDefault(); this._theme(theme === 'dark' ? 'light' : 'dark'); },
       toggleTheme: () => this._theme(theme === 'dark' ? 'light' : 'dark'),
@@ -115,8 +108,8 @@ export default class AcquistiPrivacy extends Component<any, any> {
         : h('svg', { viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor', strokeWidth: 1.7, strokeLinecap: 'round', strokeLinejoin: 'round', width: 16, height: 16 }, h('path', { d: 'M22 2 11 13' }), h('path', { d: 'M22 2 15 22l-4-9-9-4Z' })),
       ctScrim: { position: 'fixed', inset: 0, zIndex: 140, background: 'rgba(9,8,28,.35)', opacity: this.state.ct ? 1 : 0, pointerEvents: this.state.ct ? 'auto' : 'none', transition: 'opacity .45s ease' },
       ctWrap: { position: 'fixed', right: 'clamp(12px,2vw,24px)', bottom: 'clamp(12px,2vw,24px)', zIndex: 150, width: 'min(460px, calc(100vw - 24px))', maxHeight: 'calc(100vh - 24px)', overflowY: this.state.ccOpen ? 'visible' : 'auto', background: 'var(--paper)', color: 'var(--ink)', border: '1px solid var(--rule)', boxShadow: '0 40px 80px -30px rgba(10,9,32,.55)', fontFamily: "'Outfit',sans-serif", transformOrigin: '100% 100%', clipPath: this.state.ct ? 'circle(150% at 100% 100%)' : 'circle(0% at 100% 100%)', transform: this.state.ct ? 'none' : 'translate(12px,12px) scale(.86)', opacity: this.state.ct ? 1 : 0, visibility: this.state.ct ? 'visible' : 'hidden', transition: this.state.ct ? 'clip-path .75s cubic-bezier(.7,0,.2,1), transform .75s cubic-bezier(.2,.7,.2,1), opacity .3s ease, visibility 0s' : 'clip-path .75s cubic-bezier(.7,0,.2,1), transform .75s cubic-bezier(.2,.7,.2,1), opacity .3s ease .45s, visibility 0s .75s' },
-      ...(() => { const T = [["What we collect","#collect"],["Where your information is kept","#device"],["Sharing a list","#sharing"],["Tracking, analytics and advertising","#tracking"],["Scanning a till slip","#scan"],["When you choose to share","#share"],["Children","#children"],["Your rights","#rights"],["Reviews you send us","#reviews"],["Ratings","#ratings"],["Changes to this policy","#changes"],["Contact","#contact"]]; let ci = T.findIndex(t => t[1] === '#' + this.state.cur); if (ci < 0) ci = 0; const o = !!this.state.tocOpen; return { tocOpen: o, tocRot: o ? 'rotate(180deg)' : 'none', tocCurNo: (ci < 9 ? '0' : '') + (ci + 1), tocCurLabel: T[ci][0], tocToggle: () => this.setState(s => ({ tocOpen: !s.tocOpen })), tocClose: () => this.setState({ tocOpen: false }) }; })(),
-      toc: [["What we collect","#collect"],["Where your information is kept","#device"],["Sharing a list","#sharing"],["Tracking, analytics and advertising","#tracking"],["Scanning a till slip","#scan"],["When you choose to share","#share"],["Children","#children"],["Your rights","#rights"],["Reviews you send us","#reviews"],["Ratings","#ratings"],["Changes to this policy","#changes"],["Contact","#contact"]].map((t, i) => ({ label: t[0], href: t[1], no: (i < 9 ? '0' : '') + (i + 1), cur: this.state.cur === t[1].slice(1) ? 'true' : null, bg: 'transparent', ink: this.state.cur === t[1].slice(1) ? 'var(--brand-text)' : 'var(--ink)', bar: this.state.cur === t[1].slice(1) ? 1 : 0 })),
+      ...(() => { const T = [...this.props.data.sections.map((x) => [x.title, '#' + x.id]), [this.props.data.contact.title, '#contact']]; let ci = T.findIndex(t => t[1] === '#' + this.state.cur); if (ci < 0) ci = 0; const o = !!this.state.tocOpen; return { tocOpen: o, tocRot: o ? 'rotate(180deg)' : 'none', tocCurNo: (ci < 9 ? '0' : '') + (ci + 1), tocCurLabel: T[ci][0], tocToggle: () => this.setState(s => ({ tocOpen: !s.tocOpen })), tocClose: () => this.setState({ tocOpen: false }) }; })(),
+      toc: [...this.props.data.sections.map((x) => [x.title, '#' + x.id]), [this.props.data.contact.title, '#contact']].map((t, i) => ({ label: t[0], href: t[1], no: (i < 9 ? '0' : '') + (i + 1), cur: this.state.cur === t[1].slice(1) ? 'true' : null, bg: 'transparent', ink: this.state.cur === t[1].slice(1) ? 'var(--brand-text)' : 'var(--ink)', bar: this.state.cur === t[1].slice(1) ? 1 : 0 })),
     };
   }
 }

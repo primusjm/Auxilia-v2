@@ -1,0 +1,99 @@
+intro:
+  title: Privacy
+  titleEmphasis: policy
+  lead: Acquisti is a shopping list app for iPhone made by Auxilia Tech, Kenya ("we", "us"). This page explains what happens to your information when you use it.
+meta:
+  - label: Data collected
+    value: None
+  - label: Sync and sharing
+    value: Your iCloud only
+  - label: Tracking
+    value: None
+  - label: Last updated
+    value: 17 October 2026
+sections:
+  - id: collect
+    title: What we collect
+    blocks:
+      - type: p
+        text: Nothing. Acquisti does not collect, receive or store any information about you on our servers. We do not have servers for the app. There is no Acquisti account to create and no sign-in. Your lists are backed up and synced only through your own iCloud account, which we cannot access, so there is no way for us to see your list, your prices, your receipts or your shops.
+        variant: ''
+  - id: device
+    title: Where your information is kept
+    blocks:
+      - type: p
+        text: 'The things you enter, such as items, quantities, prices, brands, notes, receipts, shops (names and branches), the prices you or the app record for each shop, and your settings, are saved in the app''s storage on your iPhone. If iCloud is turned on for Acquisti, the app also keeps a copy in your private iCloud account, so your lists are backed up and stay the same on each of your devices. That copy belongs to your Apple Account: Apple stores it under its own privacy policy, and we have no access to it. If you turn iCloud off for Acquisti, your information stays only on your iPhone. Deleting the app removes the copy on your iPhone; the iCloud copy stays until you remove it in your iPhone''s iCloud settings.'
+        variant: ''
+      - type: p
+        text: The Acquisti widgets on your home screen and lock screen show a short summary of your list (item names, counts and totals). The app saves that summary in a storage area shared only between Acquisti and its widgets on your iPhone, and it is never sent anywhere.
+        variant: spaced
+  - id: sharing
+    title: Sharing a list
+    blocks:
+      - type: p
+        text: 'You can share a list with people you choose, and only through iCloud. You invite someone, and Apple shares the list from your iCloud with theirs. Only the people you invite can see it: everyone in a shared list can add, change and tick items, and sees its receipts. We are not part of the share, and we cannot see who you share with or what the list holds. Your other lists stay private. You can remove a person, or stop sharing, at any time.'
+        variant: ''
+  - id: tracking
+    title: Tracking, analytics and advertising
+    blocks:
+      - type: p
+        text: Acquisti has no analytics, no advertising, no tracking and no third-party code that sends your information anywhere. It does not ask for your location, contacts or microphone. It asks for the camera and your photos only for scanning a till slip, as described below.
+        variant: ''
+  - id: scan
+    title: Scanning a till slip
+    blocks:
+      - type: p
+        text: 'Scan a receipt lets you photograph a till slip, or pick a photo of one, so the app can read the prices. The camera is used only when you tap Scan with camera, and the app only sees the photos you pick yourself: it never asks for access to your whole photo library. The text is read on your iPhone using Apple''s own on-device text recognition. The photo is kept in memory while it is read and then discarded: it is not saved to your iPhone, not added to your Photos, and not sent anywhere. Only the prices and items you confirm are kept, in the app''s storage on your iPhone.'
+        variant: ''
+  - id: share
+    title: When you choose to share
+    blocks:
+      - type: p
+        text: 'Some features let you send your information out of the app, only when you ask:'
+        variant: lead
+      - type: rows
+        items:
+          - term: Export and Share
+            text: You can share your list as a PDF, text, CSV or JSON, make a backup of everything (your list, shops, prices, pins, aisle orders, receipts, item history and app settings), or export your receipts as a spreadsheet or as a PDF, using the iPhone share sheet. Where it goes (Messages, Notes, Files, email and so on) is decided by you, and the app you pick handles it under its own privacy policy.
+          - term: Import and Restore backup
+            text: You can bring in a JSON list, or restore a backup, from the Files app. The file is read on your iPhone and is not sent anywhere.
+          - term: Links and feedback
+            text: 'Support, Privacy policy and Visit website open pages in your browser. Send feedback opens your own email app with a message ready: it holds what you wrote, the feature you chose, the app version and your iPhone model. Nothing is sent by Acquisti itself: it goes out only if you send the email, and then we receive what you sent. Those pages and your email provider have their own policies.'
+  - id: children
+    title: Children
+    blocks:
+      - type: p
+        text: Acquisti is a general shopping list and is not directed at children. Because we collect no information, we do not knowingly collect any from children either.
+        variant: ''
+  - id: rights
+    title: Your rights
+    blocks:
+      - type: p
+        text: 'Because we hold no information about you, there is nothing for us to access, correct or delete. You are in full control of your data on your iPhone and in your iCloud: you can export it, change it, or delete it with Clear all items in Settings, or by deleting the app and removing its data from iCloud. If a law that applies to you, such as the Kenya Data Protection Act 2019, gives you rights over personal information, they are met by this design, and you can contact us with any question at the address below.'
+        variant: ''
+  - id: reviews
+    title: Reviews you send us
+    blocks:
+      - type: p
+        text: You can send us a review of Acquisti through the form on our website. If you agree, we may show your review in the Reviews section of the Acquisti website, alongside your first name and the initial of your last name, and a short description you give us (for example, "Weekly shop, Nairobi"). We never publish your email address or phone number; we use those only to reply to you.
+        variant: ''
+      - type: p
+        text: We may shorten a review to fit, but we will not change its meaning. You can ask us to edit or remove your review at any time by writing to [hello@auxilia.io](mailto:hello@auxilia.io), and we will take it down promptly.
+        variant: spaced
+  - id: ratings
+    title: Ratings
+    blocks:
+      - type: p
+        text: 'After you have finished a few trips, and then only now and then, iOS may show its own rating sheet. Acquisti sends nothing and learns nothing about whether you rate: Apple runs the sheet and any review you write is between you and the App Store. Settings, Help, Rate Acquisti opens the App Store''s review page.'
+        variant: ''
+  - id: changes
+    title: Changes to this policy
+    blocks:
+      - type: p
+        text: If a later version of Acquisti handles information differently, we will update this page and explain the change in the app's What's new notes before it takes effect.
+        variant: ''
+contact:
+  title: Contact
+  text: Questions about this policy or your information? Send us a message and we'll reply.
+  button: Contact support
+apple: Apple, the Apple logo, iPhone, iPad, Mac, App Store, and Mac App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions.
