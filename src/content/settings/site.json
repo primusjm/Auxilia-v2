@@ -1,0 +1,49 @@
+{
+  "email": "hello@auxilia.io",
+  "copyright": "© 2026 Auxilia Ltd",
+  "footerNav": [
+    {
+      "label": "Record",
+      "href": "/#record"
+    },
+    {
+      "label": "Constraints",
+      "href": "/#constraints"
+    },
+    {
+      "label": "Capability",
+      "href": "/#capability"
+    },
+    {
+      "label": "Method",
+      "href": "/#method"
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Unmatched energy, dependability and skill. They excelled at streamlining our software design.",
+      "who": "John Wanyoike",
+      "role": "Tech Lead, Belva Digital"
+    },
+    {
+      "text": "Professional, responsive and proud of what they deliver. I recommend them without hesitation.",
+      "who": "Mercy Wanjiku",
+      "role": "Project Manager, Creative FCB"
+    },
+    {
+      "text": "Creative flair with technical expertise. The care and precision give you confidence.",
+      "who": "Stephen Nzioka",
+      "role": "Project Lead, CBIN-K"
+    },
+    {
+      "text": "Our impact used to live in cohort reports. Now funders and future leaders find it on day one.",
+      "who": "Joyce Malombe",
+      "role": "Founder, Rising Leaders Center"
+    },
+    {
+      "text": "They understood that the person reading is often in crisis. Every page now leads to a call.",
+      "who": "Ben Mumo",
+      "role": "Director, Promises Treatment Centre"
+    }
+  ]
+}

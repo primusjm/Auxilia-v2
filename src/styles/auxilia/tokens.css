@@ -1,0 +1,20 @@
+/* Auxilia tokens: split from the Claude Design handover. */
+#contact{--ct-bg:#EEECF4;--ct-ink:#14130F;--ct-soft:#45425E;--ct-accent:var(--brand);--ct-line:rgba(20,19,15,.14);--ct-line-strong:rgba(20,19,15,.32);--ct-strip:rgba(255,255,255,.6);--ct-pat:#3B28FF;--ct-pat-op:.13;--ct-wash:rgba(59,40,255,.07);}
+[data-theme="dark"] #contact{--ct-bg:#0E0D26;--ct-ink:#FFFFFF;--ct-soft:#DEDBF8;--ct-accent:var(--brand);--ct-line:rgba(255,255,255,.16);--ct-line-strong:rgba(255,255,255,.4);--ct-strip:rgba(255,255,255,.06);--ct-pat:#A5A0FF;--ct-pat-op:.16;--ct-wash:rgba(124,112,255,.1);}
+#contact{--ft-bg:#F4F4FA;--ft-ink:#14130F;--ft-soft:#4A4766;--ft-accent:var(--brand);--ft-line:#E2E1EE;--ft-line-strong:rgba(20,19,15,.32);--ft-mail-rule:rgba(20,19,15,.18);--ft-strip:rgba(255,255,255,.6);--ft-mark:#3B28FF;--ft-mark-op:.06;--ft-cta-hover:#14113F;--ft-dot:rgba(20,19,15,.2);--ft-track:rgba(20,19,15,.14);--ft-ghost-hover:rgba(59,40,255,.08);}
+[data-theme="dark"] #contact{--ft-bg:#070A1A;--ft-ink:#EEF0FF;--ft-soft:#A9B0D6;--ft-accent:var(--brand);--ft-line:#222A52;--ft-line-strong:rgba(255,255,255,.4);--ft-mail-rule:rgba(255,255,255,.2);--ft-strip:#121838;--ft-mark:#7A6EFF;--ft-mark-op:.07;--ft-cta-hover:#5B4FE9;--ft-dot:rgba(242,240,248,.25);--ft-track:rgba(242,240,248,.16);--ft-ghost-hover:rgba(165,160,255,.12);}
+.ax-fx-out{--fx:#3B28FF;}
+a[aria-label="Auxilia home"]{--logo-ink:var(--ink);--logo-acc:var(--brand);}
+[data-ft-logo]{--logo-ink:var(--ft-ink)!important;--logo-acc:var(--ft-accent)!important;}
+[data-theme]{--mpanel-bg:#FFFFFF;}
+[data-theme="dark"]{--mpanel-bg:var(--brand-wash);}
+:root{
+    --paper:#F4F4FA; --surface:#FFFFFF; --ink:#14130F; --ink-soft:#57534E; --ink-faint:#6E685E;
+    --rule:#E2E1EE; --rule-strong:#14130F; --brand:#3B28FF; --brand-ink:#F7F5F0; --brand-wash:#E4E1FF; --brand-text:#3B28FF;
+    --knob-x:1px; color-scheme:light; --apx-bg:rgba(255,255,255,.6);
+  }
+[data-theme="dark"]{
+    --paper:#0A0E24; --surface:#121838; --ink:#EEF0FF; --ink-soft:#A9B0D6; --ink-faint:#949BC4;
+    --rule:#222A52; --rule-strong:rgba(238,240,255,.7); --brand:#7A6EFF; --brand-ink:#0A0E24; --brand-wash:#1A1F4A; --brand-text:#B2ACFF;
+    --knob-x:23px; color-scheme:dark; --apx-bg:rgba(255,255,255,.035);
+  }

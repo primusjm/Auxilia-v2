@@ -1,0 +1,6 @@
+---
+import icons from '../data/icons.json';
+const { k, ...attrs } = Astro.props;
+const inner = (icons as Record<string, string>)[k];
+---
+<svg {...attrs} set:html={inner} />

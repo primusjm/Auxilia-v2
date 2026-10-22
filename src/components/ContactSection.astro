@@ -1,0 +1,45 @@
+---
+import Icon from './Icon.astro';
+import site from '../content/settings/site.json';
+const { quotes, footerNav: nav, copyright, email } = site;
+---
+<section id="contact" style="position:relative;overflow:hidden;isolation:isolate;background:var(--ft-bg);color:var(--ft-ink);border-top:0;font-family:'Outfit',sans-serif;transition:background .4s ease;">
+      <div aria-hidden="true" data-mark-bot="" style="position:absolute;right:-60px;bottom:-110px;width:347px;height:600px;pointer-events:none;z-index:0;transform:rotate(-12deg);transform-origin:50% 70%;transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+        <div style="position:absolute;inset:0;background:var(--ft-mark);opacity:var(--ft-mark-op);-webkit-mask:url(/assets/mark-helmet.png) center/contain no-repeat;mask:url(/assets/mark-helmet.png) center/contain no-repeat;"></div>
+        <div style="position:absolute;inset:0;background:var(--ft-mark);opacity:var(--ft-mark-op);-webkit-mask:url(/assets/mark-plume.png) center/contain no-repeat;mask:url(/assets/mark-plume.png) center/contain no-repeat;"></div>
+      </div>
+      <div style="position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:clamp(40px,5vw,56px) clamp(20px,4vw,56px) 0;display:flex;flex-direction:column;">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:12px;font-weight:500;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ft-accent);"><span data-ct-env="" data-ft-env="" aria-hidden="true" style="display:inline-flex;"><Icon k="ic07338b" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true" style="overflow:visible;" /></span><span>Say hello</span></div>
+          <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--ft-soft);"><span data-ft-pulse="" style="width:8px;height:8px;border-radius:50%;background:var(--ft-accent);animation:ftPulse 2.4s ease-out infinite;"></span>Replies within one working day</span>
+        </div>
+        <a href={`mailto:${email}`} data-ft-mail="" aria-label={`Email ${email}`} style="position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,32px);padding-bottom:26px;border-bottom:1px solid var(--ft-mail-rule);color:var(--ft-ink);text-decoration:none;">
+          <span style="min-width:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(38px,8.4vw,112px);line-height:.92;letter-spacing:-0.045em;white-space:nowrap;color:var(--ft-ink);"><span>{email.split("@")[0]}</span><span data-ft-at="" style="font-weight:400;color:var(--ft-accent);margin:0 .02em;">@</span><span>{email.split("@")[1]}</span></span>
+          <span data-ft-arrow="" data-wig-wrap="" style="flex:none;width:clamp(52px,7vw,96px);height:clamp(52px,7vw,96px);display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ft-line-strong);color:var(--ft-ink);"><Icon k="ic113c36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36" style="width:38%;height:38%;" /></span>
+          <span data-ft-line="" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ft-accent);"></span>
+        </a>
+        <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 48px;align-items:center;padding:24px 0 28px;">
+          <p style="margin:0;flex:1 1 360px;font-size:clamp(16px,1.4vw,19px);line-height:1.6;color:var(--ft-soft);max-width:52ch;text-wrap:pretty;">Tell us where your organisation needs to get to. We'll be straight about whether and how we can help. No pitch theatre.</p>
+          <a class="ax-fx" href={`mailto:${email}?subject=Book%20a%20call`} data-cta="" data-ft-book="" style="position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 24px;background:#3B28FF;color:#FFFFFF;font-weight:600;font-size:13px;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;text-decoration:none;transition:background .3s ease;"><span data-draw-ico="" style="display:inline-flex;"><Icon k="ic8e21c5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true" /></span>Book a call</a>
+        </div>
+        <div data-ft-strip="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;border:1px solid var(--ft-line);background:var(--ft-strip);min-height:72px;margin-bottom:40px;">
+          <div data-ft-quoteicon="" style="padding:0 28px;border-right:1px solid var(--ft-line);align-self:stretch;display:flex;align-items:center;color:var(--ft-accent);"><Icon k="ic95724a" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true" /></div>
+          <div data-ft-quotes="" aria-live="polite" style="display:grid;align-items:center;padding:14px clamp(16px,2.4vw,28px);overflow:hidden;">
+            {quotes.map((q, i) => (
+              <p class={'ax-q' + (i === 0 ? ' is-on' : '')} aria-hidden={i === 0 ? 'false' : 'true'}><span style="display:block;font-size:15px;line-height:1.4;color:var(--ft-ink);text-wrap:pretty;">{q.text}</span><span data-ft-who="" style="display:block;margin-top:2px;font-size:13px;line-height:1.4;color:var(--ft-soft);"><strong style="font-weight:500;color:var(--ft-accent);">{q.who}</strong>, {q.role}</span></p>
+            ))}
+          </div>
+          <div data-ft-dots="" style="padding:0 clamp(16px,2.4vw,28px);display:flex;gap:8px;align-items:center;">
+            {quotes.map((q, i) => (
+              <button type="button" data-q-dot={i} aria-label={'Show testimonial ' + (i + 1)} style="background:none;border:0;padding:10px 0;cursor:pointer;display:flex;align-items:center;"><span class={i === 0 ? 'ax-qd-on' : 'ax-qd-off'}>{i === 0 && <span />}</span></button>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div style="position:relative;z-index:1;border-top:1px solid var(--ft-line);">
+        <div data-ft-bar="" style="max-width:1240px;margin:0 auto;padding:22px clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;gap:16px 24px;flex-wrap:wrap;font-size:13px;color:var(--ft-soft);">
+          <div data-ft-a="" style="display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap;"><a href="/" aria-label="Auxilia home" data-ft-logo="" style="display:inline-flex;flex:none;align-items:center;text-decoration:none;"><Icon k="icaa80bf" data-ax-logo="" viewBox="140 60 4290 1410" width="104" height="34" aria-hidden="true" style="display:block;overflow:visible;" /></a><nav data-ft-nav="" style="display:flex;align-items:center;gap:24px;font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;">{nav.map((n) => (<a href={n.href} style="color:var(--ft-soft);text-decoration:none;" class="ax-h20b986">{n.label}</a>))}</nav></div>
+          <div data-ft-b="" style="display:flex;align-items:center;gap:14px;"><span>{copyright}</span><span style="width:1px;height:28px;background:var(--ft-line);"></span><span role="group" aria-label="Theme" data-ft-theme="" style="display:inline-flex;height:28px;border:1px solid var(--ft-line-strong);"><button type="button" data-ft-light="" aria-label="Light mode" aria-pressed="false" title="Light" style="width:28px;height:26px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:var(--ft-soft);cursor:pointer;padding:0;"><Icon k="ic526a42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true" /></button><button type="button" data-ft-dark="" aria-label="Dark mode" aria-pressed="false" title="Dark" style="width:28px;height:26px;display:inline-flex;align-items:center;justify-content:center;border:0;background:transparent;color:var(--ft-soft);cursor:pointer;padding:0;"><Icon k="ic1a8948" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true" /></button></span><a href="#top" data-ft-top="" aria-label="Back to top" title="Back to top" style="width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ft-line-strong);color:var(--ft-ink);"><Icon k="ica7b89a" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true" /></a></div>
+        </div>
+      </div>
+    </section>

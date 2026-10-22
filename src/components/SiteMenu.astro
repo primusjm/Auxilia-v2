@@ -1,0 +1,42 @@
+---
+import Icon from './Icon.astro';
+
+interface Item {
+  label: string;
+  sub: string;
+  href: string;
+  icon: string[];
+  tab?: number;
+}
+interface Props {
+  items: Item[];
+  /** Case study pages add "Get in touch" and "Back to homepage" to the end of the menu. */
+  caseStudy?: boolean;
+}
+const { items, caseStudy = false } = Astro.props;
+
+const row = "display:grid;grid-template-columns:44px minmax(0,1fr);align-items:end;gap:16px;padding:clamp(10px,1.1vw,13px) 0;border-bottom:1px solid color-mix(in oklab, var(--brand) 22%, transparent);color:var(--ink);text-decoration:none;";
+const ico = "align-self:center;width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1.5px solid var(--brand-text);color:var(--brand-text);";
+const col = "display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right;";
+const label = "font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(24px,2.2vw,27px);line-height:1;letter-spacing:-0.02em;white-space:nowrap;";
+const sub = "width:0;min-width:100%;font-family:'Outfit',sans-serif;font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;line-height:1.3;color:var(--brand-text);white-space:nowrap;";
+---
+<div class="ax-scrim" aria-hidden="true" data-menu-close=""></div>
+<header data-hdr="" style="position:fixed;top:0;left:0;right:0;z-index:60;height:0;">
+  <div class="ax-mbar">
+    <button class="ax-fx" type="button" data-menu-toggle="" aria-expanded="false" aria-label="Open menu" style="pointer-events:auto;flex:none;display:inline-flex;align-items:center;gap:12px;height:44px;padding:0 16px;border:0;border-radius:0;background:#3B28FF;color:#FFFFFF;font-family:'Outfit',sans-serif;font-weight:600;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 22px -12px var(--brand);transition:background .3s ease;"><span aria-hidden="true" style="position:relative;width:16px;height:10px;display:block;"><span class="ax-ml1"></span><span class="ax-ml2"></span></span><span class="ax-mlabel" data-menu-label="">Menu</span></button>
+  </div>
+  <div class="ax-mpanel">
+    <nav aria-label="Main" style="padding:0 24px;">
+      {items.map((n) => (
+        <a href={n.href} data-menu-close="" data-mix="" data-tab={n.tab} style={row}><span data-mix-ico="" aria-hidden="true" style={ico}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18">{n.icon.filter(Boolean).map((d) => <path d={d} />)}</svg></span><span style={col}><span data-mix-t="" style={label}>{n.label}</span><span style={sub}>{n.sub}</span></span></a>
+      ))}
+      {caseStudy && (
+        <>
+          <a href="mailto:hello@auxilia.io" data-menu-close="" data-mix="" style={row}><span data-mix-ico="" aria-hidden="true" style={ico}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><rect x="3" y="5" width="18" height="14"></rect><path d="m3 7 9 6 9-6"></path></svg></span><span style={col}><span data-mix-t="" style={label}>Get in touch</span><span style={sub}>Book a call</span></span></a>
+          <a href="/" data-mix="" data-back-home="" style="display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:16px;padding:clamp(14px,1.6vw,18px) 0;margin-top:8px;border-top:2px solid var(--brand-text);color:var(--ink);text-decoration:none;"><span data-mix-ico="" aria-hidden="true" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;background:var(--brand);color:var(--brand-ink);border:1.5px solid var(--brand);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M19 12H5"></path><path d="m11 18-6-6 6-6"></path></svg></span><span style={col}><span data-mix-t="" style="font-family:'Outfit',sans-serif;font-weight:600;font-size:13px;letter-spacing:.12em;text-transform:uppercase;line-height:1.2;">Back to homepage</span></span></a>
+        </>
+      )}
+    </nav>
+  </div>
+</header>

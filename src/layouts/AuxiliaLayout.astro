@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import '../styles/auxilia/tokens.css';
+import '../styles/auxilia/base.css';
+import '../styles/auxilia/chrome.css';
+import '../styles/auxilia/states.css';
+import Loader from '../components/Loader.astro';
+import SiteMenu from '../components/SiteMenu.astro';
+import ContactSection from '../components/ContactSection.astro';
+import ContactModal from '../components/ContactModal.astro';
+import Lightbox from '../components/Lightbox.astro';
+
+interface MenuItem {
+  label: string;
+  sub: string;
+  href: string;
+  icon: string[];
+  tab?: number;
+}
+interface Props {
+  title: string;
+  description: string;
+  /** Path of the social image, from the site root. */
+  ogImage?: string;
+  screenLabel?: string;
+  menu: MenuItem[];
+  caseStudy?: boolean;
+  /** Subject line sent with the contact form. */
+  formSubject?: string;
+  lightbox?: boolean;
+}
+const { title, description, ogImage = '/assets/og.png', screenLabel, menu, caseStudy = false, formSubject = 'Book a call', lightbox = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const og = new URL(ogImage, Astro.site).href;
+---
+<!doctype html>
+<html lang="en-GB" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Auxilia" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <script is:inline>
+      (function () {
+        var t;
+        try { t = localStorage.getItem('auxilia-theme-v2'); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+    <slot name="head" />
+  </head>
+  <body style="margin:0;">
+    <div data-screen-label={screenLabel} style="min-height:100vh;background:var(--paper);color:var(--ink);overflow-x:hidden;position:relative;isolation:isolate;">
+      <Loader />
+      <SiteMenu items={menu} caseStudy={caseStudy} />
+      <slot />
+      <ContactSection />
+      <ContactModal subject={formSubject} />
+      {lightbox && <Lightbox />}
+    </div>
+    <script>
+      import '../scripts/chrome';
+    </script>
+  </body>
+</html>

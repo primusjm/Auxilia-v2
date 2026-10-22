@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import AuxiliaLayout from '../../layouts/AuxiliaLayout.astro';
+import RecordStudy from '../../components/work/RecordStudy.astro';
+import '../../styles/auxilia/cs.css';
+import '../../styles/auxilia/record.css';
+import { plain } from '../../lib/rich';
+
+export async function getStaticPaths() {
+  const all = await getCollection('work');
+  const records = all.filter((e) => e.data.kind === 'record').sort((a, b) => a.data.order - b.data.order);
+  return all.map((entry) => {
+    let related: { slug: string; no: string; client: string; title: string; image: string }[] = [];
+    if (entry.data.kind === 'record') {
+      const i = records.findIndex((r) => r.id === entry.id);
+      let idx = [i - 1, i + 1];
+      if (i === 0) idx = [1, 2];
+      if (i === records.length - 1) idx = [i - 2, i - 1];
+      related = idx.map((k) => {
+        const r = records[k];
+        return { slug: r.id, no: String(r.data.order).padStart(2, '0'), client: r.data.client, title: r.data.title, image: r.data.cardImage };
+      });
+    }
+    return { params: { slug: entry.id }, props: { entry, related } };
+  });
+}
+
+const { entry, related } = Astro.props;
+const d = entry.data;
+const menu = d.menu.map((m) => ({ label: m.label, sub: m.sub, href: `#${m.id}`, icon: m.icon }));
+const title = `${d.client}: ${d.title} | Auxilia`;
+const description = plain(d.hero.lead);
+---
+<AuxiliaLayout
+  title={title}
+  description={description}
+  ogImage={d.cardImage}
+  screenLabel={`Case study ${String(d.order).padStart(3, '0')}: ${d.client}`}
+  menu={menu}
+  caseStudy
+  formSubject={d.formSubject}
+  lightbox
+>
+  <RecordStudy study={d} related={related} slot="default" />
+</AuxiliaLayout>
