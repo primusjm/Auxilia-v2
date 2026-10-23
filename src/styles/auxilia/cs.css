@@ -98,3 +98,11 @@ html.reveal-armed .is-in [data-mcard]:nth-child(3) [data-draw-ico] svg > *{anima
   #results > div > [data-three]:nth-child(2) > div{text-align:center;}
 }
 
+/* Main testimonial on phones: one column with the same gap throughout (quote mark, quote, rule, author, tag) instead of a narrow text column beside the quote mark. */
+@media (max-width:680px){
+  #results figure:not([data-tq]){grid-template-columns:minmax(0,1fr)!important;gap:20px!important;padding:24px!important;}
+  #results figure:not([data-tq]) > div{gap:20px!important;}
+  #results figure:not([data-tq]) figcaption{display:grid!important;grid-template-columns:auto minmax(0,1fr);gap:14px!important;align-items:center;padding-top:20px!important;}
+  #results figure:not([data-tq]) figcaption > span:last-child{grid-column:1 / -1;justify-self:start;margin-left:0!important;}
+}
+
