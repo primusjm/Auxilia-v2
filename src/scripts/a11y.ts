@@ -36,7 +36,8 @@ function apply() {
   reflect();
 }
 
-const ICON_X = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+const ICON_X = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+const ICON_ACCESS = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="1.6"/><path d="M5 8.5h14M12 8.5v5M12 13.5l-3 6.5M12 13.5l3 6.5"/></svg>';
 const seg = (name: string, label: string, opts: [string, string][]) =>
   `<div class="a11y-group" role="group" aria-labelledby="a11y-${name}"><span class="a11y-label" id="a11y-${name}">${label}</span><div class="a11y-seg">${opts
     .map(([v, t]) => `<button type="button" data-a11y-${name}="${v}" aria-pressed="false">${t}</button>`)
@@ -52,7 +53,7 @@ panel.setAttribute('aria-modal', 'true');
 panel.setAttribute('aria-labelledby', 'a11y-title');
 panel.setAttribute('aria-hidden', 'true');
 panel.innerHTML =
-  `<div class="a11y-head"><h2 id="a11y-title">Accessibility</h2><button type="button" class="a11y-close" data-a11y-close aria-label="Close accessibility options">${ICON_X}</button></div>` +
+  `<div class="a11y-head"><h2 id="a11y-title"><span aria-hidden="true" style="display:inline-flex;">${ICON_ACCESS}</span>Accessibility</h2><button type="button" class="a11y-close ax-fx ax-fx-out ax-x" data-a11y-close aria-label="Close accessibility options">${ICON_X}</button></div>` +
   `<p class="a11y-intro">Change how the site looks and moves. Your choices are saved on this device.</p>` +
   `<div class="a11y-body">` +
   seg('theme', 'Theme', [['light', 'Light'], ['dark', 'Dark']]) +
