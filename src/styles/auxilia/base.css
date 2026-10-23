@@ -357,3 +357,9 @@ html.ax-leaving [data-loader]{animation:ldClose .7s cubic-bezier(.7,0,.2,1) forw
 [data-reply-short]{display:none;}
 @media (max-width:760px){[data-reply-long]{display:none;}[data-reply-short]{display:inline;}}
 
+/* Footer email on phones: no arrow box, and the address is centred. */
+@media (max-width:760px){
+  [data-ft-mail] [data-ft-arrow]{display:none!important;}
+  [data-ft-mail]{justify-content:center!important;}
+}
+
