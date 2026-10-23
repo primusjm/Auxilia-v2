@@ -1,5 +1,5 @@
 ---
-title: Trusts, microinsurance & awards
+title: Trusts explained, cover found, wins told
 client: Britam
 kind: appendix
 order: 1

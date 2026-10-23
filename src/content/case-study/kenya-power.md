@@ -1,5 +1,5 @@
 ---
-title: Four sites, one utility
+title: Power applied for, outages reported, bills paid
 client: Kenya Power
 kind: appendix
 order: 3

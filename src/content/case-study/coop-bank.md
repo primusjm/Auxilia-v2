@@ -1,5 +1,5 @@
 ---
-title: Four product sites, one bank
+title: Cover bought, cars bid on, loans costed
 client: Co-op Bank
 kind: appendix
 order: 2
