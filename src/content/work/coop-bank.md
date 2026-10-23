@@ -266,7 +266,7 @@ projects:
           - href: https://co-optrustinvestment.co-opbank.co.ke/
             text: Visit the live site
       - type: cards
-        variant: flat
+        variant: mandate
         items:
           - icon: ic68d9dc
             label: The first-time saver
