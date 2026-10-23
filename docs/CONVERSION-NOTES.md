@@ -131,3 +131,10 @@ Known limits:
 - The accessibility window opens and closes with the contact form's animation (a circle growing from the bottom-right corner, same timings). Both are driven by `src/styles/a11y.css` and `src/styles/auxilia/chrome.css`; keep them in step if either changes.
 - The page behind the image gallery (lightbox) is locked while it is open (`html.lb-open` in `chrome.css`, set from `chrome.ts`). The contact form, menu and accessibility window do not lock scrolling.
 
+
+## Modifica batch, 23 October 2026
+- Homepage and record images link to their case study, the record stage bar only runs while in view on phones, and the footer is centred on phones.
+- Lightbox locks page scroll and swipes on touch. Build cards and the main testimonial were reworked for phones.
+- `docs/STATS.md` lists every stat on the site with candidates for the Homepage band.
+- On phones the section icon sits above the description so the text spans the width.
+- Open with Josh: Britam, Co-op and Kenya Power titles (drafted in Todoist), the Related arrow animation, and the phone crop of the What we found image.
