@@ -1,53 +1,40 @@
-# Auxilia.io redesign: project brief for Claude Code
+# Auxilia.io: project brief for Claude Code
 
-## Goal
-Build a new auxilia.io (Josh's design studio site) focused primarily on non profits.
+## What this is
+Josh's design studio site, focused on non profits. It was converted from a Claude Design handover into Astro and is now edited directly. Two sites share one domain and one repo:
+- **Auxilia** at `/`: a Homepage and 13 case studies (10 record studies, 3 tabbed appendix studies).
+- **Acquisti** at `/acquisti`: the marketing site for Josh's iOS shopping-list app, plus `/acquisti/privacy`. It is separate: its own nav, footer, metadata and theme key. It shares only fonts, colour tokens, the theme mechanism and the brand marks.
 
-**This is a complete replacement, not a migration.** Do not reuse, scrape or port any code, layout, copy or assets from the current auxilia.io.
+This is a complete replacement of the old auxilia.io. Never reuse code, copy or assets from the old site.
 
-**The Claude Design output is the finished site and its content is final.** The task is a faithful conversion to Astro, not a redesign or rewrite. Do not invent placeholder content, change copy, or alter the design. Use the Claude Design handover zip (in `/design`) as the source of truth for layout, tokens, copy, assets and behaviour. If something in the handover is ambiguous or missing, ask Josh rather than guessing.
-
-## Decisions made
-- **Design:** done in Claude Design. Code it faithfully from the design files.
-- **Framework:** Astro, using Content Collections with Zod schemas in `src/content.config.ts` (single source of truth for content structure).
-- **Styling:** Tailwind.
-- **Hosting:** GitHub Pages, static output only. Deploy with a GitHub Actions workflow.
-- **Theme:** dark and light mode toggle, via CSS variables plus a toggle. Respect `prefers-color-scheme`, persist the choice, and meet WCAG AA contrast.
-- **Content format:** Markdown (MDX only if needed). Simple to read, shows domain authority.
-
-## CMS plan
-- **Primary editor: Lumen CMS** (lumencms.com, macOS app, Free tier, 1 site). It opens the local Astro folder and edits files, so it needs no server. It reads the Zod schemas in `src/content.config.ts`.
-- **Emergency and mobile editor: Sveltia CMS** at `public/admin/` with a short hand-written `config.yml` covering only what Josh would fix from a phone (page copy, case study text, basic fields).
-  - GitHub auth: Cloudflare Worker OAuth proxy (`sveltia-cms-auth`), with a personal access token as a backup.
-  - Test the mobile login once at launch.
-- **Keep Lumen and Sveltia in sync:** same content paths and media folder. Add a CI check that fails if the Sveltia config drifts from the Zod schemas. No generator script needed.
-- **Workflow rule:** after any Sveltia edit, pull in Lumen before the next session.
-- Keystatic was rejected because its admin route needs a Node server, which GitHub Pages cannot run.
-
-## Case studies (key requirement)
-Case studies must show Josh's thought process, not just screenshots. The case study content comes from the Claude Design handover, so map it into the schema rather than rewriting it. Suggested schema fields: client, sector, summary, role, problem, research, decisions (with reasoning), iterations, outcome, screenshots (with captions), related work, live URL.
+## Working rules
+- The copy and design are Josh's. Change only what he asks for. If a request is ambiguous, ask rather than guess. Where he gives only a topic, draft the wording from his words, never invent facts, numbers or claims, and flag the draft for his review.
+- Case studies must show Josh's thought process, not just screenshots. Keep the structure: mandate, found, decisions, screens, build, results, next.
+- Work on `dev`. `/cm` commits in sensible commits and merges `dev` into `main`. `/md` runs the open tasks in the **Modifica** section of the Todoist project **Sito**. The **Conversione** section holds the remaining conversion tasks. Tick tasks off only once verified.
 
 ## Repository
-- Create a **private** GitHub repo called **Auxilia-v2** to hold the project during conversion (for example `gh repo create Auxilia-v2 --private --source=. --remote=origin`, or ask Josh to create it if `gh` is not authenticated). Push only to this repo.
-- Do not touch the current Auxilia repo or the live site.
-- Josh reviews everything offline. Only once he confirms the site is fully ready will he archive the current site and make Auxilia-v2 the main Auxilia repo. Do not rename, archive, publish or change DNS or Pages settings without his explicit instruction.
-- GitHub Pages from a private repo needs a paid GitHub plan. Build and test locally until the cut-over, and flag this to Josh if Pages is needed earlier.
+- The private GitHub repo `primusjm/Auxilia-v2` is `origin`. Push only there.
+- Do not touch `Auxilia-old` or the live site. Do not rename, archive, publish or change DNS or Pages settings without Josh's explicit instruction.
+- GitHub Pages from a private repo needs a paid plan. Build and test locally until the cut-over, and flag it to Josh if Pages is needed earlier.
 
-## Project management
-- **Todoist:** at the start, create a project called **Sito** for this work (check first that it does not already exist). Add one task per conversion step and per page or component, and tick them off as they are completed. Josh and Claude will use this project to go through the conversion together.
-- Longer term, tasks are also tracked in **Linear.app**, with sprints added to the **Things** app.
+## Stack
+- Astro 6, static output only, Tailwind without preflight, deployed to GitHub Pages by a GitHub Actions workflow.
+- Content Collections with Zod schemas in `src/content.config.ts`, the single source of truth for content structure. Copy lives in `src/content` (`work/*.md`, `pages/home.yaml`, `acquisti/*.yaml`, `settings`).
+- Styles are plain CSS in `src/styles/auxilia` and `src/styles/acquisti`, driven by CSS variables. Shared chrome behaviour is in `src/scripts`. The Acquisti pages are Preact islands.
+- Fonts (Bricolage Grotesque and Outfit) are self-hosted in `public/fonts`.
+- Theme: `data-theme` on the root, saved under `auxilia-theme-v2` (Auxilia) or `acquisti-theme-v1` (Acquisti), falling back to `prefers-color-scheme`.
+- Background and decisions: `docs/CONVERSION-NOTES.md`.
+
+## CMS
+- **Lumen CMS** (macOS app) is the main editor. It opens this folder and reads the Zod schemas.
+- **Sveltia CMS** at `public/admin/` is for quick fixes from a phone. `npm run check:cms` fails if its config drifts from the Zod schemas.
+- After any Sveltia edit, pull in Lumen before the next session. Setup and the pending OAuth proxy are in `docs/CMS-SETUP.md`.
+
+## Quality bar
+- Run `npm run build` before committing, and `npm run check:cms` when a schema or `public/admin/` changes.
+- Check changes at 1440 and 375 wide (Josh tests on an iPhone 13 mini), in light and dark. axe must stay clean, and text must meet WCAG AA contrast, including over images.
+- Respect `prefers-reduced-motion`.
 
 ## Style rules for all output
-- UK English.
-- Concise, direct prose.
-- No em dashes.
-- Markdown content that is simple to understand.
-
-## Suggested first steps
-0. Create the private Auxilia-v2 repo and the Sito project in Todoist (with tasks for the steps below).
-1. Scaffold Astro with Tailwind and the GitHub Pages deploy workflow.
-2. Define Zod collections (case studies, pages, services, endorsements).
-3. Build the layout, tokens and dark/light toggle from the Claude Design files.
-4. Convert each page and component from the handover into Astro, moving the final copy into content collections (Markdown and JSON) so Lumen and Sveltia can edit it. Check each page against the design for fidelity.
-5. Add Sveltia config, the OAuth proxy and the CI drift check.
-6. Accessibility, performance and SEO pass.
+- UK English, concise and direct, no em dashes.
+- Client-facing copy must not read as AI-generated.
