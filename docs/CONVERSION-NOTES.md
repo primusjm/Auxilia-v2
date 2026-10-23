@@ -128,3 +128,6 @@ Known limits:
 - Co-op Trust (appendix): the three audience cards use the boxed `mandate` style, like "The problem" cards in the Vehicle portal.
 - Appendix intros are now a card like the three smaller cards below them, and the photo fills it edge to edge on the top, left and bottom (across the top when stacked).
 - The Acquisti header icon no longer switches the theme. It is a plain link, and theme changes live on the footer buttons and in the accessibility menu.
+- The accessibility window opens and closes with the contact form's animation (a circle growing from the bottom-right corner, same timings). Both are driven by `src/styles/a11y.css` and `src/styles/auxilia/chrome.css`; keep them in step if either changes.
+- The page behind the image gallery (lightbox) is locked while it is open (`html.lb-open` in `chrome.css`, set from `chrome.ts`). The contact form, menu and accessibility window do not lock scrolling.
+
