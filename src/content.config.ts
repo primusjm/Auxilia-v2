@@ -246,6 +246,7 @@ const acqPrivacy = z.object({
       ),
     }),
   ),
+  /** Contact text accepts [link text](url) for links. */
   contact: z.object({ title: z.string(), text: z.string(), button: z.string() }),
   apple: z.string(),
 });
