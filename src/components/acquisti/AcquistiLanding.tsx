@@ -2,6 +2,7 @@
 // @ts-nocheck
 // Logic ported from the Claude Design prototype (React class) to Preact. The template is generated: see ./landing.template.tsx.
 import { Component, createRef, h } from 'preact';
+import './style-px';
 import countries from '../../data/countries.json';
 import template from './landing.template';
 
