@@ -180,6 +180,7 @@ screens:
     underline: true
   plates:
     - src: /assets/site/rlc-screen-home.webp
+      srcSmall: /assets/site/rlc-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
     - src: /assets/site/rlc-screen-impact.webp
