@@ -19,6 +19,8 @@ function heroRender() {
     $('[data-h-stat]')!.textContent = cur.stat;
     $('[data-h-stat-label]')!.textContent = cur.statLabel;
     $<HTMLAnchorElement>('[data-h-link]')!.href = cur.href;
+    const hi = $<HTMLAnchorElement>('[data-h-img-link]');
+    if (hi) hi.href = cur.href;
   }
   heroSegs.forEach((btn, i) => {
     const bar = btn.firstElementChild as HTMLElement;
@@ -84,6 +86,8 @@ function spotRender() {
   const l = $<HTMLAnchorElement>('[data-s-link]')!;
   l.href = c.href;
   l.setAttribute('aria-label', `Open ${c.client}`);
+  const si = $<HTMLAnchorElement>('[data-s-img-link]');
+  if (si) si.href = c.href;
 }
 if (rows.length) {
   rows.forEach((r, i) =>
