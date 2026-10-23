@@ -1,3 +1,4 @@
 /* Auxilia record: split from the Claude Design handover. */
 @media (max-width:860px){[data-sh-split]{grid-template-columns:minmax(0,1fr)!important;}[data-found-split]{grid-template-columns:minmax(0,1fr)!important;}[data-found-split] [data-plate]{aspect-ratio:3/2;}}
 [data-found-split] [data-plate] > img{position:absolute;inset:0;}
+@media (max-width:760px){[data-sh-split] > div:last-child{flex-direction:column;gap:16px!important;}}
