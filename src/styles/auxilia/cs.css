@@ -112,6 +112,9 @@ html.reveal-armed .is-in [data-mcard]:nth-child(3) [data-draw-ico] svg > *{anima
   #results figure:not([data-tq]) figcaption > span:last-child{grid-column:3;grid-row:1 / span 2;justify-self:end;align-self:center;margin-left:0!important;padding:6px 8px!important;font-size:10px!important;letter-spacing:.1em!important;}
   #results figure:not([data-tq]) figcaption > span:first-child{width:40px!important;height:40px!important;}
   #results figure:not([data-tq]) figcaption > span:nth-child(2) > span:first-child{font-size:16px!important;}
+  #results figure[data-tq] > div{flex-direction:row!important;align-items:flex-start;gap:12px!important;}
+  #results figure[data-tq] [data-tq-ico]{flex:none;width:40px!important;height:40px!important;}
+  #results figure[data-tq] blockquote{flex:1 1 0;min-width:0;text-wrap:wrap!important;}
 }
 
 @keyframes axBop{0%,78%,100%{transform:translate(0,0);}84%{transform:translate(4px,-4px);}90%{transform:translate(0,0);}94%{transform:translate(2px,-2px);}98%{transform:translate(0,0);}}
