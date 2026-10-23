@@ -26,6 +26,7 @@
 [data-theme="dark"] [data-facts] > div{border-color:var(--rule)!important;}
 [data-theme="dark"] [data-wash]{background:linear-gradient(180deg,rgba(165,160,255,.10) 0%,rgba(165,160,255,.03) 100%)!important;}
 [data-lb]{cursor:zoom-in;overflow:hidden;}
+html:not([data-theme="dark"]) [data-plate][data-lb]{background:color-mix(in srgb,var(--brand-wash) 75%,#fff);}
 [data-lb] image-slot{transition:transform .8s cubic-bezier(.2,.7,.2,1);}
 [data-lb]:hover image-slot{transform:scale(1.025);}
 @keyframes lbIn{from{opacity:0;}to{opacity:1;}}
