@@ -79,3 +79,9 @@ html.reveal-armed .is-in [data-mcard]:nth-child(3) [data-draw-ico] svg > *{anima
 }
 [data-theme="dark"] [data-hero-facts]{border-top-color:#7A6EFF!important;}
 [data-theme="dark"] [data-hero-facts] > div{border-left-color:rgba(238,240,255,.2)!important;}
+
+/* Build cards on phones: the text fills the card width instead of being balanced into short lines. */
+@media (max-width:680px){
+  #build [data-bcard] p{text-wrap:wrap!important;}
+}
+
