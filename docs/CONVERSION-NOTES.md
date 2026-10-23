@@ -73,3 +73,24 @@ Known intentional differences from the prototype:
   - Heading order on the appendix studies (an h3 under the tab panel with no h2).
   - Acquisti FAQ rows: question 5 has a link inside a `role="button"` row (nested interactive). Fixing means restructuring the accordion.
 - Not run: Lighthouse, and a keyboard-only walkthrough. Both are best done locally.
+
+## Design calls, keyboard and Lighthouse pass
+
+Design calls resolved:
+- Appendix studies: a visually hidden `h2` (the `tablistLabel` copy) sits above the tab panels, so the project `h3`s have a parent heading.
+- Appendix tabs at 680px and below: the tab row scrolls sideways, tabs keep their natural width and are 44pt tall, and the active tab scrolls into view.
+- Acquisti FAQ: each question is a real `button` with `aria-expanded`/`aria-controls`; closed answers are `inert`. The "Leave a review" link no longer sits inside a button.
+- RLC dark: the quote initials badge uses `--brand-text` (same as `--brand` in light) to reach 4.5:1.
+
+Other fixes found while testing:
+- Acquisti features tour rows were mouse and touch only. They are now focusable and work with Enter and Space.
+- Contact dialog now moves focus into the form, keeps Tab inside it and returns focus on close.
+- Accessible-name fixes: home case study tiles (name now comes from visible text, image alt emptied) and the Acquisti logo link.
+- Fonts are self-hosted from `public/fonts` (Bricolage Grotesque with opsz and wght axes, Outfit with wght; Latin and Latin Extended; SIL OFL, licences alongside). `src/styles/fonts.css` holds the `@font-face` rules and both layouts preload the two Latin files. No request goes to Google. Metric-matched fallback faces (`Outfit Fallback`, `Bricolage Grotesque Fallback`, sized against Arial) follow the web fonts in every font stack, so the swap does not shift the layout. Vietnamese is not included.
+- Acquisti privacy page: its responsive CSS used to be injected by the component at mount, so the server-rendered page painted the desktop layout first and reflowed on hydration (CLS 0.4). The rules now live in `src/styles/acquisti/privacy.css`.
+- Footer testimonial dots: hit area is 24px (44 x 24 for the active one). The visible gap between dots is 16px instead of 8px.
+- Result (Lighthouse, mobile, simulated slow 4G, built site): performance 89-95, accessibility 96-100, best practice and SEO 100, CLS 0 on the pages sampled. Desktop 99-100. Britam mobile accessibility shows 96 only because the timeline steps are deliberately dimmed until scrolled to; at full progress they pass.
+
+Verification: axe (WCAG 2.0 to 2.2 AA plus best practice) across all 16 pages, light and dark, 1440 and 390 wide, reduced motion: no findings. Lighthouse accessibility, best practice and SEO scores are 93-100 on the pages sampled.
+
+Known gap: the footer testimonial dots meet WCAG 2.2 (24px) but not Apple's 44pt.
