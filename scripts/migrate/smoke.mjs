@@ -48,7 +48,7 @@ ok('hero seg click',(await p.textContent('[data-h-label]')).includes('Inuka'));
 await p.click('[data-spot-row="3"]');await p.waitForTimeout(200);
 ok('spot row click',(await p.textContent('[data-s-meta]')).includes('AHFIA'));
 // case study lightbox
-await p.goto('http://localhost:4321/work/gric',{waitUntil:'networkidle'});await p.waitForTimeout(3500);
+await p.goto('http://localhost:4321/case-study/gric',{waitUntil:'networkidle'});await p.waitForTimeout(3500);
 await p.evaluate(()=>document.querySelector('[data-lb="0"]').scrollIntoView());
 await p.click('[data-lb="0"]');await p.waitForTimeout(400);
 ok('lightbox opens',await p.locator('[data-lb-root]').isVisible());

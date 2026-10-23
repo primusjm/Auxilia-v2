@@ -74,13 +74,13 @@ trusted:
       srPrefix: '2'
   clients:
     - name: Britam
-      href: /work/britam
+      href: /case-study/britam
       external: false
     - name: Co-op Bank
-      href: /work/coop-bank
+      href: /case-study/coop-bank
       external: false
     - name: Kenya Power
-      href: /work/kenya-power
+      href: /case-study/kenya-power
       external: false
     - name: Kenya Pipeline
       href: https://www.kpc.co.ke/
