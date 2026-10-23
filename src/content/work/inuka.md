@@ -146,13 +146,14 @@ screens:
     href: https://iaf.worldvision.or.ke/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/inuka-screen-home.webp
+      srcSmall: /assets/site/inuka-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/inuka-screen-pledge.webp
       alt: 'Screen: birthday pledges'
       caption: birthday pledges
-    - src: /assets/sfa/hero.webp
+    - src: /assets/site/inuka-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
