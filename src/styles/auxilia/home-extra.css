@@ -10,3 +10,6 @@
 .ax-hseg-cur{position:absolute;inset:0;background:#3B28FF;transform-origin:left;animation:hoDrain 4.5s linear forwards;}
 .paused .ax-hseg-cur,.paused .ax-spot-bar{animation-play-state:paused;}
 [data-spot-m]:not([data-on]){display:none!important;}
+/* Phones: the record autoplay starts only once the list has scrolled into view. */
+@media (max-width:760px){[data-spot-row] .ax-spot-bar{animation-play-state:paused;}[data-in-view] > [data-spot-row] .ax-spot-bar{animation-play-state:running;}}
+

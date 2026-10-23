@@ -89,6 +89,11 @@ function spotRender() {
   const si = $<HTMLAnchorElement>('[data-s-img-link]');
   if (si) si.href = c.href;
 }
+// On phones the record autoplay waits until the list is on screen (the CSS pauses the drain bar until then).
+const spotList = rows[0]?.parentElement;
+if (spotList && 'IntersectionObserver' in window) {
+  new IntersectionObserver(([e]) => spotList.toggleAttribute('data-in-view', e.isIntersecting), { threshold: 0.25 }).observe(spotList);
+} else spotList?.setAttribute('data-in-view', '');
 if (rows.length) {
   rows.forEach((r, i) =>
     r.addEventListener('click', () => {
