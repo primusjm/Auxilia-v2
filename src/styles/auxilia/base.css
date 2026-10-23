@@ -371,3 +371,8 @@ html.ax-leaving [data-loader]{animation:ldClose .7s cubic-bezier(.7,0,.2,1) forw
   [data-ft-dots]{justify-content:center!important;}
 }
 
+/* Footer testimonials on phones: the lines fill the card width instead of being balanced short. */
+@media (max-width:760px){
+  [data-ft-quotes] .ax-q > span{text-wrap:wrap!important;}
+}
+
