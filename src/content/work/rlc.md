@@ -152,11 +152,11 @@ logo:
   intro: A new site deserved a logo that said what RLC does, **not just who it is.**
   note: Before and after
   beforeAfter:
-    - src: ''
-      alt: The previous RLC logo
+    - src: /assets/rlc/logo-before.webp
+      alt: The previous RLC logo, a green arched mark above the words Collective Rising Leadership Institute
       caption: 'before: the previous logo'
-    - src: ''
-      alt: The new RLC logo
+    - src: /assets/rlc/logo-after.webp
+      alt: The new Rising Leaders Center logo, four birds in green, teal, blue and amber rising beside the name
       caption: '**after: the new logo**'
   cards:
     - label: Why change it
@@ -166,9 +166,9 @@ logo:
     - label: How we got there
       text: Options were tested with the RLC team against their own needs, **one audience at a time**, until one direction held for funders, leaders and alumni alike.
   system:
-    src: ''
-    alt: 'The logo in use: site header, social, print, colour and clear-space'
-    caption: the logo in use, across site, social and print
+    src: /assets/rlc/logo-in-use.webp
+    alt: 'The new logo in use on merchandise: a tote bag, navy T-shirt, mug, water bottle, cap and notebook'
+    caption: the logo in use, on merchandise
 screens:
   tab: The screens
   title: The pages that ==carry the story.==
