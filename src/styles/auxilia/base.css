@@ -365,7 +365,7 @@ html.ax-leaving [data-loader]{animation:ldClose .7s cubic-bezier(.7,0,.2,1) forw
 
 /* Footer on phones: everything is centred, like the Acquisti home page. */
 @media (max-width:760px){
-  [data-ft-head]{flex-direction:column;justify-content:center!important;align-items:center!important;gap:12px!important;text-align:center;}
+  [data-ft-head]{flex-wrap:nowrap!important;justify-content:space-between!important;align-items:center!important;gap:12px!important;}
   [data-ft-lede]{text-align:center;margin-left:auto!important;margin-right:auto!important;}
   [data-ft-quotes]{text-align:center;}
   [data-ft-dots]{justify-content:center!important;}
@@ -376,3 +376,6 @@ html.ax-leaving [data-loader]{animation:ldClose .7s cubic-bezier(.7,0,.2,1) forw
   [data-ft-quotes] .ax-q > span{text-wrap:wrap!important;}
 }
 
+
+/* Footer logo on phones: larger than the desktop mark. */
+@media (max-width:760px){[data-ft-logo] svg{width:152px!important;height:auto!important;}}
