@@ -86,7 +86,6 @@ export default class AcquistiPrivacy extends Component<any, any> {
       ...this._menuVals(),
       pdata: this.props.data,
       theme,
-      logoTheme: (e) => { e.preventDefault(); this._theme(theme === 'dark' ? 'light' : 'dark'); },
       toggleTheme: () => this._theme(theme === 'dark' ? 'light' : 'dark'),
       setLight: () => this._theme('light'), setDark: () => this._theme('dark'),
       isLight: theme === 'light', isDark: theme === 'dark',

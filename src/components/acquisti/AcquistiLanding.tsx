@@ -246,7 +246,7 @@ export default class AcquistiLanding extends Component<any, any> {
       pause: () => this.setState({ paused: true }),
       resume: () => this.setState({ paused: false }),
       fStopped: !!this.state.fStop, fToggle: () => this.setState(s => ({ fStop: !s.fStop })), fToggleCard: (e) => { e.stopPropagation(); this.setState(s => ({ fStop: !s.fStop })); }, fBtnText: this.state.fStop ? 'Play' : 'Pause', fBtnLabel: this.state.fStop ? 'Play feature tour' : 'Pause feature tour', fIco: this.state.fStop ? 'M8 5.5v13l11-6.5z' : 'M7 5h3.5v14H7zM13.5 5H17v14h-3.5z',
-      toggleTheme: () => this._theme(dark ? 'light' : 'dark'), logoTheme: (e) => { e.preventDefault(); this._theme(dark ? 'light' : 'dark'); },
+      toggleTheme: () => this._theme(dark ? 'light' : 'dark'),
       setLight: () => this._theme('light'),
       setDark: () => this._theme('dark'),
       lightBg: dark ? 'transparent' : '#3B28FF', lightInk: dark ? 'var(--soft)' : '#FFFFFF',
