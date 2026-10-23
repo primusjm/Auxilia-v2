@@ -174,7 +174,7 @@ export default class AcquistiLanding extends Component<any, any> {
     const fc = !!this.state.fClosed;
     const features = feats.map((f, i) => { const open = i === a && !fc; return {
       l: `/acquisti/assets/acquisti/${f[2]}-light.webp`, d: `/acquisti/assets/acquisti/${f[2]}-dark.webp`, title: f[0], body: f[1], rows: open ? '1fr' : '0fr', op: open ? 1 : 0,
-      bg: open ? 'var(--surface)' : 'var(--feat-pill)', pbd: 'var(--rule)', w: open ? '100%' : 'fit-content',
+      bg: 'var(--surface)', pbd: 'var(--rule)', w: open ? '100%' : 'fit-content',
       rot: open ? 'rotate(45deg)' : 'none',
       bd: open ? '#3B28FF' : 'var(--ink)',
       dot: open ? '#3B28FF' : 'transparent',
