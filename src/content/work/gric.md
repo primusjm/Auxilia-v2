@@ -146,13 +146,14 @@ screens:
     href: https://learning.gricafrica.org/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/gric-screen-home.webp
+      srcSmall: /assets/site/gric-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/gric-screen-lesson.webp
       alt: 'Screen: a lesson'
       caption: a lesson in progress
-    - src: /assets/stock/photo-1515657241610-a6b33f0f6c5a.webp
+    - src: /assets/site/gric-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
