@@ -71,3 +71,15 @@ html.reveal-armed .is-in [data-mcard] [data-draw-ico] svg > *{animation:mcDraw 1
 html.reveal-armed .is-in [data-mcard]:nth-child(2) [data-draw-ico] svg > *{animation-delay:.45s!important;}
 html.reveal-armed .is-in [data-mcard]:nth-child(3) [data-draw-ico] svg > *{animation-delay:.7s!important;}
 @media (prefers-reduced-motion:reduce){[data-mcard] [data-draw-ico] svg > *{animation:none!important;stroke-dasharray:none!important;stroke-dashoffset:0!important;}}
+
+/* Case study hero: full-bleed photo that fades into the page from the bottom. */
+[data-theme="dark"] [data-hero] > img{filter:none!important;}
+/* The fade is a little denser than the first design pass (the 40% stop goes from 72% to 85% in light, the 45% stop from .55 to .75 in dark) so the subtitle reaches 4.5:1 over every hero photo. Phones get a denser fade again, because the wrapped headline pushes the text up the photo. */
+[data-hero-wash]{background:linear-gradient(0deg,var(--paper) 0%,color-mix(in srgb,var(--paper) 85%,transparent) 40%,color-mix(in srgb,var(--paper) 45%,transparent) 72%,transparent 100%);}
+[data-theme="dark"] [data-hero-wash]{background:linear-gradient(0deg,#0A0E24 0%,rgba(10,14,36,.75) 45%,rgba(10,14,36,.3) 100%);}
+@media (max-width:680px){
+  [data-hero-wash]{background:linear-gradient(0deg,var(--paper) 0%,color-mix(in srgb,var(--paper) 88%,transparent) 55%,color-mix(in srgb,var(--paper) 55%,transparent) 80%,transparent 100%);}
+  [data-theme="dark"] [data-hero-wash]{background:linear-gradient(0deg,#0A0E24 0%,rgba(10,14,36,.88) 55%,rgba(10,14,36,.55) 80%,rgba(10,14,36,.3) 100%);}
+}
+[data-theme="dark"] [data-hero-facts]{border-top-color:#7A6EFF!important;}
+[data-theme="dark"] [data-hero-facts] > div{border-left-color:rgba(238,240,255,.2)!important;}

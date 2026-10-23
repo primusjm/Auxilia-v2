@@ -94,3 +94,16 @@ Other fixes found while testing:
 Verification: axe (WCAG 2.0 to 2.2 AA plus best practice) across all 16 pages, light and dark, 1440 and 390 wide, reduced motion: no findings. Lighthouse accessibility, best practice and SEO scores are 93-100 on the pages sampled.
 
 Known gap: the footer testimonial dots meet WCAG 2.2 (24px) but not Apple's 44pt.
+
+## Case study hero redesign
+
+All 13 case study heroes (10 records, 3 appendix pages) follow the new Claude Design hero: a full-bleed photo at full opacity that fades into the page from the bottom, with the eyebrow, headline, subtitle and (records only) the facts row at the bottom. `RecordStudy.astro` and `AppendixStudy.astro` hold the markup, `src/styles/auxilia/cs.css` the dark mode rules and the fade gradients. The subtitle is the existing `hero.lead` field with the new shorter copy. Headline emphasis uses `--brand-text`, so it lightens in dark mode.
+
+Deviations from the design instructions:
+- The fade is denser than specified: the 40% stop goes from 72% to 85% paper in light, and the 45% stop from .55 to .75 in dark. With the original stops the subtitle fell below 4.5:1 over several photos. Phones (680px and below) use a denser fade again, because the wrapped headline pushes the text up the photo.
+- Appendix pages keep their bottom padding under the subtitle, since they have no facts row.
+
+Known limits:
+- The small eyebrow (brand colour, 11.5px) is below 4.5:1 over busy parts of many photos, as in the original design. A denser fade fixes it everywhere but washes out the photos.
+- The page meta description is built from `hero.lead`, so it is now one short sentence. A dedicated `description` field would be better for search.
+- `britam/hero.webp` is pale and only 1000px wide, so its hero barely shows the photo.
