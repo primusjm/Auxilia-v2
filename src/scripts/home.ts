@@ -2,7 +2,7 @@
 const de = document.documentElement;
 const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => r.querySelector<T>(s);
 const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => Array.from(r.querySelectorAll<T>(s));
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reduce = (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'));
 
 /* ---------- Hero proof slideshow (4.5s a slide) ---------- */
 type Slide = { client: string; year: string; stat: string; statLabel: string; href: string };

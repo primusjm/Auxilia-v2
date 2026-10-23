@@ -2,6 +2,7 @@
 import '../styles/fonts.css';
 import '../styles/acquisti/base.css';
 import '../styles/acquisti/states.css';
+import '../styles/a11y.css';
 
 interface Props {
   title: string;
@@ -36,6 +37,13 @@ const og = new URL(ogImage, Astro.site).href;
         try { t = localStorage.getItem('acquisti-theme-v1'); } catch (e) {}
         if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
         document.documentElement.setAttribute('data-theme', t);
+        // Accessibility preferences, shared by both sites (see src/scripts/a11y.ts).
+        var p = {};
+        try { p = JSON.parse(localStorage.getItem('auxilia-a11y-v1') || '{}') || {}; } catch (e) {}
+        var c = document.documentElement.classList;
+        if (p.size === 1 || p.size === 2) c.add('a11y-size-' + p.size);
+        if (p.font === 'plain' || p.font === 'dyslexic') c.add('a11y-font-' + p.font);
+        ['contrast', 'links', 'nobold', 'spacing', 'motion'].forEach(function (k) { if (p[k]) c.add('a11y-' + k); });
       })();
     </script>
   </head>
@@ -44,6 +52,7 @@ const og = new URL(ogImage, Astro.site).href;
     <script>
       import '../scripts/nav';
       import '../scripts/acquisti-footer';
+      import '../scripts/a11y';
     </script>
   </body>
 </html>

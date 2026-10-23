@@ -7,7 +7,8 @@ import './nav';
 const de = document.documentElement;
 const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => r.querySelector<T>(s);
 const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => Array.from(r.querySelectorAll<T>(s));
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+// The saved Reduce motion choice (src/scripts/a11y.ts) counts as well as the system setting.
+const reduce = (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'));
 
 initThemeButtons('auxilia-theme-v2');
 

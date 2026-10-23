@@ -1,0 +1,57 @@
+/* Accessibility menu, shared by Auxilia and Acquisti. Preferences are classes on <html>, set before first paint
+   by the inline script in each layout and changed by src/scripts/a11y.ts. */
+@font-face{font-family:'OpenDyslexic';font-style:normal;font-display:swap;font-weight:400;src:url(/fonts/opendyslexic-latin-400-normal.woff2) format('woff2');}
+@font-face{font-family:'OpenDyslexic';font-style:normal;font-display:swap;font-weight:700;src:url(/fonts/opendyslexic-latin-700-normal.woff2) format('woff2');}
+
+/* ---------- Preferences ---------- */
+html.a11y-size-1{--a11y-z:1.125;}
+html.a11y-size-2{--a11y-z:1.25;}
+html.a11y-size-1 body,html.a11y-size-2 body{zoom:var(--a11y-z);}
+html.a11y-font-plain *{font-family:Arial,Helvetica,sans-serif!important;}
+html.a11y-font-dyslexic *{font-family:'OpenDyslexic',Arial,sans-serif!important;}
+html.a11y-nobold *{font-weight:400!important;}
+html.a11y-links a{text-decoration:underline!important;text-decoration-thickness:1px!important;text-underline-offset:.18em!important;}
+html.a11y-spacing body :is(p,li,dd,dt,blockquote,figcaption,h1,h2,h3,h4,h5,h6,a,span,button,label,td,th,input,textarea){letter-spacing:.12em!important;word-spacing:.16em!important;line-height:1.6!important;}
+/* Autoplay timers (progress bars that advance on animationend) pause rather than finish at once. */
+html.a11y-motion :is(.ax-hseg-cur,.ax-spot-bar,[data-fbar]){animation-play-state:paused!important;}
+html.a11y-motion *:not(.ax-hseg-cur,.ax-spot-bar,[data-fbar]),html.a11y-motion *::before,html.a11y-motion *::after{animation-duration:.001ms!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important;scroll-behavior:auto!important;}
+html.a11y-motion [data-loader]{display:none!important;}
+html.a11y-motion [data-reveal]{opacity:1!important;transform:none!important;}
+html.a11y-contrast[data-theme="light"]{--ink-soft:#14130F;--ink-faint:#14130F;--soft:#14130F;--faint:#14130F;--rule:rgba(20,19,15,.5);}
+html.a11y-contrast[data-theme="dark"]{--ink-soft:#FFFFFF;--ink-faint:#FFFFFF;--soft:#FFFFFF;--faint:#FFFFFF;--ink:#FFFFFF;--rule:rgba(255,255,255,.5);}
+html.a11y-contrast #contact,html.a11y-contrast [data-pfoot]{--ft-soft:var(--ft-ink);--ct-soft:var(--ct-ink);--ft-line:var(--ft-line-strong);}
+
+/* ---------- Footer button ---------- */
+[data-ft-a11y]{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid var(--ft-line-strong);background:transparent;color:var(--ft-ink);cursor:pointer;transition:background .3s ease,color .3s ease;}
+[data-ft-a11y]:hover,[data-ft-a11y][aria-expanded="true"]{background:var(--ft-ghost-hover,rgba(59,40,255,.08));color:var(--ft-ink);}
+
+/* ---------- Panel ---------- */
+.a11y-scrim{position:fixed;inset:0;z-index:140;background:rgba(9,8,28,.35);opacity:0;transition:opacity .45s ease;pointer-events:none;}
+.a11y-scrim.is-open{opacity:1;pointer-events:auto;}
+.a11y-panel{position:fixed;right:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);z-index:150;/* The panel zooms with the page, so its limits are scaled back to fit the screen. */width:min(420px,calc((100vw - 24px) / var(--a11y-z,1)));max-height:calc((100vh - 24px) / var(--a11y-z,1));max-height:calc((100dvh - 24px) / var(--a11y-z,1));overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box;background:var(--paper);color:var(--ink);border:1px solid var(--rule);box-shadow:0 40px 80px -30px rgba(10,9,32,.55);font-family:'Outfit','Outfit Fallback',sans-serif;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s linear .5s;}
+.a11y-panel.is-open{opacity:1;visibility:visible;transform:none;transition:opacity .35s ease,transform .5s cubic-bezier(.2,.7,.2,1),visibility 0s;}
+.a11y-panel *{box-sizing:border-box;}
+.a11y-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px 0 24px;}
+.a11y-head h2{margin:0;font-family:'Bricolage Grotesque','Bricolage Grotesque Fallback',sans-serif;font-weight:500;font-size:22px;line-height:1.2;letter-spacing:-0.015em;}
+.a11y-close{flex:none;width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;padding:0;}
+.a11y-close:hover{background:var(--brand-wash);}
+.a11y-intro{margin:8px 24px 0;font-size:14.5px;line-height:1.55;color:var(--ink-soft,var(--soft));}
+.a11y-body{padding:8px 24px 24px;}
+.a11y-group{padding:16px 0;border-bottom:1px solid var(--rule);}
+.a11y-label{display:block;margin:0 0 10px;font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand-text);}
+.a11y-seg{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);border:1px solid var(--rule);}
+.a11y-seg button{min-height:44px;padding:8px 10px;border:0;border-left:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:14px;line-height:1.25;cursor:pointer;}
+.a11y-seg button:first-child{border-left:0;}
+.a11y-seg button:hover{background:var(--brand-wash);}
+.a11y-seg button[aria-pressed="true"]{background:#3B28FF;color:#FFFFFF;}
+.a11y-row{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:52px;padding:4px 0;border:0;border-bottom:1px solid var(--rule);background:transparent;color:var(--ink);font:inherit;font-size:15px;line-height:1.35;text-align:left;cursor:pointer;}
+.a11y-row:last-child{border-bottom:0;}
+.a11y-row small{display:block;margin-top:2px;font-size:13px;color:var(--ink-soft,var(--soft));}
+.a11y-switch{flex:none;position:relative;width:44px;height:26px;border:1.5px solid var(--ink);background:transparent;transition:background .25s ease,border-color .25s ease;}
+.a11y-switch::after{content:"";position:absolute;top:3px;left:3px;width:17px;height:17px;background:var(--ink);transition:transform .25s cubic-bezier(.2,.7,.2,1),background .25s ease;}
+.a11y-row[aria-checked="true"] .a11y-switch{background:#3B28FF;border-color:#3B28FF;}
+.a11y-row[aria-checked="true"] .a11y-switch::after{background:#FFFFFF;transform:translateX(18px);}
+.a11y-reset{margin-top:18px;min-height:44px;padding:0 16px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-weight:600;font-size:12px;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;}
+.a11y-reset:hover{background:var(--ink);color:var(--paper);}
+.a11y-panel :focus-visible{outline:2px solid var(--brand-text);outline-offset:2px;}
+@media (prefers-reduced-motion:reduce){.a11y-panel,.a11y-panel.is-open,.a11y-scrim{transition:none;}}

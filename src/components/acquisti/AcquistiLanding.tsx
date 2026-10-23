@@ -100,17 +100,17 @@ export default class AcquistiLanding extends Component<any, any> {
     this._fMeasure = () => { const el = document.querySelector('[data-flist]'); if (!el) return; if (window.innerWidth <= 640) { el.style.height = ''; el.style.removeProperty('--fbw'); return; } const cards = [...el.children].filter(c => c.querySelector('[data-fbody]')); if (!cards.length) return; const openW = Math.min(560, el.clientWidth) - 36 - 50; const probe = document.createElement('div'); probe.style.cssText = 'position:absolute;left:-9999px;top:0;visibility:hidden;width:' + openW + 'px;'; document.body.appendChild(probe); let base = 0, max = 0; cards.forEach(c => { const b = c.querySelector('[data-fbody]'); base += c.offsetHeight - b.clientHeight; const q = b.firstElementChild.cloneNode(true); q.style.marginLeft = '0'; probe.innerHTML = ''; probe.appendChild(q); probe.appendChild(b.lastElementChild.cloneNode(true)); max = Math.max(max, probe.offsetHeight); }); probe.remove(); const gap = parseFloat(getComputedStyle(el).rowGap) || 0; el.style.setProperty('--fbw', openW + 'px'); el.style.height = Math.ceil(base + max + gap * (cards.length - 1) + 4) + 'px'; };
     this._fMeasureT = () => { clearTimeout(this._fmT); this._fmT = setTimeout(this._fMeasure, 150); };
     window.addEventListener('resize', this._fMeasureT); setTimeout(this._fMeasure, 50); if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => this._fMeasure());
-    this._sHov = (e) => { const c = e.target.closest && e.target.closest('[data-grid3] > div'); if (!c || c.contains(e.relatedTarget) || !c.querySelector('[data-sico]')) return; if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return; c.querySelectorAll('[data-sico] svg *').forEach((p, k) => p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 1000, delay: k * 90, easing: 'cubic-bezier(.6,0,.3,1)', fill: 'backwards' })); };
+    this._sHov = (e) => { const c = e.target.closest && e.target.closest('[data-grid3] > div'); if (!c || c.contains(e.relatedTarget) || !c.querySelector('[data-sico]')) return; if ((window.matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'))) return; c.querySelectorAll('[data-sico] svg *').forEach((p, k) => p.animate([{ strokeDashoffset: 1 }, { strokeDashoffset: 0 }], { duration: 1000, delay: k * 90, easing: 'cubic-bezier(.6,0,.3,1)', fill: 'backwards' })); };
     document.addEventListener('mouseover', this._sHov);
     this._tmStart();
-    if (!(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    if (!(window.matchMedia && (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion')))) {
       const cyc = (side, delay) => setTimeout(() => { const run = () => { this.setState(s => ({ ['hcV' + side]: false })); this._hcT[side + 'b'] = setTimeout(() => this.setState(s => ({ ['hc' + side]: ((s['hc' + side] || 0) + 1) % 4, ['hcV' + side]: true })), 500); };
         run(); this._hcT[side] = setInterval(run, 4200); }, delay);
       this._hcT = {}; this._hcT.l0 = cyc('L', 3000); this._hcT.r0 = cyc('R', 5100);
     } document.addEventListener('mousedown', this._ccDoc);
     if (location.hash === '#feedback') setTimeout(() => { const el = document.getElementById('contact'); if (el) window.scrollTo({ top: el.offsetTop, behavior: 'auto' }); this.openContact(); }, 300);
     this._startQuotes(); window.addEventListener('scroll', this._onScrollM, { passive: true }); this._onScrollM(); document.addEventListener('keydown', this._onKey); document.addEventListener('mousedown', this._fbDoc);
-    const reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduce = window.matchMedia && (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'));
     this.reveal = () => {
       const root = this.rootEl; if (!root) return;
       const lim = window.innerHeight - 40;
@@ -128,7 +128,8 @@ export default class AcquistiLanding extends Component<any, any> {
     const t0 = performance.now();
     const tick = (t) => {
       const el = this.phoneEl;
-      if (el) {
+      if (el && document.documentElement.classList.contains('a11y-motion')) { el.style.transform = ''; if (this.chipWrapEl) this.chipWrapEl.style.transform = ''; }
+      else if (el) {
         const small = window.innerWidth < 900 ? 0.45 : 1;
         this.amp += (small - this.amp) * 0.05;
         const s = (t - t0) / 1000;
@@ -150,9 +151,10 @@ export default class AcquistiLanding extends Component<any, any> {
     this._fT = setTimeout(() => { w.style.transition = ''; w.style.height = ''; this._fAnim = false; this._fh = w.firstElementChild ? w.firstElementChild.offsetHeight : to; }, 600);
   }
   _tmStart() {
-    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia && (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'))) return;
     let x = 0, v = 38, hx = 0, hv = 38, last = performance.now();
-    const step = (t) => { const dt = Math.min(0.05, (t - last) / 1000); last = t; const el = this._tmEl;
+    const step = (t) => { if (document.documentElement.classList.contains('a11y-motion')) { last = t; this._tmRaf = requestAnimationFrame(step); return; }
+      const dt = Math.min(0.05, (t - last) / 1000); last = t; const el = this._tmEl;
       if (el) { const target = this._tmHover ? 12 : 38; v += (target - v) * Math.min(1, dt * (this._tmHover ? 1.1 : 1.6)); const half = el.scrollWidth / 2; x += v * dt; if (half > 0 && x >= half) x -= half; el.style.transform = 'translateX(' + (x - half) + 'px)'; }
       const hl = this._hlEl; if (hl) { const tg = this._hlHover ? 12 : 38; hv += (tg - hv) * Math.min(1, dt * (this._hlHover ? 1.1 : 1.6)); const hh = hl.scrollWidth / 2; hx += hv * dt; if (hh > 0 && hx >= hh) hx -= hh; hl.style.transform = 'translateX(' + (-hx) + 'px)'; }
       this._tmRaf = requestAnimationFrame(step); };
@@ -173,7 +175,7 @@ export default class AcquistiLanding extends Component<any, any> {
     const feats = this.props.data.features.items.map((f) => [f.title, f.body, f.image, f.chipLabel, f.chipValue, f.caption]);
     const cur = feats[a][2];
     const next = () => this.setState(s => ({ active: (s.active + 1) % feats.length }));
-    const bar = h('div', { key: 'bar' + a, onAnimationEnd: next, style: { height: '100%', background: '#3B28FF', transformOrigin: '0 50%', animation: `acqProg ${dur}s linear forwards`, animationPlayState: (this.state.paused || this.state.fStop || this.state.fClosed || !this.state.fSeen || !this.state.fIn) ? 'paused' : 'running' } });
+    const bar = h('div', { key: 'bar' + a, 'data-fbar': '', onAnimationEnd: next, style: { height: '100%', background: '#3B28FF', transformOrigin: '0 50%', animation: `acqProg ${dur}s linear forwards`, animationPlayState: (this.state.paused || this.state.fStop || this.state.fClosed || !this.state.fSeen || !this.state.fIn) ? 'paused' : 'running' } });
     const fc = !!this.state.fClosed;
     const features = feats.map((f, i) => { const open = i === a && !fc; return {
       l: `/acquisti/assets/acquisti/${f[2]}-light.webp`, d: `/acquisti/assets/acquisti/${f[2]}-dark.webp`, title: f[0], body: f[1], rows: open ? '1fr' : '0fr', op: open ? 1 : 0,

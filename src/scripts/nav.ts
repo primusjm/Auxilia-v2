@@ -2,7 +2,7 @@
 // Ported from the prototype's inline nav script. Reset on pageshow so bfcache pages are not left covered.
 import { prefetch } from 'astro:prefetch';
 const de = document.documentElement;
-const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const rm = (matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('a11y-motion'));
 
 function setPoint(x: number, y: number) {
   de.style.setProperty('--mx', x + 'px');
