@@ -69,7 +69,7 @@ trusted:
       srPrefix: '6'
     - value: '2'
       icon: ic2de851
-      iconStyle: paper
+      iconStyle: brand
       text: corporations under public scrutiny
       srPrefix: '2'
   clients:
