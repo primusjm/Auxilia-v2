@@ -62,3 +62,14 @@
   [data-tabgrid] > div:last-child{padding-right:76px!important;}
   [data-tabgrid] [role="tab"]{min-height:44px;white-space:nowrap;}
 }
+
+/* Split project intro: a photo with a soft shadow inside the grid, the heading beside it. Stacks on narrow screens. */
+[data-apx-intro]{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);align-items:center;padding-top:clamp(28px,3.6vw,46px);margin:0 0 clamp(28px,3.6vw,46px);}
+[data-apx-intro-img]{position:relative;box-shadow:0 2px 4px rgba(10,9,32,.06),0 28px 56px -28px rgba(10,9,32,.38);}
+[data-theme="dark"] [data-apx-intro-img]{box-shadow:0 2px 4px rgba(0,0,0,.3),0 28px 56px -24px rgba(0,0,0,.75);}
+[data-apx-intro-img] img{display:block;width:100%;height:clamp(300px,32vw,480px);object-fit:cover;}
+[data-apx-intro-text]{display:flex;flex-direction:column;justify-content:center;gap:16px;}
+@media (max-width:860px){
+  [data-apx-intro]{grid-template-columns:minmax(0,1fr);gap:24px;padding-top:24px;}
+  [data-apx-intro-img] img{height:auto;aspect-ratio:3/2;}
+}
