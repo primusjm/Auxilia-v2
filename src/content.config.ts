@@ -60,7 +60,8 @@ const record = z.object({
   screens: z.object({
     ...head,
     link: z.object({ href: z.string().url(), text: z.string(), underline: z.boolean().optional() }),
-    plates: z.array(z.object({ src: z.string(), alt: z.string(), caption: z.string() })),
+    /** `srcSmall` is an optional squarer image used below 560px wide, where the plate crops a wide image's sides. */
+    plates: z.array(z.object({ src: z.string(), srcSmall: z.string().optional(), alt: z.string(), caption: z.string() })),
   }),
   build: z.object({ ...head, note: z.string(), cards: z.array(z.object({ icon, label: z.string(), text: rich })) }),
   results: z.object({

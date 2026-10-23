@@ -18,6 +18,9 @@ const nums: Record<string, string> = {};
 const wrap = 'max-width:1240px;margin:0 auto;padding:clamp(32px,4.2vw,60px) clamp(20px,4vw,44px);';
 const plateCap = "font-family:'Outfit','Outfit Fallback',sans-serif;font-weight:500;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint);";
 const quoteCardStyle = 'position:relative;overflow:hidden;isolation:isolate;margin:0;padding:clamp(20px,2.4vw,28px);background:var(--surface);border:1px solid var(--rule);border-top:2px solid var(--brand);display:flex;flex-direction:column;justify-content:space-between;gap:22px;';
+// Below this width the screens plates switch to a plate's `srcSmall`, if it has one. The screens
+// images are anchored to the top, so a wide, short plate crops only the bottom of a window.
+const smallPlate = '(max-width: 560px)';
 const lbCaps: string[] = (d.screens?.plates ?? []).map((p: any) => p.caption);
 ---
 <main id="top">
@@ -133,12 +136,12 @@ const lbCaps: string[] = (d.screens?.plates ?? []).map((p: any) => p.caption);
       <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>
       <div style={wrap}>
         <SectionHead no={nums.screens} tab={d.screens.tab} title={d.screens.title} icon={d.screens.icon} intro={d.screens.intro} link={d.screens.link} mb="clamp(26px,3.4vw,44px)" />
-        <div data-reveal="" style="position:relative;height:clamp(240px,38vw,520px);border:1px solid var(--rule);" data-plate="" data-lb="0" data-lb-plate="The screens" data-lb-cap={lbCaps[0]}><img src={d.screens.plates[0].src} alt={d.screens.plates[0].alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;" /></div>
+        <div data-reveal="" style="position:relative;height:clamp(240px,38vw,520px);border:1px solid var(--rule);" data-plate="" data-lb="0" data-lb-plate="The screens" data-lb-cap={lbCaps[0]}><picture style="display:contents;">{d.screens.plates[0].srcSmall && <source media={smallPlate} srcset={d.screens.plates[0].srcSmall} />}<img src={d.screens.plates[0].src} alt={d.screens.plates[0].alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;" /></picture></div>
         <div data-reveal="" style={`margin-top:10px;margin-bottom:clamp(14px,2vw,22px);${plateCap}`}>{lbCaps[0]}</div>
         <div data-plates="" data-reveal="" style="display:grid;gap:clamp(12px,1.6vw,20px);">
           {d.screens.plates.slice(1).map((p: any, n: number) => (
             <div>
-              <div style="position:relative;height:clamp(200px,26vw,340px);border:1px solid var(--rule);" data-plate="" data-lb={String(n + 1)} data-lb-plate="The screens" data-lb-cap={lbCaps[n + 1]}><img src={p.src} alt={p.alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;" /></div>
+              <div style="position:relative;height:clamp(200px,26vw,340px);border:1px solid var(--rule);" data-plate="" data-lb={String(n + 1)} data-lb-plate="The screens" data-lb-cap={lbCaps[n + 1]}><picture style="display:contents;">{p.srcSmall && <source media={smallPlate} srcset={p.srcSmall} />}<img src={p.src} alt={p.alt} loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;object-position:50% 0;" /></picture></div>
               <div style={`margin-top:10px;${plateCap}`}>{lbCaps[n + 1]}</div>
             </div>
           ))}
