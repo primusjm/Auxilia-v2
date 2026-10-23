@@ -138,3 +138,6 @@ Known limits:
 - `docs/STATS.md` lists every stat on the site with candidates for the Homepage band.
 - On phones the section icon sits above the description so the text spans the width.
 - Open with Josh: Britam, Co-op and Kenya Power titles (drafted in Todoist), the Related arrow animation, and the phone crop of the What we found image.
+- Case studies now live at `/case-study/<slug>`. The pages folder, `src/content/case-study`, `src/components/case-study`, the `case-study` content collection and the Sveltia collection were all renamed from `work`. Lumen needs the folder reopened.
+- Homepage appendix cards and the Related cards on appendix studies show each study's hero title. The `title` field (Britam, Co-op Bank and Kenya Power drafted as skills-themed lines) now only feeds the page title.
+- The accessibility panel header and close button match the contact form. Image captions are 11.5px. Phone testimonials put the quote icon on the left.
