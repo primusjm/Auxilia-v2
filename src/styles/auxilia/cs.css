@@ -93,3 +93,8 @@ html.reveal-armed .is-in [data-mcard]:nth-child(3) [data-draw-ico] svg > *{anima
   #build [data-bcard] > p{grid-column:2;grid-row:2;}
 }
 
+/* Impact stats on phones: every number and its text is centred, not only the first. */
+@media (max-width:680px){
+  #results > div > [data-three]:nth-child(2) > div{text-align:center;}
+}
+
