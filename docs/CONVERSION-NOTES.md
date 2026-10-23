@@ -107,3 +107,11 @@ Known limits:
 - The small eyebrow (brand colour, 11.5px) is below 4.5:1 over busy parts of many photos, as in the original design. A denser fade fixes it everywhere but washes out the photos.
 - The page meta description is built from `hero.lead`, so it is now one short sentence. A dedicated `description` field would be better for search.
 - `britam/hero.webp` is pale and only 1000px wide, so its hero barely shows the photo.
+
+## Modifica pass, 23 October 2026
+
+- **Preact 11 and numeric styles:** Preact 11 no longer adds `px` to numeric inline styles, so the Acquisti menu bar and hamburger lost their sizes. `src/components/acquisti/style-px.ts` restores the React behaviour for both Acquisti islands. Keep it while the islands use style objects with numbers.
+- **Sticky elements:** the page roots on both sites use `overflow: clip` instead of `overflow: hidden`, which had turned them into scroll containers and stopped `position: sticky` working. The Acquisti support topics (mobile) and the appendix project tabs now pin while you are in their section.
+- **Speed:** Astro prefetch is on (`prefetchAll`, hover strategy), with a touchstart hook in `src/scripts/nav.ts` for phones. Prefetch, not prerender, so analytics added later will not count unvisited pages. Content already on screen at load no longer fades in on either site. The 1.5s loader still covers the first screen.
+- **Accessibility menu:** a footer button opens a panel on both sites (`src/scripts/a11y.ts`, `src/styles/a11y.css`) with theme, text size, font (site, plain or OpenDyslexic), high contrast, underlined links, no bold, wider spacing and reduce motion. Choices are classes on `<html>`, saved under `auxilia-a11y-v1` for the whole domain and applied by the inline head script. Text size zooms the page, because the sites use fixed pixel sizes. Reduce motion pauses autoplay and is read by the scripts alongside the system setting. The panel wording is a draft for Josh's review.
+- **Acquisti:** phone frames use a 35% narrower Dynamic Island, from the leaked iPhone 18 Pro figure; revisit if Apple's final size differs. The privacy policy gained App Store figures, Security, Your consent and an email in Contact (drafted for review). No custom terms: Acquisti relies on Apple's Standard EULA.
