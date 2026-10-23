@@ -14,13 +14,13 @@ Updated 23 October 2026, for starting a fresh Claude Code session. Read `CLAUDE.
 - Both live in `.claude/commands/`. `.claude/launch.json` is local and not committed.
 
 ## Todoist is the source of truth for tasks
-Project **Sito**, sections **Conversione** (conversion work and things Josh has to supply), **Modifica** (edits, run with `/md`) and **Futuro** (later). Modifica was empty when this note was written. Connectors are authorised per account, so authorise Todoist on a new account with `/mcp`.
+Project **Sito**, sections **Conversione** (conversion work and things Josh has to supply), **Modifica** (edits, run with `/md`) and **Futuro** (later). Modifica was empty when this note was written. The **Record** section holds one placeholder task per record study for the live-site screenshots work (a separate session). Connectors are authorised per account, so authorise Todoist on a new account with `/mcp`.
 
 Open items worth knowing about:
 - **4k, fidelity check:** `design/` is gone, so this cannot be finished as planned. Josh should close it. Earlier findings are in `docs/CONVERSION-NOTES.md`. To compare against the prototypes again, restore `design/` from git history (commit `77cd44c`) into a scratch folder.
 - **5b, OAuth proxy for Sveltia:** needs Josh's GitHub and Cloudflare accounts (steps in `docs/CMS-SETUP.md`).
 - **6, accessibility, performance and SEO pass:** largely done; Josh to confirm it can be closed.
-- **Futuro:** "Redesign image section below tabs in appendix case studies" looks done (the appendix project intros), and "remove the theme toggle on the Acquisti icon" is still open.
+- **Futuro:** "Redesign image section below tabs in appendix case studies" looks done (the appendix project intros), and Josh can close it. The Acquisti icon no longer toggles the theme (it was moved into Modifica and done).
 
 ## Things only Josh can supply
 Open Graph image (1200x630 at `/assets/og.png`), the three missing RLC logo images, a larger source for `britam/hero.webp`, and the decision on the GitHub Pages plan (a private repo needs a paid plan, and Pages is not enabled).

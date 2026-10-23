@@ -119,11 +119,12 @@ Known limits:
 ## Case study menu and appendix project intros
 
 - **Menu:** case studies use the homepage menu (`src/data/menu.ts`). Off the homepage the section links point to `/#record` and so on, and Contact stays on the page. Get in touch and Back to homepage were removed. Each case study's `menu` field in `src/content/work` is no longer read; it is kept so the CMS config does not change, and can be removed with its schema later.
-- **Appendix project intros:** a project that opens with a `plate` then a `head` block renders them as one split intro in `AppendixStudy.astro`: the photo inside the grid with a soft shadow, beside the kicker, title, intro and live links. It stacks at 860px and below. Styles are at the end of `src/styles/auxilia/appendix.css`. Several intro photos are 1000 to 1200px wide and look slightly soft on high-density screens; 1400px or wider sources would fix that.
+- **Appendix project intros:** a project that opens with a `plate` then a `head` block renders them as one split intro in `AppendixStudy.astro`: a card (white in light mode, with a plain border) holding the photo, which runs edge to edge along the top, left and bottom, beside the kicker, title, intro and live links. It stacks at 860px and below. Styles are at the end of `src/styles/auxilia/appendix.css`. Several intro photos are 1000 to 1200px wide and look slightly soft on high-density screens; 1400px or wider sources would fix that.
 
 ## Handover folder removed, last Modifica tasks, 23 October 2026
 
 - `design/` (the Claude Design prototypes, screenshots and assets) was deleted once the conversion work was done. It remains in git history from commit `77cd44c`. The full fidelity pass (task 4k) was not completed: record studies matched the prototypes to within about 1.5% at 390, 700 and 1000 wide before the hero redesign, and the differences found were fixed. Anything compared against the prototypes from now on needs the folder restored from history.
 - Footer buttons on phones: at 760px and below the theme switcher, back-to-top and accessibility buttons are all 44px on both sites. The accessibility button rule is in `src/styles/a11y.css`, and the Acquisti privacy page now has the same 44px sizing as the landing page.
 - Co-op Trust (appendix): the three audience cards use the boxed `mandate` style, like "The problem" cards in the Vehicle portal.
-
+- Appendix intros are now a card like the three smaller cards below them, and the photo fills it edge to edge on the top, left and bottom (across the top when stacked).
+- The Acquisti header icon no longer switches the theme. It is a plain link, and theme changes live on the footer buttons and in the accessibility menu.
