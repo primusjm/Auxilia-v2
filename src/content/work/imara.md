@@ -146,13 +146,14 @@ screens:
     href: https://imarafund.org/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/imara-screen-home.webp
+      srcSmall: /assets/site/imara-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/imara-screen-leadership.webp
       alt: 'Screen: leadership'
       caption: the leadership bios
-    - src: /assets/stock/photo-1632215861513-130b66fe97f4.webp
+    - src: /assets/site/imara-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
