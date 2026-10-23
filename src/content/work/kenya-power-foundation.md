@@ -146,13 +146,14 @@ screens:
     href: https://www.kplc.co.ke/kenya-power-foundation
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/kenya-power-foundation-screen-home.webp
+      srcSmall: /assets/site/kenya-power-foundation-screen-home-sm.webp
       alt: 'Screen: foundation page'
       caption: the foundation page
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/kenya-power-foundation-screen-themes.webp
       alt: 'Screen: thematic areas'
       caption: the thematic areas
-    - src: /assets/rsif/hero.webp
+    - src: /assets/site/kenya-power-foundation-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
