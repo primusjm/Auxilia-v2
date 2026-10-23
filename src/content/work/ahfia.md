@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: AHFIA · An Axum initiative
   title: Health financing, made legible ==to the people who decide it.==
-  lead: A home for the Alliance for Health Financing in Africa that gives ministries and funders **a clear case, a named team** and **a reason to get in touch.**
+  lead: 'A public home for health financing policy, **readable by ministries and journalists alike.**'
   facts:
     - icon: ic691dbb
       label: Client

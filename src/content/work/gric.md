@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: GRiC Africa · Kenya, Tanzania & Uganda
   title: Early-years lessons in the language a child ==speaks at home.==
-  lead: A learning portal that starts children in **Maa, Kiswahili or English**, and builds from there **to confident reading.**
+  lead: 'Picture-led lessons in Maa, Kiswahili and English, **free to start.**'
   facts:
     - icon: ic691dbb
       label: Client

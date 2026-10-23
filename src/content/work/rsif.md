@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: PASET-Rsif · hosted by icipe, Nairobi
   title: Opening Africa’s first pan-African science fund ==to every applicant.==
-  lead: A website for the fund that trains **Africa’s future science leaders**, with calls, scholars and results **in three languages.**
+  lead: 'Scholarships and grants one click away, **in the applicant’s language.**'
   facts:
     - icon: ic691dbb
       label: Client

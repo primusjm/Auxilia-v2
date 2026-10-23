@@ -44,7 +44,7 @@ hero:
   image: /assets/kenyapower/kp-corp-intro-emg6.webp
   eyebrow: Kenya Power · Nairobi
   title: One utility, four sites, ==each with its own audience.==
-  lead: A corporate site for ten million customers, a sustainability hub, a newsroom and an e-cooking campaign, each built for **the people it has to reach.**
+  lead: 'Four sites, **each built around the audience it serves.**'
 tablistLabel: Kenya Power projects
 projects:
   - id: corp

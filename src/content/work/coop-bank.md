@@ -45,7 +45,7 @@ hero:
   image: /assets/coopbank/main-k0ul.webp
   eyebrow: The Co-operative Bank of Kenya · Nairobi
   title: One bank, four products, ==each with its own front door.==
-  lead: An insurance buyer’s journey, a vehicle auction portal, an asset finance application and an investment site, each built for **the one job its visitor came to do.**
+  lead: 'Four product sites, **each built around what its customer came to do.**'
 tablistLabel: Co-operative Bank projects
 projects:
   - id: insure

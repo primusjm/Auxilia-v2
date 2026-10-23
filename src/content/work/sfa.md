@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Science for Africa Foundation · Nairobi, Kenya
   title: Putting African-led research ==in front of its funders.==
-  lead: A new website for a pan-African foundation that **funds and strengthens science**, built to show **the whole research value chain.**
+  lead: 'Ten programmes in four clear portfolios, **in English and French.**'
   facts:
     - icon: ic691dbb
       label: Client

@@ -39,7 +39,7 @@ hero:
   image: /assets/britam/hero.webp
   eyebrow: Britam Holdings · Nairobi
   title: One insurer, three very different audiences, ==each met where they are.==
-  lead: A trust services site for families planning their estate, a microinsurance platform for people buying cover by the week, and an awards showcase for the advisors behind the brand, each built for **the conversation its visitor needs to have.**
+  lead: 'Three sites, **each built for the conversation its visitor needs to have.**'
 tablistLabel: Britam projects
 projects:
   - id: trust

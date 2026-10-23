@@ -59,7 +59,7 @@ menu:
 hero:
   eyebrow: Rising Leaders Center · East Africa
   title: Making a leadership institute’s impact ==impossible to miss.==
-  lead: A new website that shows funders, partners and future leaders **what the work changes**, in the words of **the people it changed.**
+  lead: 'Showing funders and future leaders **what the work changes.**'
   facts:
     - icon: ic691dbb
       label: Client
@@ -179,13 +179,13 @@ screens:
     text: Visit the live site
     underline: true
   plates:
-    - src: /assets/site/rlc-pages.webp
+    - src: /assets/site/rlc-screen-home.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/site/rlc-about.webp
+    - src: /assets/site/rlc-screen-impact.webp
       alt: 'Screen: Our Impact page'
       caption: the Our Impact page
-    - src: /assets/site/rlc-mobile.webp
+    - src: /assets/site/rlc-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:

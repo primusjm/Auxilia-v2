@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Co-operative Bank Foundation · Nairobi, Kenya
   title: Giving a bank’s foundation ==a voice of its own.==
-  lead: A website for the social-impact arm of Co-operative Bank, built to show **scholarships, youth and women’s programmes** as **a story of shared value.**
+  lead: 'A website of its own, **apart from the bank’s loans and accounts.**'
   facts:
     - icon: ic691dbb
       label: Client

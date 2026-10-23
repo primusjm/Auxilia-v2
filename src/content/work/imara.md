@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Imara Fund · Pan-African
   title: A new pan-African fund, introduced ==with quiet confidence.==
-  lead: A first website for a fund that partners with **trusted organisations across Africa**, built to say **more with less.**
+  lead: 'Credibility built on its people and partners, **before a track record.**'
   facts:
     - icon: ic691dbb
       label: Client

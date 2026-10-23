@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Promises Treatment Centre · Webuye, Kenya
   title: A recovery centre where the first step is ==one phone call.==
-  lead: A new website that meets people at their hardest moment with **a voice first, by phone or WhatsApp**, and shows families **that recovery is possible.**
+  lead: 'A calm, confidential site **where calling for help takes one tap.**'
   facts:
     - icon: ic691dbb
       label: Client

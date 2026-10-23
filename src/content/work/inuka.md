@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Inuka Angaza Fund · World Vision Kenya
   title: Making it easy for Kenyans to give ==to Kenyan children.==
-  lead: A giving platform for World Vision Kenya’s local fund, where anyone can **donate in a few taps** or **pledge their birthday** to a child.
+  lead: 'Every way of giving one tap away, **every shilling accounted for.**'
   facts:
     - icon: ic691dbb
       label: Client

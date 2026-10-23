@@ -52,7 +52,7 @@ menu:
 hero:
   eyebrow: Kenya Power Foundation · Nairobi, Kenya
   title: Putting a utility’s social investment on the record.
-  lead: A home for the social-impact arm of Kenya Power, built to set out **four thematic areas** and **the flagship programmes** behind them.
+  lead: 'Scattered CSR projects, **brought together in one public place.**'
   facts:
     - icon: ic691dbb
       label: Client
