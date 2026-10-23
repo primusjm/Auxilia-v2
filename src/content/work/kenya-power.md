@@ -56,8 +56,8 @@ projects:
       - ''
     blocks:
       - type: plate
-        src: /assets/kenyapower/kp-corp-intro-emg6.webp
-        alt: 'Project image: Kenya Power'
+        src: /assets/kenyapower/kp-corp-intro-battery.webp
+        alt: 'Project image: a battery-shaped cut-out with a lightning bolt, lit by the setting sun'
       - type: head
         kicker: Project 01 · Corporate
         title: Ten million customers, ==one place to start.==
