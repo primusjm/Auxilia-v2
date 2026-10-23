@@ -342,6 +342,33 @@ if (lb) {
   $('[data-lb-bar]', lb)?.addEventListener('click', (e) => e.stopPropagation());
   $('[data-lb-prev]', lb)?.addEventListener('click', () => lbStep(-1));
   $('[data-lb-next]', lb)?.addEventListener('click', () => lbStep(1));
+  // Swipe left or right to step through the gallery on touch screens. It needs a clear horizontal move, so taps and vertical drags do nothing.
+  let sx = 0;
+  let sy = 0;
+  let swiping = false;
+  lb.addEventListener(
+    'touchstart',
+    (e) => {
+      swiping = e.touches.length === 1;
+      if (swiping) {
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+      }
+    },
+    { passive: true },
+  );
+  lb.addEventListener(
+    'touchend',
+    (e) => {
+      if (!swiping || lbIdx < 0) return;
+      swiping = false;
+      const t = e.changedTouches[0];
+      const dx = t.clientX - sx;
+      const dy = t.clientY - sy;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) lbStep(dx < 0 ? 1 : -1);
+    },
+    { passive: true },
+  );
 }
 
 /* ---------------- Keyboard ---------------- */
