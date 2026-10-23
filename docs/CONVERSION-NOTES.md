@@ -63,3 +63,13 @@ Known intentional differences from the prototype:
 3. **RLC logos:** three logo images are missing from the handover and render as empty plates.
 4. **GitHub Pages:** the repo is private, so Pages needs a paid plan. Not enabled.
 5. **Still to do (no input needed, next session):** image optimisation (4j), wider fidelity checks (4k), accessibility and Lighthouse pass (6).
+
+## Image and accessibility pass
+
+- Images: Britam awards PNGs converted to WebP (2.1 MB down to 0.2 MB), Acquisti icon PNG quantised (1.4 MB to 0.14 MB). Everything else was already WebP, `loading="lazy"` and `decoding="async"`. Responsive widths and AVIF were not added: they would change the markup, and the heaviest remaining file is under 800 KB.
+- axe-core (WCAG 2.1 AA and best practice) on home, 6 case studies, Acquisti landing and privacy, dark and light, 1440 and 390: no alt text, label or colour contrast failures, apart from one node on RLC dark (looks like a mid-animation reading, to confirm).
+- Fixed without visual change: landmarks (Contact labelled, Acquisti `<main>`, privacy duplicate banner), marquee `role="list"` to `group`, scrollable trip grid keyboard access.
+- Left as designed, for Josh to decide:
+  - Heading order on the appendix studies (an h3 under the tab panel with no h2).
+  - Acquisti FAQ rows: question 5 has a link inside a `role="button"` row (nested interactive). Fixing means restructuring the accordion.
+- Not run: Lighthouse, and a keyboard-only walkthrough. Both are best done locally.
