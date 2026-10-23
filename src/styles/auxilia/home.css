@@ -105,7 +105,6 @@ a:hover [data-wig],a:focus-visible [data-wig],a:hover [data-wig-wrap] svg,[data-
 .lc-ico.ico-draw,.mt-node.ico-draw{animation-duration:.45s;}
 @media (prefers-reduced-motion:reduce){[data-wig],[data-wig-wrap] svg{animation:none!important;}}
 @media (max-width:860px){[data-mt-leave]{font-size:16px!important;}}
-[data-ld-helmet]{background:#4A4766!important;}
 .lc-ico.is-on,.mt-node.is-on{background:var(--brand-wash)!important;color:var(--brand)!important;}
 .lc-ico,.mt-node{border-color:var(--brand)!important;}
 [data-lc-fill],[data-mt-fill],.mt-end.is-on{background:var(--brand)!important;}
