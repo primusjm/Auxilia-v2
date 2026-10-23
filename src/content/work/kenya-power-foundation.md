@@ -51,7 +51,7 @@ menu:
       - m7 15 4-4 3 3 5-6
 hero:
   eyebrow: Kenya Power Foundation · Nairobi, Kenya
-  title: Putting a utility’s social investment on the record.
+  title: Putting a utility’s social investment ==on the record.==
   lead: 'Scattered CSR projects, **brought together in one public place.**'
   facts:
     - icon: ic691dbb
