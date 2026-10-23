@@ -58,6 +58,7 @@ const tabCount = d.projects.length;
   <section id="projects" style="border-bottom:1px solid var(--rule);">
     <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>
     <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,44px) clamp(32px,4.2vw,60px);">
+      <h2 class="ax-sr-only">{d.tablistLabel}</h2>
       {projects.map((p: any, i: number) => (
         <div role="tabpanel" id={`panel-${p.id}`} aria-labelledby={`tab-${p.id}`} tabindex="0" hidden={i !== 0} style="padding-top:0;outline:none;">
           {p.blocks.map((b: any) => {

@@ -20,6 +20,13 @@ function goTab(i: number, focus = false, force = false) {
     t.parentElement?.classList.toggle('is-on', on);
   });
   panels.forEach((p, j) => (p.hidden = j !== k));
+  // On narrow screens the tab row scrolls sideways; keep the active tab in view.
+  const list = $('[role="tablist"]');
+  const cell = tabs[k].parentElement;
+  if (list && cell && list.scrollWidth > list.clientWidth) {
+    const left = list.scrollLeft + cell.getBoundingClientRect().left - list.getBoundingClientRect().left - 16;
+    list.scrollTo({ left, behavior: reduce ? 'auto' : 'smooth' });
+  }
   const sec = document.getElementById('projects');
   const bar = document.getElementById('projects-top');
   if (sec && bar) {

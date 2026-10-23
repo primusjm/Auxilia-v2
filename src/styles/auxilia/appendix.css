@@ -46,7 +46,19 @@
 /* Tab states, replacing the prototype's style objects. */
 .ax-tabcell{position:relative;box-shadow:inset 0 0 0 transparent;transition:box-shadow .35s ease;}
 .ax-tabcell.is-on{box-shadow:inset 0 -2px 0 var(--brand);}
-.ax-tablab{font-family:'Outfit',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;display:flex;align-items:center;gap:8px;transition:color .3s ease;}
+.ax-tablab{font-family:'Outfit','Outfit Fallback',sans-serif;font-weight:500;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:8px;display:flex;align-items:center;gap:8px;transition:color .3s ease;}
 .ax-tabcell.is-on .ax-tablab{color:var(--brand-text);}
-.ax-tabname{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(16px,1.8vw,21px);line-height:1.15;letter-spacing:-0.012em;font-weight:500;color:var(--ink-soft);transition:color .3s ease;}
+.ax-tabname{display:block;font-family:'Bricolage Grotesque','Bricolage Grotesque Fallback',sans-serif;font-size:clamp(16px,1.8vw,21px);line-height:1.15;letter-spacing:-0.012em;font-weight:500;color:var(--ink-soft);transition:color .3s ease;}
 .ax-tabcell.is-on .ax-tabname{color:var(--ink);}
+
+/* Visually hidden heading that gives the tab panels a parent h2. */
+.ax-sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+/* Narrow screens: tabs keep their natural width and the row scrolls sideways, so labels never spill into a neighbour. */
+@media (max-width:680px){
+  [data-tabgrid]{display:flex!important;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none;}
+  [data-tabgrid]::-webkit-scrollbar{display:none;}
+  [data-tabgrid] > div{flex:0 0 auto;min-width:max-content;scroll-snap-align:start;padding-left:16px!important;padding-right:20px!important;}
+  [data-tabgrid] > div:last-child{padding-right:76px!important;}
+  [data-tabgrid] [role="tab"]{min-height:44px;white-space:nowrap;}
+}
