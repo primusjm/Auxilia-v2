@@ -47,6 +47,7 @@ const tabCount = d.projects.length;
     </div>
   </section>
 
+  <div data-projects-wrap="">
   <div id="projects-top" style="position:sticky;top:0;z-index:40;background:var(--surface);border-top:2px solid var(--brand);border-bottom:1px solid var(--rule);">
     <div data-facts="" data-tabgrid="" data-tabs={tabCount} role="tablist" aria-label={d.tablistLabel} style="box-sizing:border-box;display:grid;gap:0;">
       {projects.map((p: any, i: number) => (
@@ -152,6 +153,7 @@ const tabCount = d.projects.length;
       ))}
     </div>
   </section>
+  </div>
 
   <section id="thread" style="border-bottom:1px solid var(--rule);background:var(--surface);">
     <div data-grid="" aria-hidden="true"><span data-grid-rule=""></span></div>

@@ -64,7 +64,7 @@ const og = new URL(ogImage, Astro.site).href;
     <slot name="head" />
   </head>
   <body style="margin:0;">
-    <div data-screen-label={screenLabel} style="min-height:100vh;background:var(--paper);color:var(--ink);overflow-x:hidden;position:relative;isolation:isolate;">
+    <div data-screen-label={screenLabel} style="min-height:100vh;background:var(--paper);color:var(--ink);overflow-x:clip;position:relative;isolation:isolate;">
       <Loader />
       <SiteMenu items={menu} caseStudy={caseStudy} />
       <slot />
