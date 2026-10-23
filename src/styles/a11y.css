@@ -24,6 +24,8 @@ html.a11y-contrast #contact,html.a11y-contrast [data-pfoot]{--ft-soft:var(--ft-i
 /* ---------- Footer button ---------- */
 [data-ft-a11y]{width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid var(--ft-line-strong);background:transparent;color:var(--ft-ink);cursor:pointer;transition:background .3s ease,color .3s ease;}
 [data-ft-a11y]:hover,[data-ft-a11y][aria-expanded="true"]{background:var(--ft-ghost-hover,rgba(59,40,255,.08));color:var(--ft-ink);}
+/* On phones the theme switcher and back-to-top button grow to 44px (760px and below), so the accessibility button matches them. */
+@media (max-width:760px){[data-ft-a11y]{width:44px;height:44px;}}
 
 /* ---------- Panel ---------- */
 .a11y-scrim{position:fixed;inset:0;z-index:140;background:rgba(9,8,28,.35);opacity:0;transition:opacity .45s ease;pointer-events:none;}
