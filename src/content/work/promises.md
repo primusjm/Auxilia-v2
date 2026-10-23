@@ -146,13 +146,14 @@ screens:
     href: https://promisestreatmentcentre.org
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/promises-screen-home.webp
+      srcSmall: /assets/site/promises-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/promises-screen-selfcheck.webp
       alt: 'Screen: the self-check'
       caption: the private self-check
-    - src: /assets/stock/photo-1515657241610-a6b33f0f6c5a.webp
+    - src: /assets/site/promises-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
