@@ -297,8 +297,7 @@ header[data-hdr] > div{border:0!important;}
     [role="tablist"][aria-label="Support topics"] > button > span:nth-child(3){display:none;}
     [role="tablist"][aria-label="Support topics"] > button > span:last-child{top:auto!important;bottom:0!important;left:0!important;right:0!important;width:auto!important;height:3px!important;}
     [role="tablist"][aria-label="Support topics"] > div[aria-hidden]{display:none!important;}
-    [data-sup-side]{position:sticky;top:0;z-index:20;background:var(--paper);}
-    [role="tablist"][aria-label="Support topics"]{background:var(--paper)!important;padding:14px 96px 0 20px!important;scroll-padding-right:96px;transform:none!important;}
+    [role="tablist"][aria-label="Support topics"]{position:sticky;top:0;z-index:20;background:var(--paper)!important;padding:14px 96px 0 20px!important;scroll-padding-right:96px;transform:none!important;}
     [data-sup-grid]{animation:none!important;}
     [data-sup-grid] aside{align-items:center;text-align:center;}
     [data-ft-mail] [data-ft-arrow]{display:none!important;}
