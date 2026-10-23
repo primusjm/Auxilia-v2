@@ -100,8 +100,8 @@ constraints:
   intro: Every plan starts from your funding cycle, your board's questions and what your donors need to see.
   note: 4 constraints, planned for
   tiles:
-    - image: /assets/rlc/hero.webp
-      alt: Programme team reviewing a phased budget
+    - image: /assets/home/grant-budgets.webp
+      alt: A boardroom with a long table beside a living plant wall
       icon: ic82b8ea
       title: Grant-sized budgets
       text: Scope fixed in writing, phased to your funding cycle, with retainers you can report to the board.
@@ -110,16 +110,16 @@ constraints:
       icon: icb30901
       title: Boards, donors, beneficiaries
       text: One site serving every audience, and impact reporting that answers the board's question before it's asked.
-    - image: /assets/stock/photo-1687422809654-579d81c29d32.webp
-      alt: Paying via M-Pesa on a phone
-      icon: ic6276c0
-      title: M-Pesa first
-      text: 'Giving and payment flows built around how people here actually pay: mobile money, then cards.'
-    - image: /assets/stock/photo-1688989667243-221eee13cbdb.webp
-      alt: Site loading on a shared handset
-      icon: ic8965d0
-      title: Low-bandwidth & accessible
-      text: Pages that open in seconds on a shared handset, built to WCAG 2.1 AA as the baseline, not an add-on.
+    - image: /assets/stock/photo-1516321318423-f06f85e504b3.webp
+      alt: A colleague pointing out something on a laptop screen
+      icon: ic86ce40
+      title: Small in-house tech teams
+      text: No developer on staff? We build sites your team can run themselves, with written guides and training for every editing task.
+    - image: /assets/stock/photo-1632215861513-130b66fe97f4.webp
+      alt: Learners reading together in a classroom
+      icon: ic522f82
+      title: Many languages, low bandwidth
+      text: Content in the languages your audiences speak, on pages that open in seconds on a shared handset, built to WCAG 2.1 AA as the baseline.
 capability:
   tab: Capability
   title: Four ways we help you get there, [[all of them ==in-house.==]]
