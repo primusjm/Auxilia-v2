@@ -9,6 +9,8 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'never',
   build: { format: 'file' },
+  // Hovering or focusing a link warms the next page; nav.ts adds touchstart for phones.
+  prefetch: { prefetchAll: true, defaultStrategy: 'hover' },
   integrations: [preact(), sitemap()],
   vite: {
     plugins: [tailwindcss()],

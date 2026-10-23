@@ -1,5 +1,6 @@
 // Page-leave transition: a circular wipe from the click point, then a normal navigation.
 // Ported from the prototype's inline nav script. Reset on pageshow so bfcache pages are not left covered.
+import { prefetch } from 'astro:prefetch';
 const de = document.documentElement;
 const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -55,6 +56,15 @@ document.addEventListener('click', (e) => {
     location.href = u.href;
   }, 750);
 });
+// Phones have no hover, so warm the page on first touch. The wipe gives it time to arrive.
+document.addEventListener(
+  'touchstart',
+  (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+    if (a && !a.target && !a.hasAttribute('download') && !a.pathname.startsWith('/admin')) prefetch(a.href, { ignoreSlowConnection: true });
+  },
+  { passive: true },
+);
 window.addEventListener('pageshow', (ev) => {
   if (ev.persisted) de.classList.remove('ax-leaving');
 });

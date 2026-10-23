@@ -484,6 +484,10 @@ if (!reduce && 'IntersectionObserver' in window) {
   requestAnimationFrame(() => {
     const t1 = (document.timeline && (document.timeline.currentTime as number)) || 0;
     if (!(t1 > t0)) return;
+    // What is already on screen stays put; only content below the fold animates in.
+    $$('[data-reveal]').forEach((n) => {
+      if (n.getBoundingClientRect().top < innerHeight) n.classList.add('is-in');
+    });
     de.classList.add('reveal-armed');
     const io = new IntersectionObserver(
       (entries) =>

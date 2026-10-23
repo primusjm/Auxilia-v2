@@ -119,6 +119,9 @@ export default class AcquistiLanding extends Component<any, any> {
     this.onScroll = () => { cancelAnimationFrame(this.rv); this.rv = requestAnimationFrame(this.reveal); };
     window.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
     window.addEventListener('resize', this.onScroll);
+    // Content is visible until now. Keep what is on screen as it is and hide only what is below the fold.
+    { const r0 = this.rootEl; if (r0) r0.querySelectorAll('[data-reveal]').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('acq-in'); }); }
+    if (!reduce) document.documentElement.classList.add('acq-armed');
     this.reveal();
     this.fb = setTimeout(() => { const r = this.rootEl; if (r) r.querySelectorAll('[data-reveal]').forEach(el => { if (el.getBoundingClientRect().top < window.innerHeight * 3) el.classList.add('acq-in'); }); }, 1500);
     if (reduce) return;
