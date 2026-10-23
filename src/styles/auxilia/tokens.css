@@ -5,6 +5,8 @@
 [data-theme="dark"] #contact{--ft-bg:#070A1A;--ft-ink:#EEF0FF;--ft-soft:#A9B0D6;--ft-accent:var(--brand);--ft-line:#222A52;--ft-line-strong:rgba(255,255,255,.4);--ft-mail-rule:rgba(255,255,255,.2);--ft-strip:#121838;--ft-mark:#7A6EFF;--ft-mark-op:.07;--ft-cta-hover:#5B4FE9;--ft-dot:rgba(242,240,248,.25);--ft-track:rgba(242,240,248,.16);--ft-ghost-hover:rgba(165,160,255,.12);}
 .ax-fx-out{--fx:#3B28FF;}
 a[aria-label="Auxilia home"]{--logo-ink:var(--ink);--logo-acc:var(--brand);}
+/* A study can ask for the white logo when its hero photo is dark behind it (hero.logo: light). */
+a[aria-label="Auxilia home"][data-logo="light"]{--logo-ink:#FFFFFF;--logo-acc:#B2ACFF;}
 [data-ft-logo]{--logo-ink:var(--ft-ink)!important;--logo-acc:var(--ft-accent)!important;}
 [data-theme]{--mpanel-bg:#FFFFFF;}
 [data-theme="dark"]{--mpanel-bg:var(--brand-wash);}

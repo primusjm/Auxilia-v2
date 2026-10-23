@@ -33,6 +33,8 @@ const record = z.object({
     eyebrow: z.string(),
     title: rich,
     lead: rich,
+    /** Set to 'light' to show the white Auxilia logo, for a hero photo that is dark behind it. */
+    logo: z.enum(['light']).optional(),
     facts: z.array(z.object({ icon, label: z.string(), value: rich })),
   }),
   sections: z.array(z.string()),

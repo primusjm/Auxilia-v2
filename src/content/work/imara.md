@@ -51,6 +51,7 @@ menu:
       - m7 15 4-4 3 3 5-6
 hero:
   eyebrow: Imara Fund · Pan-African
+  logo: light
   title: A new pan-African fund, introduced ==with quiet confidence.==
   lead: 'Credibility built on its people and partners, **before a track record.**'
   facts:
