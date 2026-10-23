@@ -352,3 +352,8 @@ a:hover [data-ax-logo] .lg-dot + .lg-dot,a:focus-visible [data-ax-logo] .lg-dot 
 [data-loader]{-webkit-mask:radial-gradient(circle at var(--mx,calc(100vw - 56px)) var(--my,40px),transparent var(--ld-c),#000 calc(var(--ld-c) + 1px));mask:radial-gradient(circle at var(--mx,calc(100vw - 56px)) var(--my,40px),transparent var(--ld-c),#000 calc(var(--ld-c) + 1px));animation:ldOpen .9s cubic-bezier(.7,0,.2,1) 1.5s forwards!important;}
 html.ax-leaving [data-loader]{animation:ldClose .7s cubic-bezier(.7,0,.2,1) forwards!important;}
 @media (max-width:860px){[data-sh-split]{grid-template-columns:minmax(0,1fr)!important;}}
+
+/* Footer reply note: the short wording replaces the long one on phones. */
+[data-reply-short]{display:none;}
+@media (max-width:760px){[data-reply-long]{display:none;}[data-reply-short]{display:inline;}}
+
