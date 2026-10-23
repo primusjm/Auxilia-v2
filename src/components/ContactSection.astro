@@ -29,9 +29,9 @@ const { quotes, footerNav: nav, copyright, email } = site;
               <p class={'ax-q' + (i === 0 ? ' is-on' : '')} aria-hidden={i === 0 ? 'false' : 'true'}><span style="display:block;font-size:15px;line-height:1.4;color:var(--ft-ink);text-wrap:pretty;">{q.text}</span><span data-ft-who="" style="display:block;margin-top:2px;font-size:13px;line-height:1.4;color:var(--ft-soft);"><strong style="font-weight:500;color:var(--ft-accent);">{q.who}</strong>, {q.role}</span></p>
             ))}
           </div>
-          <div data-ft-dots="" style="padding:0 clamp(16px,2.4vw,28px);display:flex;gap:8px;align-items:center;">
+          <div data-ft-dots="" style="padding:0 clamp(16px,2.4vw,28px);margin-left:-8px;display:flex;gap:0;align-items:center;">
             {quotes.map((q, i) => (
-              <button type="button" data-q-dot={i} aria-label={'Show testimonial ' + (i + 1)} style="background:none;border:0;padding:10px 0;cursor:pointer;display:flex;align-items:center;"><span class={i === 0 ? 'ax-qd-on' : 'ax-qd-off'}>{i === 0 && <span />}</span></button>
+              <button type="button" data-q-dot={i} aria-label={'Show testimonial ' + (i + 1)} style="background:none;border:0;padding:0 8px;min-height:24px;cursor:pointer;display:flex;align-items:center;"><span class={i === 0 ? 'ax-qd-on' : 'ax-qd-off'}>{i === 0 && <span />}</span></button>
             ))}
           </div>
         </div>

@@ -66,17 +66,28 @@ function syncCt() {
   if (ctLabel) ctLabel.textContent = ctState === 'sending' ? 'Sending…' : 'Send message';
   if (ctIco) ctIco.innerHTML = ctState === 'sending' ? '<span class="ax-ct-spin" data-ct-anim=""></span>' : sendIcoHTML;
 }
+let ctReturn: HTMLElement | null = null;
+const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([type="hidden"]),select,textarea,[tabindex]:not([tabindex="-1"])';
+const ctFocusables = () => $$<HTMLElement>(FOCUSABLE, dlg ?? document).filter((el) => !el.closest('[hidden]') && el.getClientRects().length > 0);
 function openContact(e?: Event) {
   e?.preventDefault();
   setMenu(false);
+  if (!ctOpen) ctReturn = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   ctOpen = true;
   if (ctState === 'sent') ctState = 'idle';
   syncCt();
+  // Move focus into the dialog so keyboard and screen reader users start in the form.
+  requestAnimationFrame(() => ($<HTMLElement>('input[name="first_name"]', dlg ?? document) ?? ctFocusables()[0])?.focus());
 }
 function closeContact() {
+  const wasOpen = ctOpen;
   ctOpen = false;
   closePicker(false);
   syncCt();
+  if (wasOpen) {
+    ctReturn?.focus();
+    ctReturn = null;
+  }
 }
 $$('[data-ct-close]').forEach((el) => el.addEventListener('click', closeContact));
 document.addEventListener(
@@ -336,6 +347,25 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') lbClose();
     else if (e.key === 'ArrowRight') lbStep(1);
     else if (e.key === 'ArrowLeft') lbStep(-1);
+    return;
+  }
+  if (e.key === 'Tab' && ctOpen && dlg) {
+    // Keep Tab inside the open dialog.
+    const f = ctFocusables();
+    if (!f.length) return;
+    const first = f[0];
+    const last = f[f.length - 1];
+    const cur = document.activeElement;
+    if (!dlg.contains(cur)) {
+      e.preventDefault();
+      first.focus();
+    } else if (e.shiftKey && cur === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && cur === last) {
+      e.preventDefault();
+      first.focus();
+    }
     return;
   }
   if (e.key !== 'Escape') return;
