@@ -3,7 +3,15 @@
 Updated 23 October 2026. This sits beside `docs/HANDOFF.md`; read `CLAUDE.md` first for the working rules.
 
 ## The task
-Replace the three "The screens" plates on each record study with fresh captures of the client's live site. RLC is done and is the reference. The other nine still show placeholder stock photos. Keep each study's existing captions and alt text unless Josh changes them.
+Replace the three "The screens" plates on each record study with fresh captures of the client's live site. RLC is done and is the reference. The other nine still show placeholder stock photos. Keep each study's existing captions and alt text unless Josh changes them, apart from the change below.
+
+## Do this first: two desktop plates and one mobile on every study
+Josh wants every record study laid out like RLC: plate 1 the homepage (desktop), plate 2 one inner page (desktop), plate 3 "on mobile" (four phones). Before capturing anything, check all nine `.md` files in `src/content/work/` against this and fix the plate list, then confirm the result with Josh.
+- **Known mismatch:** AHFIA's third plate is "meet the team". It needs to become an "on mobile" plate. Decide with Josh whether "meet the team" becomes the second plate in place of "the focus areas", or is dropped.
+- **Second plates that are not a plain page:** GRIC "a lesson in progress", Inuka "birthday pledges", Promises "the private self-check", SFA "the programmes menu", RSIF "the impact map". Each must become one desktop page capture. Ask Josh which URL to use, and whether the caption stays or changes.
+- **Kenya Power:** the first plate is "the foundation page", not a homepage. That is fine as plate 1 if Josh agrees, since the foundation lives inside the KPLC site.
+- **Captions and alt text** are Josh's copy. Where a plate changes, draft the new caption and alt from his existing wording (lower case, short, like "the homepage", "on mobile"), and flag every draft for his review.
+- Only once the list is agreed, capture each study with the steps below.
 
 ## What Josh decided (RLC)
 - **Transparent background.** Frames float on the plate with a hairline and a soft neutral shadow, so one image works in light and dark. No gradient, no per-theme images.
@@ -28,7 +36,7 @@ In `public/assets/site/`, named after the study slug:
 Then point the study's `screens.plates` in `src/content/work/<slug>.md` at them, adding `srcSmall` to the first plate only. See `rlc.md`.
 
 ## Steps for the next client
-1. **Agree the pages with Josh.** The live URL is the study's `screens.link.href`. The second plate's caption names what to show, but several are not plain pages ("a lesson in progress" on GRIC, "birthday pledges" on Inuka, "the private self-check" on Promises, "the programmes menu" on SFA, "the impact map" on RSIF), and AHFIA's third plate is "meet the team", not mobile. Ask which URL or state to capture, and which four pages go on the phones. Co-op Bank and Kenya Power have several sites: ask which.
+1. **Agree the pages with Josh** (see "Do this first"). The live URL is the study's `screens.link.href`. Also ask which four pages go on the phones. Co-op Bank and Kenya Power have several sites: ask which.
 2. **Set up a scratch folder**, not the repo: copy in `docs/screenshots/*.mjs`, run `npm i playwright-core axe-core`, and make `raw/` and `out/`. The scripts launch the Chrome for Testing build in `~/Library/Caches/ms-playwright/chromium-1248`; change the path if that version has gone.
 3. **Capture.** In `cap.mjs` set `base` and the page paths. It takes each page at 2x: 1440 by 900, a `-tall` version at 1440 by 1500 for the cut-off windows, and the phones at 375 by 812. Look at every raw shot: dismiss cookie banners, scroll to load lazy images, and retake anything half-loaded. These are other organisations' sites, so do not log in or submit anything.
 4. **Compose.** In `compose.mjs` rename the second job and its `-tall` source to the client's page. Run `node compose.mjs`, then open the PNGs in `out/`.
