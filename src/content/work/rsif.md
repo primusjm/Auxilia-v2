@@ -146,13 +146,14 @@ screens:
     href: https://rsif-paset.org/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/rsif-screen-home.webp
+      srcSmall: /assets/site/rsif-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/rsif-screen-map.webp
       alt: 'Screen: impact map'
       caption: the impact map
-    - src: /assets/coopfoundation/hero.webp
+    - src: /assets/site/rsif-screen-mobile.webp
       alt: 'Screen: mobile views'
       caption: on mobile
 build:
