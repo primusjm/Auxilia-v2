@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import AuxiliaLayout from '../../layouts/AuxiliaLayout.astro';
+import { siteMenu } from '../../data/menu';
 import RecordStudy from '../../components/work/RecordStudy.astro';
 import '../../styles/auxilia/cs.css';
 import '../../styles/auxilia/record.css';
@@ -24,7 +25,7 @@ export async function getStaticPaths() {
 
 const { entry, related } = Astro.props;
 const d = entry.data as Extract<typeof entry.data, { kind: 'record' }>;
-const menu = d.menu.map((m) => ({ label: m.label, sub: m.sub, href: `#${m.id}`, icon: m.icon }));
+const menu = siteMenu(false);
 const title = `${d.client}: ${d.title} | Auxilia`;
 const description = plain(d.hero.lead);
 ---
@@ -34,7 +35,6 @@ const description = plain(d.hero.lead);
   ogImage={d.cardImage}
   screenLabel={`Case study ${String(d.order).padStart(3, '0')}: ${d.client}`}
   menu={menu}
-  caseStudy
   formSubject={d.formSubject}
   lightbox
 >

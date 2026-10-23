@@ -34,11 +34,6 @@
 [data-dec-ico].ico-draw{animation:none;}
 a:hover [data-wig],a:focus-visible [data-wig],[data-ft-mail]:hover [data-wig-wrap] svg{animation:none;}
 @media (prefers-reduced-motion:reduce){[data-wig],[data-wig-wrap] svg,[data-cta] [data-draw-ico]{animation:none!important;}}
-nav[aria-label="Main"] a[data-mix]:has(+ [data-back-home]){border-bottom:0!important;}
-@keyframes backNudge{0%,100%{transform:translateX(0);}40%{transform:translateX(-5px);}70%{transform:translateX(1px);}}
-[data-back-home]:hover [data-mix-ico] svg,[data-back-home]:focus-visible [data-mix-ico] svg{animation:backNudge .9s cubic-bezier(.2,.7,.2,1) infinite;}
-[data-back-ico]{transition:transform .45s cubic-bezier(.2,.7,.2,1);}
-[data-back-home]:hover [data-back-ico]{transform:translateX(-6px);}
 @keyframes qBgDrift{0%,100%{transform:translate3d(0,0,0) rotate(0deg) scale(1);}50%{transform:translate3d(-14px,-18px,0) rotate(-6deg) scale(1.05);}}
 @keyframes qIcoBeat{0%,70%,100%{transform:translateY(0) scale(1);}76%{transform:translateY(-6px) scale(1.08);}84%{transform:translateY(0) scale(.96);}90%{transform:translateY(-2px) scale(1.02);}}
 [data-q-bg]{animation:qBgDrift 11s ease-in-out infinite;transform-origin:60% 60%;}

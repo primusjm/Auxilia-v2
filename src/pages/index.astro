@@ -6,6 +6,7 @@ import Marquee from '../components/home/Marquee.astro';
 import Icon from '../components/Icon.astro';
 import { rich, plain } from '../lib/rich';
 import { ico } from '../lib/ico';
+import { siteMenu } from '../data/menu';
 import '../styles/auxilia/home.css';
 import '../styles/auxilia/home-extra.css';
 
@@ -37,13 +38,7 @@ const spot = records.map((r) => ({
 }));
 const slides = home.hero.slides.map((slug: string) => spot.find((s) => s.slug === slug)!).filter(Boolean);
 
-const menu = [
-  { label: 'Record', sub: 'Our missions', href: '#record', icon: ['M3 6h7l2 2h9v11H3Z'] },
-  { label: 'Constraints', sub: 'What we plan around', href: '#constraints', icon: ['M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18Z', 'M12 7a5 5 0 1 0 0 10a5 5 0 1 0 0-10Z', 'M12 11a1 1 0 1 0 0 2a1 1 0 1 0 0-2Z'] },
-  { label: 'Capability', sub: 'What we build', href: '#capability', icon: ['m12 3 9 5-9 5-9-5Z', 'm3 13 9 5 9-5'] },
-  { label: 'Method', sub: 'How we work', href: '#method', icon: ['M4 6h10', 'M4 12h16', 'M4 18h7'] },
-  { label: 'Contact', sub: 'Say hello', href: '#contact', icon: ['M3 5h18v14H3Z', 'm3 7 9 6 9-6'] },
-];
+const menu = siteMenu(true);
 
 const wrap = 'max-width:1240px;margin:0 auto;padding:clamp(36px,4.5vw,60px) clamp(20px,4vw,44px);';
 const first = slides[0];

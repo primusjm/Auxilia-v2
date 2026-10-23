@@ -26,12 +26,11 @@ interface Props {
   ogImage?: string;
   screenLabel?: string;
   menu: MenuItem[];
-  caseStudy?: boolean;
   /** Subject line sent with the contact form. */
   formSubject?: string;
   lightbox?: boolean;
 }
-const { title, description, ogImage = '/assets/og.png', screenLabel, menu, caseStudy = false, formSubject = 'Book a call', lightbox = false } = Astro.props;
+const { title, description, ogImage = '/assets/og.png', screenLabel, menu, formSubject = 'Book a call', lightbox = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
 const og = new URL(ogImage, Astro.site).href;
 ---
@@ -74,7 +73,7 @@ const og = new URL(ogImage, Astro.site).href;
   <body style="margin:0;">
     <div data-screen-label={screenLabel} style="min-height:100vh;background:var(--paper);color:var(--ink);overflow-x:clip;position:relative;isolation:isolate;">
       <Loader />
-      <SiteMenu items={menu} caseStudy={caseStudy} />
+      <SiteMenu items={menu} />
       <slot />
       <ContactSection />
       <ContactModal subject={formSubject} />
