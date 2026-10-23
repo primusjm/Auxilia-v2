@@ -160,7 +160,7 @@ build:
   title: Light enough for ==any phone, any signal.==
   icon: ic2224f7
   intro: A fast, static site **the Promises team can keep current**, with FAQs that **answer the questions families ask first.**
-  note: 6 build notes
+  note: 5 build notes
   cards:
     - icon: ica08a77
       label: Build
@@ -168,9 +168,6 @@ build:
     - icon: ic6b9f5b
       label: Structure
       text: About, Treatment, Addiction explained, Aftercare, Self-check and Contact
-    - icon: icf1822e
-      label: Content
-      text: FAQs on cost, length, admission and relapse, plus a call-back request for anyone not ready to phone
     - icon: ic22a978
       label: Privacy
       text: 'The self-check runs on the device: nothing stored, nothing sent unless you share it'
