@@ -240,13 +240,13 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/britam/awards-lead.png
+          - src: /assets/britam/awards-lead.webp
             alt: 'Screen: the 2025 company wins'
             caption: the 2025 company wins
-          - src: /assets/britam/awards-a.png
+          - src: /assets/britam/awards-a.webp
             alt: 'Screen: individual award winners'
             caption: individual award winners
-          - src: /assets/britam/awards-b.png
+          - src: /assets/britam/awards-b.webp
             alt: 'Screen: why the awards matter'
             caption: why the awards matter
 thread:
