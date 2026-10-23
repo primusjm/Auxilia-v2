@@ -295,6 +295,7 @@ function lbShow(k: number) {
   const plate = p.getAttribute('data-lb-plate') || 'The screens';
   const cap = p.getAttribute('data-lb-cap') || '';
   lb.hidden = false;
+  de.classList.add('lb-open');
   $('[data-lb-count]', lb)!.textContent = String(pool.indexOf(k) + 1).padStart(2, '0') + ' / ' + String(pool.length).padStart(2, '0');
   $('[data-lb-plate]', lb)!.textContent = plate;
   $('[data-lb-cap]', lb)!.textContent = cap;
@@ -318,6 +319,7 @@ function lbShow(k: number) {
 function lbClose() {
   lbIdx = -1;
   if (lb) lb.hidden = true;
+  de.classList.remove('lb-open');
 }
 if (lb) {
   document.addEventListener(

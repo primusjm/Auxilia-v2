@@ -45,3 +45,6 @@ html.ct-open .ax-ct-wrap{clip-path:circle(150% at 100% 100%);transform:none;opac
 /* The active dot is wider, so it needs less padding to keep the 24px target-size pitch. */
 [data-q-dot]:has(> .ax-qd-on){padding:0 4px!important;}
 [data-q-dot]:first-child:has(> .ax-qd-on){padding-left:0!important;}
+/* While the image gallery is open the page behind it does not scroll. The gutter stays reserved so the layout does not shift when the scrollbar disappears. */
+html.lb-open,html.lb-open body{overflow:hidden;}
+html.lb-open{scrollbar-gutter:stable;}
