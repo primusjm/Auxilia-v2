@@ -1,6 +1,6 @@
 # Handoff
 
-Updated 23 October 2026, for starting a fresh Claude Code session. Read `CLAUDE.md` first for the working rules. `docs/CONVERSION-NOTES.md` has the history and decisions, `docs/CMS-SETUP.md` the CMS setup, and `docs/HANDOFF-screenshots.md` the live-site screenshots task, which Josh runs in a separate session. Do not touch that task's files (`public/assets/site/`, the `screens` plates in `src/content/work/*.md`, `docs/screenshots/`) unless Josh asks.
+Updated 23 October 2026, for starting a fresh Claude Code session. Read `CLAUDE.md` first for the working rules. `docs/CONVERSION-NOTES.md` has the history and decisions, `docs/CMS-SETUP.md` the CMS setup, and `docs/HANDOFF-screenshots.md` the live-site screenshots task, which Josh runs in a separate session. Do not touch that task's files (`public/assets/site/`, the `screens` plates in `src/content/case-study/*.md`, `docs/screenshots/`) unless Josh asks.
 
 ## Where things stand
 - Local folder: `/Users/primus/Archivio/Codice/Auxilia`. This is the Auxilia-v2 repo (remote `origin` is `primusjm/Auxilia-v2`, private), with the folder renamed. The old site is in `Auxilia-old` and must not be touched.

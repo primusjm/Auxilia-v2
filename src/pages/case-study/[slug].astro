@@ -2,13 +2,13 @@
 import { getCollection } from 'astro:content';
 import AuxiliaLayout from '../../layouts/AuxiliaLayout.astro';
 import { siteMenu } from '../../data/menu';
-import RecordStudy from '../../components/work/RecordStudy.astro';
+import RecordStudy from '../../components/case-study/RecordStudy.astro';
 import '../../styles/auxilia/cs.css';
 import '../../styles/auxilia/record.css';
 import { plain } from '../../lib/rich';
 
 export async function getStaticPaths() {
-  const records = (await getCollection('work')).filter((e) => e.data.kind === 'record').sort((a, b) => a.data.order - b.data.order);
+  const records = (await getCollection('case-study')).filter((e) => e.data.kind === 'record').sort((a, b) => a.data.order - b.data.order);
   return records.map((entry) => {
     // Related cards are the previous and next records; the first and last borrow from the other side.
     const i = records.findIndex((r) => r.id === entry.id);

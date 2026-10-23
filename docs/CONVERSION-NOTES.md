@@ -7,7 +7,7 @@ Working notes for the Claude Design to Astro conversion. Update as work proceeds
 - CSS from the prototypes is kept as plain CSS, split by overlap into `src/styles/auxilia/` (`tokens`, `base`, `cs`, `home`, `record`, `appendix`). Inline styles are kept in the markup for fidelity.
 - `style-hover` / `style-focus` prototype attributes become generated classes in `src/styles/auxilia/states.css`.
 - Chrome state is vanilla JS in `src/scripts/`, driven by classes and data attributes.
-- Copy for case studies lives in `src/content/work/*.md` frontmatter. Rich text uses `**bold**` and `==highlight==` (the brand-coloured spans).
+- Copy for case studies lives in `src/content/case-study/*.md` frontmatter. Rich text uses `**bold**` and `==highlight==` (the brand-coloured spans).
 - Assets: `public/assets` (Auxilia) and `public/acquisti/assets` (Acquisti).
 
 ## Decisions
@@ -27,7 +27,7 @@ Working notes for the Claude Design to Astro conversion. Update as work proceeds
 Done and verified (DOM diff against the handover markup, plus screenshot diff in reduced motion; see "Verification"):
 - Scaffold, layout, tokens, theme, shared chrome (menu, contact modal, country picker, lightbox, quotes, reveals).
 - Homepage (`src/pages/index.astro`, copy in `src/content/pages/home.yaml`).
-- 10 record case studies (`src/content/work/*.md`, `kind: record`) on `RecordStudy.astro`.
+- 10 record case studies (`src/content/case-study/*.md`, `kind: record`) on `RecordStudy.astro`.
 - 3 appendix case studies (`kind: appendix`) on `AppendixStudy.astro`. Panels are an ordered list of typed blocks.
 - Local copies of all Unsplash placeholder images in `public/assets/stock/` (WebP).
 
@@ -118,7 +118,7 @@ Known limits:
 
 ## Case study menu and appendix project intros
 
-- **Menu:** case studies use the homepage menu (`src/data/menu.ts`). Off the homepage the section links point to `/#record` and so on, and Contact stays on the page. Get in touch and Back to homepage were removed. Each case study's `menu` field in `src/content/work` is no longer read; it is kept so the CMS config does not change, and can be removed with its schema later.
+- **Menu:** case studies use the homepage menu (`src/data/menu.ts`). Off the homepage the section links point to `/#record` and so on, and Contact stays on the page. Get in touch and Back to homepage were removed. Each case study's `menu` field in `src/content/case-study` is no longer read; it is kept so the CMS config does not change, and can be removed with its schema later.
 - **Appendix project intros:** a project that opens with a `plate` then a `head` block renders them as one split intro in `AppendixStudy.astro`: a card (white in light mode, with a plain border) holding the photo, which runs edge to edge along the top, left and bottom, beside the kicker, title, intro and live links. It stacks at 860px and below. Styles are at the end of `src/styles/auxilia/appendix.css`. Several intro photos are 1000 to 1200px wide and look slightly soft on high-density screens; 1400px or wider sources would fix that.
 
 ## Handover folder removed, last Modifica tasks, 23 October 2026

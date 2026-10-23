@@ -2,7 +2,7 @@ import fs from 'fs';
 import * as yaml from 'js-yaml';
 import {D,readDc,slugMap} from './clean.mjs';
 import {extractRecord} from './extract-all.mjs';
-const OUT='/home/user/Auxilia-v2/src/content/work/';
+const OUT='/home/user/Auxilia-v2/src/content/case-study/';
 fs.mkdirSync(OUT,{recursive:true});
 const home=fs.readFileSync(D+'auxilia/Homepage.dc.html','utf8');
 const spotSrc=/_spot = (\[[\s\S]*?\]);\n/.exec(home)[1];

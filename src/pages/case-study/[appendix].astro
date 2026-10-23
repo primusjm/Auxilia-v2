@@ -2,13 +2,13 @@
 import { getCollection } from 'astro:content';
 import AuxiliaLayout from '../../layouts/AuxiliaLayout.astro';
 import { siteMenu } from '../../data/menu';
-import AppendixStudy from '../../components/work/AppendixStudy.astro';
+import AppendixStudy from '../../components/case-study/AppendixStudy.astro';
 import '../../styles/auxilia/cs.css';
 import '../../styles/auxilia/appendix.css';
 import { plain } from '../../lib/rich';
 
 export async function getStaticPaths() {
-  const appendix = (await getCollection('work')).filter((e) => e.data.kind === 'appendix').sort((a, b) => a.data.order - b.data.order);
+  const appendix = (await getCollection('case-study')).filter((e) => e.data.kind === 'appendix').sort((a, b) => a.data.order - b.data.order);
   return appendix.map((entry) => {
     // The related cards link to the other appendix studies.
     const related = appendix

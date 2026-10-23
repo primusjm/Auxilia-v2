@@ -14,10 +14,10 @@ public_folder: /assets
 publish_mode: simple
 
 collections:
-  - name: work
+  - name: case-study
     label: Case studies
     label_singular: Case study
-    folder: src/content/work
+    folder: src/content/case-study
     extension: md
     format: yaml-frontmatter
     create: false

@@ -12,7 +12,7 @@ for (const theme of ['light','dark']) for (const w of [375,560,768,1024,1440]) {
   const c = await b.newContext({viewport:{width:w,height:900},reducedMotion:'reduce'});
   await c.addInitScript(t=>localStorage.setItem('auxilia-theme-v2',t), theme);
   const p = await c.newPage();
-  await p.goto(`http://localhost:${port}/work/${slug}`,{waitUntil:'networkidle'});
+  await p.goto(`http://localhost:${port}/case-study/${slug}`,{waitUntil:'networkidle'});
   await p.evaluate(()=>document.querySelectorAll('#screens img').forEach(i=>i.loading='eager'));
   const plates = p.locator('#screens [data-plate]');
   for (let i = 0; i < await plates.count(); i++) {

@@ -19,7 +19,7 @@ This is a complete replacement of the old auxilia.io. Never reuse code, copy or 
 
 ## Stack
 - Astro 6, static output only, Tailwind without preflight, deployed to GitHub Pages by a GitHub Actions workflow.
-- Content Collections with Zod schemas in `src/content.config.ts`, the single source of truth for content structure. Copy lives in `src/content` (`work/*.md`, `pages/home.yaml`, `acquisti/*.yaml`, `settings`).
+- Content Collections with Zod schemas in `src/content.config.ts`, the single source of truth for content structure. Copy lives in `src/content` (`case-study/*.md`, `pages/home.yaml`, `acquisti/*.yaml`, `settings`).
 - Styles are plain CSS in `src/styles/auxilia` and `src/styles/acquisti`, driven by CSS variables. Shared chrome behaviour is in `src/scripts`. The Acquisti pages are Preact islands.
 - Fonts (Bricolage Grotesque and Outfit) are self-hosted in `public/fonts`.
 - Theme: `data-theme` on the root, saved under `auxilia-theme-v2` (Auxilia) or `acquisti-theme-v1` (Acquisti), falling back to `prefers-color-scheme`.

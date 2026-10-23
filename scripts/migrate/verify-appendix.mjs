@@ -2,7 +2,7 @@ import * as cheerio from 'cheerio';import fs from 'fs';
 import {normHtml,origMain,diff} from './verify.mjs';
 for(const [n,s] of [['Britam','britam'],['CoopBank','coop-bank'],['KenyaPower','kenya-power']]){
   const orig=origMain(`auxilia/CS - ${n}.dc.html`);
-  const built=fs.readFileSync(`/home/user/Auxilia-v2/dist/work/${s}.html`,'utf8');
+  const built=fs.readFileSync(`/home/user/Auxilia-v2/dist/case-study/${s}.html`,'utf8');
   // compare each tabpanel, thread and hero separately
   const oa=cheerio.load(orig,{xmlMode:false},false), ba=cheerio.load(built,{xmlMode:false},false);
   const parts=[['hero','section[data-hero]'],['thread','#thread'],['next','#next'],['tabbar','#projects-top']];

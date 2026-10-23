@@ -15,7 +15,7 @@ export class Collector{constructor(prefix){this.prefix=prefix;this.css=new Map()
 }
 export function rewriteHref(h){
   if(!h)return h;
-  let m=h.match(/^\.\/CS%20-%20([A-Za-z]+)\.dc\.html(#.*)?$/); if(m&&slugMap[m[1]]) return '/work/'+slugMap[m[1]]+(m[2]||'');
+  let m=h.match(/^\.\/CS%20-%20([A-Za-z]+)\.dc\.html(#.*)?$/); if(m&&slugMap[m[1]]) return '/case-study/'+slugMap[m[1]]+(m[2]||'');
   m=h.match(/^\.\/Homepage\.dc\.html(#.*)?$/); if(m) return '/'+(m[1]||'');
   m=h.match(/^\.\/Acquisti(?:%20|\s)Privacy\.dc\.html(#.*)?$/); if(m) return '/acquisti/privacy'+(m[1]||'');
   m=h.match(/^\.\/Acquisti\.dc\.html(#.*)?$/); if(m) return '/acquisti'+(m[1]||'');

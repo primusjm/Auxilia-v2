@@ -136,8 +136,8 @@ const appendix = z.object({
   }),
 });
 
-const work = defineCollection({
-  loader: glob({ pattern: '*.md', base: './src/content/work' }),
+const caseStudy = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/case-study' }),
   schema: z.discriminatedUnion('kind', [record, appendix]),
 });
 
@@ -273,4 +273,4 @@ const settings = defineCollection({
   }),
 });
 
-export const collections = { work, pages, acquisti, settings };
+export const collections = { 'case-study': caseStudy, pages, acquisti, settings };
