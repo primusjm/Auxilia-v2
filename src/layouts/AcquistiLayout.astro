@@ -1,4 +1,5 @@
 ---
+import '../styles/fonts.css';
 import '../styles/acquisti/base.css';
 import '../styles/acquisti/states.css';
 
@@ -27,9 +28,8 @@ const og = new URL(ogImage, Astro.site).href;
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={og} />
     <meta name="twitter:card" content="summary" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/bricolage-grotesque-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/outfit-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
     <script is:inline>
       (function () {
         var t;

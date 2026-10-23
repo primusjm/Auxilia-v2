@@ -3,7 +3,7 @@ import Icon from './Icon.astro';
 import site from '../content/settings/site.json';
 const { quotes, footerNav: nav, copyright, email } = site;
 ---
-<section id="contact" aria-label="Contact" style="position:relative;overflow:hidden;isolation:isolate;background:var(--ft-bg);color:var(--ft-ink);border-top:0;font-family:'Outfit',sans-serif;transition:background .4s ease;">
+<section id="contact" aria-label="Contact" style="position:relative;overflow:hidden;isolation:isolate;background:var(--ft-bg);color:var(--ft-ink);border-top:0;font-family:'Outfit','Outfit Fallback',sans-serif;transition:background .4s ease;">
       <div aria-hidden="true" data-mark-bot="" style="position:absolute;right:-60px;bottom:-110px;width:347px;height:600px;pointer-events:none;z-index:0;transform:rotate(-12deg);transform-origin:50% 70%;transition:transform .8s cubic-bezier(.2,.7,.2,1);">
         <div style="position:absolute;inset:0;background:var(--ft-mark);opacity:var(--ft-mark-op);-webkit-mask:url(/assets/mark-helmet.png) center/contain no-repeat;mask:url(/assets/mark-helmet.png) center/contain no-repeat;"></div>
         <div style="position:absolute;inset:0;background:var(--ft-mark);opacity:var(--ft-mark-op);-webkit-mask:url(/assets/mark-plume.png) center/contain no-repeat;mask:url(/assets/mark-plume.png) center/contain no-repeat;"></div>
@@ -14,7 +14,7 @@ const { quotes, footerNav: nav, copyright, email } = site;
           <span style="display:inline-flex;align-items:center;gap:10px;font-size:15px;color:var(--ft-soft);"><span data-ft-pulse="" style="width:8px;height:8px;border-radius:50%;background:var(--ft-accent);animation:ftPulse 2.4s ease-out infinite;"></span>Replies within one working day</span>
         </div>
         <a href={`mailto:${email}`} data-ft-mail="" aria-label={`Email ${email}`} style="position:relative;margin-top:28px;display:flex;align-items:center;justify-content:space-between;gap:clamp(16px,3vw,32px);padding-bottom:26px;border-bottom:1px solid var(--ft-mail-rule);color:var(--ft-ink);text-decoration:none;">
-          <span style="min-width:0;font-family:'Bricolage Grotesque',sans-serif;font-weight:300;font-size:clamp(38px,8.4vw,112px);line-height:.92;letter-spacing:-0.045em;white-space:nowrap;color:var(--ft-ink);"><span>{email.split("@")[0]}</span><span data-ft-at="" style="font-weight:400;color:var(--ft-accent);margin:0 .02em;">@</span><span>{email.split("@")[1]}</span></span>
+          <span style="min-width:0;font-family:'Bricolage Grotesque','Bricolage Grotesque Fallback',sans-serif;font-weight:300;font-size:clamp(38px,8.4vw,112px);line-height:.92;letter-spacing:-0.045em;white-space:nowrap;color:var(--ft-ink);"><span>{email.split("@")[0]}</span><span data-ft-at="" style="font-weight:400;color:var(--ft-accent);margin:0 .02em;">@</span><span>{email.split("@")[1]}</span></span>
           <span data-ft-arrow="" data-wig-wrap="" style="flex:none;width:clamp(52px,7vw,96px);height:clamp(52px,7vw,96px);display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ft-line-strong);color:var(--ft-ink);"><Icon k="ic113c36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="36" height="36" style="width:38%;height:38%;" /></span>
           <span data-ft-line="" style="position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--ft-accent);"></span>
         </a>
