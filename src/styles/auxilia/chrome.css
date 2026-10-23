@@ -42,3 +42,6 @@ html.ct-open .ax-ct-wrap{clip-path:circle(150% at 100% 100%);transform:none;opac
 /* Lightbox */
 [hidden]{display:none!important;}
 .ax-lb-img{display:block;max-width:100%;max-height:100%;object-fit:contain;box-shadow:0 40px 80px -30px rgba(0,0,0,.7);animation:lbImg .5s cubic-bezier(.2,.7,.2,1);}
+/* The active dot is wider, so it needs less padding to keep the 24px target-size pitch. */
+[data-q-dot]:has(> .ax-qd-on){padding:0 4px!important;}
+[data-q-dot]:first-child:has(> .ax-qd-on){padding-left:0!important;}
