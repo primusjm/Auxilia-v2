@@ -1,0 +1,22 @@
+/* Shared by Auxilia and Acquisti: pointer cursor on clickable elements, and icon animations that play once as the icon enters the screen.
+   src/scripts/icons-once.ts adds .ico-once to the icons below when they scroll into view. The footer envelope, the contact form
+   envelope, the pulsing reply dot and the All missions arrow are exceptions: they keep looping. */
+
+/* ---------- Pointer cursor ---------- */
+a[href],button:not(:disabled),[role="button"],[role="tab"],[role="switch"],[role="menuitem"],summary,select,label[for],
+input[type="checkbox"],input[type="radio"],input[type="range"],input[type="submit"],input[type="file"],[data-lb],[data-lb-root] button{cursor:pointer;}
+button:disabled,[aria-disabled="true"]{cursor:not-allowed;}
+
+/* ---------- Icons play once on entering the screen ---------- */
+[data-fact-ico],[data-q-ico],[data-wig],[data-wig-wrap] svg,[data-cta] svg,[data-cta] [data-draw-ico],[data-cta-down] svg,.ax-btn-back .ax-btn-ico svg{animation:none!important;}
+[data-cta-down]:hover svg,[data-cta-down]:focus-visible svg{animation:ctaDropLoop .9s cubic-bezier(.4,0,.2,1) infinite!important;}
+[data-fact-ico].ico-once{animation:axFact 4.8s ease-in-out 1!important;}
+[data-q-ico].ico-once{animation:qIcoBeat 4.8s cubic-bezier(.2,.7,.2,1) -3.2s 1!important;}
+[data-wig].ico-once,[data-wig-wrap].ico-once svg{animation:axWig 4.8s ease-in-out -3.8s 1!important;}
+[data-cta] svg.ico-once,[data-cta] [data-draw-ico].ico-once{animation:ctaNudge 4.8s ease-in-out -3.6s 1!important;transform-origin:50% 40%;}
+[data-cta-down] svg.ico-once{animation:ctaDrop 3.2s cubic-bezier(.4,0,.2,1) -1.9s 1!important;}
+.ax-btn-back .ax-btn-ico svg.ico-once{animation:backNudge 3.2s cubic-bezier(.6,0,.3,1) -2.2s 1!important;}
+@media (prefers-reduced-motion:reduce){
+  [data-fact-ico],[data-q-ico],[data-wig],[data-wig-wrap] svg,[data-cta] svg,[data-cta] [data-draw-ico],[data-cta-down] svg,.ax-btn-back .ax-btn-ico svg,
+  .ico-once,.ico-once svg{animation:none!important;}
+}

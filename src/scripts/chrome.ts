@@ -475,10 +475,9 @@ if ('IntersectionObserver' in window) {
         if (en.isIntersecting) {
           if (!icoTimers.has(el)) {
             icoPlay(el);
-            icoTimers.set(el, window.setInterval(() => icoPlay(el), 30000));
+            icoTimers.set(el, 0);
           }
         } else if (icoTimers.has(el)) {
-          clearInterval(icoTimers.get(el));
           icoTimers.delete(el);
         }
       }),

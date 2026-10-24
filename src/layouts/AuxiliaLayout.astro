@@ -6,6 +6,7 @@ import '../styles/auxilia/base.css';
 import '../styles/auxilia/chrome.css';
 import '../styles/auxilia/states.css';
 import '../styles/a11y.css';
+import '../styles/interactive.css';
 import Loader from '../components/Loader.astro';
 import SiteMenu from '../components/SiteMenu.astro';
 import ContactSection from '../components/ContactSection.astro';
@@ -82,6 +83,7 @@ const og = new URL(ogImage, Astro.site).href;
     <script>
       import '../scripts/chrome';
       import '../scripts/a11y';
+      import '../scripts/icons-once';
     </script>
   </body>
 </html>
