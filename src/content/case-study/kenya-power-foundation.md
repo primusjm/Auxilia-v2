@@ -50,6 +50,7 @@ menu:
       - M3 3v18h18
       - m7 15 4-4 3 3 5-6
 hero:
+  logo: light
   eyebrow: Kenya Power Foundation · Nairobi, Kenya
   title: Putting a utility’s social investment ==on the record.==
   lead: 'Scattered CSR projects, **brought together in one public place.**'
