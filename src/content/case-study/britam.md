@@ -1,5 +1,5 @@
 ---
-title: Insurance and trusts, explained in plain terms
+title: An insurer that explains before it sells
 client: Britam
 kind: appendix
 order: 1

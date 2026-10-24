@@ -1,5 +1,5 @@
 ---
-title: Electricity for ten million customers, made easier to reach
+title: Powering Kenya, with the services to match
 client: Kenya Power
 kind: appendix
 order: 3
