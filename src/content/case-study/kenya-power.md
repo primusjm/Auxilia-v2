@@ -1,5 +1,5 @@
 ---
-title: Power applied for, outages reported, bills paid
+title: Electricity for ten million customers, made easier to reach
 client: Kenya Power
 kind: appendix
 order: 3

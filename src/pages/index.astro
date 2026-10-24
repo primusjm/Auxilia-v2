@@ -17,7 +17,7 @@ const records = (await getCollection('case-study'))
 const appendix = (await getCollection('case-study'))
   .flatMap((e) => (e.data.kind === 'appendix' ? [{ id: e.id, data: e.data }] : []))
   .sort((a, b) => a.data.order - b.data.order);
-const featured = appendix.map((a) => ({ href: `/case-study/${a.id}`, image: a.data.cardImage, client: a.data.client, title: String(a.data.hero.title).replace(/==/g, '').replace(/\s+/g, ' ').trim() }));
+const featured = appendix.map((a) => ({ href: `/case-study/${a.id}`, image: a.data.cardImage, client: a.data.client, title: a.data.title }));
 const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen', 'Twenty'];
 const count = records.length;
 const missions = words[count] ?? String(count);

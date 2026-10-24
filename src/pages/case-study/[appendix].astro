@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     // The related cards link to the other appendix studies.
     const related = appendix
       .filter((r) => r.id !== entry.id)
-      .map((r) => ({ slug: r.id, no: String(r.data.order).padStart(2, '0'), client: r.data.client, title: String(r.data.hero.title).replace(/==/g, '').replace(/\s+/g, ' ').trim(), image: r.data.cardImage }));
+      .map((r) => ({ slug: r.id, no: String(r.data.order).padStart(2, '0'), client: r.data.client, title: r.data.title, image: r.data.cardImage }));
     return { params: { appendix: entry.id }, props: { entry, related } };
   });
 }

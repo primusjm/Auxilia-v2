@@ -1,5 +1,5 @@
 ---
-title: Trusts explained, cover found, wins told
+title: Insurance and trusts, explained in plain terms
 client: Britam
 kind: appendix
 order: 1

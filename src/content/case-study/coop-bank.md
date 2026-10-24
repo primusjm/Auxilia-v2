@@ -1,5 +1,5 @@
 ---
-title: Cover bought, cars bid on, loans costed
+title: Insurance, loans, auctions and investments from one bank
 client: Co-op Bank
 kind: appendix
 order: 2
