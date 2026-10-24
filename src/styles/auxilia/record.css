@@ -1,3 +1,8 @@
 /* Auxilia record: split from the Claude Design handover. */
 @media (max-width:860px){[data-sh-split]{grid-template-columns:minmax(0,1fr)!important;}[data-found-split]{grid-template-columns:minmax(0,1fr)!important;}[data-found-split] [data-plate]{aspect-ratio:3/2;}}
 [data-found-split] [data-plate] > img{position:absolute;inset:0;}
+/* What we found on desktop: the text column keeps its natural height with even gaps, and the image takes that height. */
+@media (min-width:861px){
+  [data-found-split] > div:last-child{justify-content:flex-start!important;}
+  [data-found-split] [data-plate]{min-height:0!important;}
+}
