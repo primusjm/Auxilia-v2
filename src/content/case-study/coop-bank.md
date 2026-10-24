@@ -1,5 +1,5 @@
 ---
-title: Insurance, loans, auctions and investments from one bank
+title: Insurance, loans and investments from one bank
 client: Co-op Bank
 kind: appendix
 order: 2
