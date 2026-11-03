@@ -146,15 +146,16 @@ screens:
     href: https://ahfia.africa/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/ahfia-screen-home.webp
+      srcSmall: /assets/site/ahfia-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/ahfia-screen-focus.webp
       alt: 'Screen: the focus areas'
       caption: the focus areas
-    - src: /assets/stock/photo-1515657241610-a6b33f0f6c5a.webp
-      alt: 'Screen: meet the team'
-      caption: meet the team
+    - src: /assets/site/ahfia-screen-mobile.webp
+      alt: 'Screen: mobile views'
+      caption: on mobile
 build:
   tab: Build notes
   title: Built for a team ==that publishes.==
