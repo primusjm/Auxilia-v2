@@ -1,13 +1,13 @@
 ---
-description: Run the open tasks in the Modifica section of the Sito Todoist project
+description: Run the open tasks in the Modifica section of the Disegno Todoist project
 argument-hint: [optional: part of a task name to run only that task]
 allowed-tools: Bash(git *), Bash(npm run build), Bash(npm run check:cms), Read, Edit, Write
 ---
 
-Do the open tasks in the **Modifica** section of the Todoist project **Sito**. Optional filter from Josh: $ARGUMENTS
+Do the open tasks in the **Modifica** section of the Todoist project **Disegno**. Optional filter from Josh: $ARGUMENTS
 
 ## 1. Read the list
-- Find the project **Sito** and its section **Modifica** by name (use `find-projects`, `find-sections`, then `find-tasks` for that section). Do not rely on stored ids.
+- Find the project **Disegno** and its section **Modifica** by name (use `find-projects`, `find-sections`, then `find-tasks` for that section). Do not rely on stored ids.
 - Skip completed tasks. If `$ARGUMENTS` is set, run only the tasks whose title contains it.
 - Read each task's title, description and comments. The title and description are Josh's instruction. Comments may hold answers to questions raised earlier.
 - If the section is empty, say so and stop.

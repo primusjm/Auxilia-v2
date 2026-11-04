@@ -12,7 +12,7 @@ Work through these steps in order and stop at the first one that fails.
 2. **Inspect.** Run `git status --short` and `git diff --stat`. If there is nothing to commit, say so and stop. Never stage `.env*`, `node_modules`, `dist`, scratch or test output, or `.claude/launch.json`. Stage files by name, not with `git add -A`.
 3. **Gate.** Run `npm run build`, and `npm run check:cms` if `src/content.config.ts` or `public/admin/` changed. If either fails, report the output and stop. Do not commit a broken build.
 4. **Commit.** Group the changes into sensible commits, one concern each (for example fonts, a page, an accessibility fix, docs). Write a short imperative subject line, and a body only when the why is not obvious. UK English, no em dashes. Add the standing co-author attribution line. Do not skip hooks.
-5. **Notes.** If the work changes status, decisions or open items, update `docs/CONVERSION-NOTES.md` in its own commit. Tick finished tasks in the Todoist project **Sito**.
+5. **Notes.** If the work changes status, decisions or open items, update `docs/CONVERSION-NOTES.md` in its own commit. Tick finished tasks in the Todoist project **Disegno**.
 6. **Merge.** Push `dev` (`git push origin dev`), then:
    - `git checkout main`
    - `git merge --ff-only dev`

@@ -10,11 +10,11 @@ Updated 23 October 2026, for starting a fresh Claude Code session. Read `CLAUDE.
 
 ## Tools in the repo
 - `/cm`: commits the work on `dev` in sensible commits, then merges into `main`. It stops if the build fails or `main` has diverged.
-- `/md`: runs the open tasks in the **Modifica** section of the Todoist project **Sito**. It asks rather than guesses when a task is unclear.
+- `/md`: runs the open tasks in the **Modifica** section of the Todoist project **Disegno**. It asks rather than guesses when a task is unclear.
 - Both live in `.claude/commands/`. `.claude/launch.json` is local and not committed.
 
 ## Todoist is the source of truth for tasks
-Project **Sito**, sections **Conversione** (conversion work and things Josh has to supply), **Modifica** (edits, run with `/md`) and **Futuro** (later). Modifica was empty when this note was written. The **Record** section holds one placeholder task per record study for the live-site screenshots work (a separate session). Connectors are authorised per account, so authorise Todoist on a new account with `/mcp`.
+Project **Disegno**, sections **Conversione** (conversion work and things Josh has to supply), **Modifica** (edits, run with `/md`) and **Futuro** (later). Modifica was empty when this note was written. The **Record** section holds one placeholder task per record study for the live-site screenshots work (a separate session). Connectors are authorised per account, so authorise Todoist on a new account with `/mcp`.
 
 Open items worth knowing about:
 - **4k, fidelity check:** `design/` is gone, so this cannot be finished as planned. Josh should close it. Earlier findings are in `docs/CONVERSION-NOTES.md`. To compare against the prototypes again, restore `design/` from git history (commit `77cd44c`) into a scratch folder.

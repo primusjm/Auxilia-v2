@@ -10,7 +10,7 @@ This is a complete replacement of the old auxilia.io. Never reuse code, copy or 
 ## Working rules
 - The copy and design are Josh's. Change only what he asks for. If a request is ambiguous, ask rather than guess. Where he gives only a topic, draft the wording from his words, never invent facts, numbers or claims, and flag the draft for his review.
 - Case studies must show Josh's thought process, not just screenshots. Keep the structure: mandate, found, decisions, screens, build, results, next.
-- Work on `dev`. `/cm` commits in sensible commits and merges `dev` into `main`. `/md` runs the open tasks in the **Modifica** section of the Todoist project **Sito**. The **Conversione** section holds the remaining conversion tasks. Tick tasks off only once verified.
+- Work on `dev`. `/cm` commits in sensible commits and merges `dev` into `main`. `/md` runs the open tasks in the **Modifica** section of the Todoist project **Disegno**. The **Conversione** section holds the remaining conversion tasks. Tick tasks off only once verified.
 
 ## Repository
 - The private GitHub repo `primusjm/Auxilia-v2` is `origin`. Push only there.
