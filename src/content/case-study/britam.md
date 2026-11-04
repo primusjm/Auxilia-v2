@@ -50,7 +50,7 @@ projects:
   blocks:
   - alt: 'Project image: Britam Trust'
     type: plate
-    src: /assets/britam/shutterstock_2161473289.jpg
+    src: /assets/britam/trusts-plate.webp
   - type: head
     title: Trusts, explained ==before they’re sold.==
     intro: 'A new home for Britam’s trustee business: three trust types, a self-assessment and **a real consultant behind every page.**'
@@ -180,7 +180,7 @@ projects:
 - name: Britam Awards
   blocks:
   - alt: 'Project image: Britam Awards'
-    src: /assets/britam/shutterstock_2460463923.jpg
+    src: /assets/britam/awards-plate.webp
     type: plate
   - title: Nineteen years of wins, ==told in one place.==
     links:
