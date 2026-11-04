@@ -146,15 +146,16 @@ screens:
     href: https://scienceforafrica.foundation/
     text: Visit the live site
   plates:
-    - src: /assets/stock/photo-1655720358066-2aab2a903ef8.webp
+    - src: /assets/site/sfa-screen-home.webp
+      srcSmall: /assets/site/sfa-screen-home-sm.webp
       alt: 'Screen: homepage'
       caption: the homepage
-    - src: /assets/stock/photo-1655721991918-ee80a3291219.webp
+    - src: /assets/site/sfa-screen-programmes.webp
       alt: 'Screen: programmes'
       caption: the programmes menu
-    - src: /assets/imara/hero.webp
-      alt: 'Screen: mobile views'
-      caption: on mobile
+    - src: /assets/site/sfa-screen-stories.webp
+      alt: 'Screen: impact stories'
+      caption: impact stories
 build:
   tab: Build notes
   title: Built to grow ==with the portfolio.==
