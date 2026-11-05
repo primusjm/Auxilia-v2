@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+<key>Label</key><string>io.auxilia.devserver</string>
+<key>WorkingDirectory</key><string>/Users/primus/Archivio/Codice/Auxilia</string>
+<key>ProgramArguments</key><array>
+<string>/opt/homebrew/bin/node</string>
+<string>node_modules/astro/bin/astro.mjs</string>
+<string>dev</string><string>--host</string><string>0.0.0.0</string><string>--port</string><string>4321</string>
+</array>
+<key>EnvironmentVariables</key><dict><key>PATH</key><string>/opt/homebrew/bin:/usr/bin:/bin</string></dict>
+<key>RunAtLoad</key><true/>
+<key>KeepAlive</key><true/>
+<key>StandardOutPath</key><string>/tmp/auxilia-devserver.log</string>
+<key>StandardErrorPath</key><string>/tmp/auxilia-devserver.log</string>
+</dict></plist>
