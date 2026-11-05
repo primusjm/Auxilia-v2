@@ -159,10 +159,10 @@ const tabCount = d.projects.length;
                   <div style={`margin:clamp(32px,4vw,52px) 0 16px;${labelStyle}`}>{b.label}</div>
                   <div data-reveal="" style="position:relative;height:clamp(240px,38vw,520px);border:1px solid var(--rule);" data-plate="" data-lb={b.plates[0].lb} data-lb-plate={p.name} data-lb-cap={b.plates[0].caption}><picture style="display:contents;">{b.plates[0].srcSmall && <source media={smallPlate} srcset={b.plates[0].srcSmall} />}<img src={b.plates[0].src} alt={b.plates[0].alt} loading="lazy" decoding="async" style={plateFit(b.plates[0].src)} /></picture></div>
                   <div data-reveal="" style={`margin-top:10px;margin-bottom:clamp(14px,2vw,22px);${plateCap}`}>{b.plates[0].caption}</div>
-                  <div data-plates="" data-reveal="" style="display:grid;gap:clamp(12px,1.6vw,20px);">
+                  <div data-plates="" data-reveal="" style={`display:grid;gap:clamp(12px,1.6vw,20px);${b.plates.length === 2 ? 'grid-template-columns:minmax(0,1fr);' : ''}`}>
                     {b.plates.slice(1).map((pl: any) => (
                       <div>
-                        <div style="position:relative;height:clamp(200px,26vw,340px);border:1px solid var(--rule);" data-plate="" data-lb={pl.lb} data-lb-plate={p.name} data-lb-cap={pl.caption}><picture style="display:contents;">{pl.srcSmall && <source media={smallPlate} srcset={pl.srcSmall} />}<img src={pl.src} alt={pl.alt} loading="lazy" decoding="async" style={plateFit(pl.src)} /></picture></div>
+                        <div style={`position:relative;height:${b.plates.length === 2 ? 'clamp(240px,38vw,520px)' : 'clamp(200px,26vw,340px)'};border:1px solid var(--rule);`} data-plate="" data-lb={pl.lb} data-lb-plate={p.name} data-lb-cap={pl.caption}><picture style="display:contents;">{pl.srcSmall && <source media={smallPlate} srcset={pl.srcSmall} />}<img src={pl.src} alt={pl.alt} loading="lazy" decoding="async" style={plateFit(pl.src)} /></picture></div>
                         <div style={`margin-top:10px;${plateCap}`}>{pl.caption}</div>
                       </div>
                     ))}
