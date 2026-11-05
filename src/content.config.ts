@@ -104,7 +104,7 @@ const block = z.discriminatedUnion('type', [
   z.object({
     type: z.literal('screens'),
     label: z.string(),
-    plates: z.array(z.object({ src: z.string(), alt: z.string(), caption: z.string() })),
+    plates: z.array(z.object({ src: z.string(), srcSmall: z.string().optional(), alt: z.string(), caption: z.string() })),
   }),
 ]);
 
