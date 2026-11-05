@@ -178,15 +178,16 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1503376780353-7e6692767b70.webp
+          - src: /assets/site/coop-bank-vehicles-screen-home.webp
+            srcSmall: /assets/site/coop-bank-vehicles-screen-home-sm.webp
             alt: 'Screen: the vehicle search'
             caption: the vehicle search
-          - src: /assets/stock/photo-1552519507-da3b142c6e3d.webp
+          - src: /assets/site/coop-bank-vehicles-screen-detail.webp
             alt: 'Screen: a vehicle listing'
             caption: a vehicle listing
-          - src: /assets/stock/photo-1512941937669-90a1b58e7e9c.webp
+          - src: /assets/site/coop-bank-vehicles-screen-mobile.webp
             alt: 'Screen: bidding on mobile'
-            caption: bidding on mobile
+            caption: on mobile
   - id: finance
     num: '03'
     name: Asset Finance
@@ -291,13 +292,14 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1460925895917-afdab827c52f.webp
+          - src: /assets/site/coop-bank-trust-screen-home.webp
+            srcSmall: /assets/site/coop-bank-trust-screen-home-sm.webp
             alt: 'Screen: the homepage'
             caption: the homepage
-          - src: /assets/stock/photo-1579532537598-459ecdaf39cc.webp
+          - src: /assets/site/coop-bank-trust-screen-product.webp
             alt: 'Screen: a product page'
             caption: a product page
-          - src: /assets/stock/photo-1553729459-efe14ef6055d.webp
+          - src: /assets/site/coop-bank-trust-screen-mobile.webp
             alt: 'Screen: on mobile'
             caption: on mobile
 thread:
