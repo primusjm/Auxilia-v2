@@ -52,5 +52,4 @@ Then point the study's `screens.plates` in `src/content/case-study/<slug>.md` at
 - **Image viewers show transparency as black or white.** That is the viewer, not the file; `webpinfo` should report `Alpha: 1`.
 
 ## Still open
-- The old `rlc-pages.webp`, `rlc-about.webp` and `rlc-mobile.webp` are still in `public/assets/site/` and unused. Josh has not asked for them to be deleted, so ask before removing.
 - Nothing has been merged to `main` or pushed since the RLC work.
