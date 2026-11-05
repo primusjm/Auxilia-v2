@@ -100,15 +100,16 @@ projects:
     label: The offer, in numbers
   - type: screens
     plates:
-    - src: /assets/stock/photo-1450101499163-c8848c66ca85.webp
-      alt: 'Screen: the trust solutions'
-      caption: the trust solutions
-    - src: /assets/stock/photo-1556761175-5973dc0f32e7.webp
+    - src: /assets/site/britam-trust-screen-home.webp
+      srcSmall: /assets/site/britam-trust-screen-home-sm.webp
+      alt: 'Screen: homepage'
+      caption: the homepage
+    - src: /assets/site/britam-trust-screen-family.webp
       caption: a trust product page
-      alt: 'Screen: a trust product page'
-    - alt: 'Screen: requesting a callback'
-      caption: requesting a callback
-      src: /assets/stock/photo-1521791136064-7986c2920216.webp
+      alt: 'Screen: the Family Trust page'
+    - src: /assets/site/britam-trust-screen-mobile.webp
+      alt: 'Screen: mobile views'
+      caption: on mobile
     label: The screens
 - id: connect
   name: Britam Connect
