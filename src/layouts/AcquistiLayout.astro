@@ -4,6 +4,7 @@ import '../styles/acquisti/base.css';
 import '../styles/acquisti/states.css';
 import '../styles/a11y.css';
 import '../styles/interactive.css';
+import PrivacyNotice from '../components/PrivacyNotice.astro';
 
 interface Props {
   title: string;
@@ -50,6 +51,7 @@ const og = new URL(ogImage, Astro.site).href;
   </head>
   <body style="margin:0;">
     <slot />
+    <PrivacyNotice policy="/acquisti/privacy" />
     <script>
       import '../scripts/nav';
       import '../scripts/acquisti-footer';

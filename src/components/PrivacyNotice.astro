@@ -1,0 +1,47 @@
+---
+// Privacy notice shown once per device. The site sets no cookies and runs no analytics.
+// `form` adds the line about the contact form (Auxilia only); `policy` links a privacy page.
+interface Props {
+  form?: boolean;
+  policy?: string;
+}
+const { form = false, policy } = Astro.props;
+---
+<aside class="pn" data-privacy-notice hidden role="region" aria-labelledby="pn-title">
+  <h2 class="pn-title" id="pn-title">No cookies, no tracking</h2>
+  <p class="pn-text">
+    This site sets no cookies and runs no analytics or advertising. Your theme and accessibility choices are kept on your device only.{form && ' If you send the contact form, your message reaches me through Formspree.'}
+    {policy && <> <a href={policy}>Privacy policy</a>.</>}
+  </p>
+  <button type="button" class="pn-btn" data-privacy-ok>Got it</button>
+</aside>
+<style is:global>
+  .pn{position:fixed;left:clamp(12px,2vw,24px);bottom:clamp(12px,2vw,24px);z-index:120;width:min(400px,calc(100vw - 24px));box-sizing:border-box;padding:18px 18px 16px;background:var(--paper);color:var(--ink);border:1px solid var(--rule);box-shadow:0 30px 60px -28px rgba(10,9,32,.5);font-family:'Outfit','Outfit Fallback',sans-serif;opacity:0;transform:translateY(12px);transition:opacity .4s ease,transform .5s cubic-bezier(.2,.7,.2,1);}
+  .pn[hidden]{display:none;}
+  .pn.pn-in{opacity:1;transform:none;}
+  .pn-title{margin:0 0 6px;font-size:17px;font-weight:600;line-height:1.25;color:var(--ink);}
+  .pn-text{margin:0 0 14px;font-size:14.5px;line-height:1.5;color:var(--ink-soft,var(--ink));}
+  .pn-text a{color:inherit;text-decoration:underline;text-underline-offset:3px;}
+  .pn-btn{appearance:none;cursor:pointer;min-height:44px;padding:0 22px;border:0;background:var(--ink);color:var(--paper);font:inherit;font-size:15px;font-weight:600;}
+  .pn-btn:focus-visible,.pn-text a:focus-visible{outline:2px solid currentColor;outline-offset:3px;}
+  .pn-btn:focus-visible{outline-color:var(--ink);outline-offset:3px;}
+  @media (prefers-reduced-motion:reduce){.pn{transition:none;transform:none;}}
+  @media print{.pn{display:none;}}
+</style>
+<script>
+  const KEY = 'auxilia-privacy-v1';
+  const el = document.querySelector<HTMLElement>('[data-privacy-notice]');
+  let seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch {}
+  if (el && !seen) {
+    setTimeout(() => {
+      el.hidden = false;
+      requestAnimationFrame(() => el.classList.add('pn-in'));
+    }, 1600);
+    el.querySelector('[data-privacy-ok]')?.addEventListener('click', () => {
+      try { localStorage.setItem(KEY, '1'); } catch {}
+      el.classList.remove('pn-in');
+      setTimeout(() => { el.hidden = true; }, 400);
+    });
+  }
+</script>

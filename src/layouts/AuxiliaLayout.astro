@@ -12,6 +12,7 @@ import SiteMenu from '../components/SiteMenu.astro';
 import ContactSection from '../components/ContactSection.astro';
 import ContactModal from '../components/ContactModal.astro';
 import Lightbox from '../components/Lightbox.astro';
+import PrivacyNotice from '../components/PrivacyNotice.astro';
 
 interface MenuItem {
   label: string;
@@ -79,6 +80,7 @@ const og = new URL(ogImage, Astro.site).href;
       <ContactSection />
       <ContactModal subject={formSubject} />
       {lightbox && <Lightbox />}
+      <PrivacyNotice form />
     </div>
     <script>
       import '../scripts/chrome';
