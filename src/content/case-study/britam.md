@@ -162,15 +162,16 @@ projects:
     - text: '**partners** listed on the platform'
       value: '47'
   - plates:
-    - caption: talking to Britam AI
-      alt: 'Screen: talking to Britam AI'
-      src: /assets/stock/photo-1512941937669-90a1b58e7e9c.webp
-    - alt: 'Screen: the product catalogue'
+    - src: /assets/site/britam-connect-screen-home.webp
+      srcSmall: /assets/site/britam-connect-screen-home-sm.webp
+      alt: 'Screen: homepage'
+      caption: the homepage
+    - src: /assets/site/britam-connect-screen-catalogue.webp
+      alt: 'Screen: the product catalogue'
       caption: the product catalogue
-      src: /assets/stock/photo-1516321318423-f06f85e504b3.webp
-    - src: /assets/stock/photo-1573497019940-1c28c88b4f3e.webp
-      caption: finding a hospital panel
-      alt: 'Screen: finding a hospital panel'
+    - src: /assets/site/britam-connect-screen-mobile.webp
+      alt: 'Screen: mobile views'
+      caption: on mobile
     type: screens
     label: The screens
   num: '02'
@@ -232,15 +233,16 @@ projects:
     label: The record, in numbers
   - type: screens
     plates:
-    - caption: the 2025 company wins
-      src: /assets/britam/awards-lead.webp
-      alt: 'Screen: the 2025 company wins'
-    - caption: individual award winners
-      src: /assets/britam/awards-a.webp
-      alt: 'Screen: individual award winners'
-    - alt: 'Screen: why the awards matter'
-      caption: why the awards matter
-      src: /assets/britam/awards-b.webp
+    - src: /assets/site/britam-awards-screen-home.webp
+      srcSmall: /assets/site/britam-awards-screen-home-sm.webp
+      alt: 'Screen: the AKI Awards page'
+      caption: the AKI Awards page
+    - src: /assets/site/britam-awards-screen-site.webp
+      alt: 'Screen: the Britam homepage'
+      caption: the Britam homepage
+    - src: /assets/site/britam-awards-screen-mobile.webp
+      alt: 'Screen: mobile views'
+      caption: on mobile
     label: The screens
   type: Recognition
   id: awards
