@@ -114,13 +114,11 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1486262715619-67b85e0b08d3.webp
-            alt: 'Screen: choosing a vehicle type'
-            caption: choosing a vehicle type
-          - src: /assets/stock/photo-1556742049-0cfed4f6a45d.webp
-            alt: 'Screen: reviewing the cover'
-            caption: reviewing the cover
-          - src: /assets/stock/photo-1517245386807-bb43f82c33c4.webp
+          - src: /assets/site/coop-bank-insure-screen-home.webp
+            srcSmall: /assets/site/coop-bank-insure-screen-home-sm.webp
+            alt: 'Screen: the insurance homepage'
+            caption: the insurance homepage
+          - src: /assets/site/coop-bank-insure-screen-campaign.webp
             alt: 'Screen: the campaign landing page'
             caption: the campaign landing page
   - id: vehicles
@@ -238,15 +236,13 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1450101499163-c8848c66ca85.webp
-            alt: 'Screen: the loan calculator'
-            caption: the loan calculator
-          - src: /assets/stock/photo-1563013544-824ae1b704d3.webp
+          - src: /assets/site/coop-bank-finance-screen-home.webp
+            srcSmall: /assets/site/coop-bank-finance-screen-home-sm.webp
+            alt: 'Screen: the homepage'
+            caption: the homepage
+          - src: /assets/site/coop-bank-finance-screen-apply.webp
             alt: 'Screen: starting an application'
             caption: starting an application
-          - src: /assets/stock/photo-1556656793-08538906a9f8.webp
-            alt: 'Screen: tracking on mobile'
-            caption: tracking on mobile
   - id: trust
     num: '04'
     name: Co-op Trust
