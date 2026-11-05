@@ -111,13 +111,14 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1509391366360-2e959784a276.webp
+          - src: /assets/site/kenya-power-corp-screen-home.webp
+            srcSmall: /assets/site/kenya-power-corp-screen-home-sm.webp
             alt: 'Screen: the homepage'
             caption: the homepage
-          - src: /assets/stock/photo-1581092160562-40aa08e78837.webp
-            alt: 'Screen: applying for electricity'
-            caption: applying for electricity
-          - src: /assets/stock/photo-1556742049-0cfed4f6a45d.webp
+          - src: /assets/site/kenya-power-corp-screen-support.webp
+            alt: 'Screen: customer service'
+            caption: customer service
+          - src: /assets/site/kenya-power-corp-screen-mobile.webp
             alt: 'Screen: on mobile'
             caption: on mobile
   - id: sust
@@ -184,13 +185,14 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1497435334941-8c899ee9e8e9.webp
+          - src: /assets/site/kenya-power-sust-screen-home.webp
+            srcSmall: /assets/site/kenya-power-sust-screen-home-sm.webp
             alt: 'Screen: the homepage'
             caption: the homepage
-          - src: /assets/kpfoundation/main.webp
+          - src: /assets/site/kenya-power-sust-screen-sdgs.webp
             alt: 'Screen: the SDGs page'
             caption: the SDGs page
-          - src: /assets/stock/photo-1517245386807-bb43f82c33c4.webp
+          - src: /assets/site/kenya-power-sust-screen-mobile.webp
             alt: 'Screen: on mobile'
             caption: on mobile
   - id: news
@@ -257,13 +259,14 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1495020689067-958852a7765e.webp
+          - src: /assets/site/kenya-power-news-screen-home.webp
+            srcSmall: /assets/site/kenya-power-news-screen-home-sm.webp
             alt: 'Screen: the homepage'
             caption: the homepage
-          - src: /assets/stock/photo-1586339949916-3e9457bef6d3.webp
+          - src: /assets/site/kenya-power-news-screen-article.webp
             alt: 'Screen: an article'
             caption: an article
-          - src: /assets/stock/photo-1486262715619-67b85e0b08d3.webp
+          - src: /assets/site/kenya-power-news-screen-mobile.webp
             alt: 'Screen: on mobile'
             caption: on mobile
   - id: pika
@@ -330,15 +333,16 @@ projects:
       - type: screens
         label: The screens
         plates:
-          - src: /assets/stock/photo-1556909114-f6e7ad7d3136.webp
+          - src: /assets/site/kenya-power-pika-screen-home.webp
+            srcSmall: /assets/site/kenya-power-pika-screen-home-sm.webp
             alt: 'Screen: the homepage'
             caption: the homepage
-          - src: /assets/stock/photo-1585515320310-259814833e62.webp
-            alt: 'Screen: the appliances'
-            caption: the appliances
-          - src: /assets/stock/photo-1504674900247-0877df9cc836.webp
-            alt: 'Screen: booking a class'
-            caption: booking a class
+          - src: /assets/site/kenya-power-pika-screen-classes.webp
+            alt: 'Screen: cooking classes'
+            caption: cooking classes
+          - src: /assets/site/kenya-power-pika-screen-mobile.webp
+            alt: 'Screen: on mobile'
+            caption: on mobile
 thread:
   tab: What carried across
   title: Four sites, ==one utility behind them.==
